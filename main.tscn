@@ -1,8 +1,19 @@
-[gd_scene format=3 uid="uid://chwo58nwqx6ka"]
+[gd_scene load_steps=4 format=3 uid="uid://chwo58nwqx6ka"]
 
-[node name="Node" type="Node"]
+[ext_resource type="Script" path="res://Player.gd" id="1_4e4no"]
+[ext_resource type="Script" path="res://Main.gd" id="1_ikv4p"]
+[ext_resource type="PackedScene" uid="uid://bivh14t8aek5t" path="res://ship_1.tscn" id="1_w4fao"]
 
-[node name="Label" type="Label" parent="."]
+[node name="Main" type="Node"]
+script = ExtResource("1_ikv4p")
+
+[node name="InventoryInterface" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 40.0
-offset_bottom = 23.0
-text = "Haizea tolai jiji"
+offset_bottom = 40.0
+
+[node name="Ship_1" parent="." instance=ExtResource("1_w4fao")]
+
+[node name="Player" type="Node2D" parent="."]
+script = ExtResource("1_4e4no")

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bl8loxbkmx020"
-path="res://.godot/imported/gbjam-atlas.png-16eef4c62f30d591d798d5d533bdac4c.ctex"
+path="res://.godot/imported/gbjam-atlas.png-a9d4195bd3307b5f098f4ffdd51d21a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles/gbjam-atlas.png"
-dest_files=["res://.godot/imported/gbjam-atlas.png-16eef4c62f30d591d798d5d533bdac4c.ctex"]
+source_file="res://tiles_resources/gbjam-atlas.png"
+dest_files=["res://.godot/imported/gbjam-atlas.png-a9d4195bd3307b5f098f4ffdd51d21a6.ctex"]
 
 [params]
 

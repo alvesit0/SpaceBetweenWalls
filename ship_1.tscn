@@ -1,18 +1,18 @@
 [gd_scene load_steps=13 format=3 uid="uid://bivh14t8aek5t"]
 
-[ext_resource type="Texture2D" uid="uid://cghs2fgg6emr6" path="res://tiles/floor/tile1.png" id="1_l5hm6"]
-[ext_resource type="Texture2D" uid="uid://dvd3xjwkshaan" path="res://tiles/floor/tile2.png" id="2_ao17y"]
+[ext_resource type="Texture2D" uid="uid://cghs2fgg6emr6" path="res://tiles_resources/floor/tile1.png" id="1_qf72f"]
+[ext_resource type="Texture2D" uid="uid://dvd3xjwkshaan" path="res://tiles_resources/floor/tile2.png" id="2_u4j4p"]
 [ext_resource type="PackedScene" uid="uid://dtovq1alm2afe" path="res://placeables.tscn" id="3_44gms"]
 [ext_resource type="Script" path="res://Selector.gd" id="7_erb0m"]
 [ext_resource type="Texture2D" uid="uid://cgpw7gy4c6553" path="res://selection.png" id="7_mob7b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ngq3y"]
-texture = ExtResource("1_l5hm6")
+texture = ExtResource("1_qf72f")
 texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lo0k8"]
-texture = ExtResource("2_ao17y")
+texture = ExtResource("2_u4j4p")
 texture_region_size = Vector2i(8, 8)
 
 [sub_resource type="TileSet" id="TileSet_4i3jw"]
@@ -21,7 +21,7 @@ sources/3 = SubResource("TileSetAtlasSource_lo0k8")
 sources/1 = SubResource("TileSetAtlasSource_ngq3y")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l182g"]
-texture = ExtResource("2_ao17y")
+texture = ExtResource("2_u4j4p")
 texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
 

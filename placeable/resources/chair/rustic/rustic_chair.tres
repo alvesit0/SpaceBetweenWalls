@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PlaceableData" load_steps=6 format=3 uid="uid://8f05jdw6k3iu"]
+
+[ext_resource type="Resource" uid="uid://dvsjmoyq7024j" path="res://placeable/resources/chair/rustic/rustic_chair_front.tres" id="1_ldfdw"]
+[ext_resource type="Script" path="res://placeable/PlaceableData.gd" id="1_ptbb4"]
+[ext_resource type="Resource" uid="uid://e3vua5xvhnr5" path="res://placeable/resources/chair/rustic/rustic_chair_right.tres" id="2_emnxe"]
+[ext_resource type="Resource" uid="uid://65rwkfrysijo" path="res://placeable/resources/chair/rustic/rustic_chair_back.tres" id="3_she28"]
+[ext_resource type="Resource" uid="uid://dbr28qg7p0bjs" path="res://placeable/resources/chair/rustic/rustic_chair_left.tres" id="4_yn2ef"]
+
+[resource]
+script = ExtResource("1_ptbb4")
+name = "Rustic Chair"
+available_rotations = Array[Resource("res://placeable/RotatedPlaceableData.gd")]([ExtResource("1_ldfdw"), ExtResource("2_emnxe"), ExtResource("3_she28"), ExtResource("4_yn2ef")])
+current_rotation = ExtResource("1_ldfdw")
+price = 30

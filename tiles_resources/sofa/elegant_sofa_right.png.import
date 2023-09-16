@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2plvadotbo33"
-path="res://.godot/imported/tile3.png-382a4f173d41e84abf7086547cc6ae93.ctex"
+uid="uid://dl7tgbweb87qp"
+path="res://.godot/imported/elegant_sofa_right.png-12838bca2f6911b0db37cb4458ee757b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles/floor/tile3.png"
-dest_files=["res://.godot/imported/tile3.png-382a4f173d41e84abf7086547cc6ae93.ctex"]
+source_file="res://tiles_resources/sofa/elegant_sofa_right.png"
+dest_files=["res://.godot/imported/elegant_sofa_right.png-12838bca2f6911b0db37cb4458ee757b.ctex"]
 
 [params]
 
