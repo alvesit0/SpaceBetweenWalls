@@ -1,0 +1,62 @@
+[gd_resource type="Theme" load_steps=14 format=3 uid="uid://brt1frgstdh0o"]
+
+[ext_resource type="FontFile" uid="uid://4lcildi182c8" path="res://fonts/zeldadxt.ttf" id="1_ax5b6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hnm1t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qvsyp"]
+draw_center = false
+border_width_left = 2
+border_width_top = 1
+border_width_right = 2
+border_width_bottom = 1
+border_color = Color(0.8, 0.8, 0.8, 0)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_umcf7"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_7afp7"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_pveue"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_6pixt"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_mywuu"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_bc3fg"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lrxcf"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0y7fu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mvmjf"]
+border_color = Color(1, 1, 1, 0)
+border_blend = true
+anti_aliasing = false
+
+[sub_resource type="FontVariation" id="FontVariation_ay5tv"]
+base_font = ExtResource("1_ax5b6")
+
+[resource]
+default_font = SubResource("FontVariation_ay5tv")
+default_font_size = 12
+Button/styles/focus = SubResource("StyleBoxEmpty_hnm1t")
+Button/styles/normal = SubResource("StyleBoxFlat_qvsyp")
+Button/styles/pressed = SubResource("StyleBoxEmpty_umcf7")
+TabBar/icons/close = null
+TabBar/icons/decrement = null
+TabBar/icons/decrement_highlight = null
+TabBar/icons/drop_mark = null
+TabBar/icons/increment = null
+TabBar/icons/increment_highlight = null
+TabContainer/constants/icon_separation = 0
+TabContainer/constants/side_margin = 0
+TabContainer/icons/decrement = SubResource("CanvasTexture_7afp7")
+TabContainer/icons/decrement_highlight = SubResource("CanvasTexture_pveue")
+TabContainer/icons/drop_mark = SubResource("CanvasTexture_6pixt")
+TabContainer/icons/increment = SubResource("CanvasTexture_mywuu")
+TabContainer/icons/increment_highlight = SubResource("CanvasTexture_bc3fg")
+TabContainer/icons/menu = SubResource("CanvasTexture_lrxcf")
+TabContainer/icons/menu_highlight = SubResource("CanvasTexture_0y7fu")
+VBoxContainer/constants/separation = 4
+VBoxContainer/styles/normal = SubResource("StyleBoxFlat_mvmjf")

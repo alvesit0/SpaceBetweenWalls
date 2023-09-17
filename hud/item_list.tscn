@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkeyjxy4v4qob"]
+
+[ext_resource type="Theme" uid="uid://brt1frgstdh0o" path="res://ingame_theme.tres" id="1_p5m5u"]
+[ext_resource type="Script" path="res://hud/ListedItemList.gd" id="1_u4rsn"]
+
+[node name="ItemList" type="PanelContainer"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_p5m5u")
+script = ExtResource("1_u4rsn")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 2
+theme = ExtResource("1_p5m5u")
+
+[node name="All" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("1_p5m5u")
+
+[node name="AllItemsContainer" type="VBoxContainer" parent="TabContainer/All"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Rustic" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Elegant" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Futuristic" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Modern" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Otherworldly" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
