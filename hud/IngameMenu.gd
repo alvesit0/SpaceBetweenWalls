@@ -3,16 +3,18 @@ extends Control
 @onready var inventory_button = $PanelContainer/VBoxContainer/Inventory
 @onready var item_list = $"../ItemList"
 @onready var player = $"../../Player"
-
-const ITEM_LIST = preload("res://hud/item_list.tscn")
+@onready var v_box_container = $PanelContainer/VBoxContainer
 
 func set_focus() -> void:
 	inventory_button.grab_focus()
 
 func _on_inventory_pressed() -> void:
-	inventory_button.release_focus()
+	v_box_container.release_focus()
 	item_list.set_listed_item_list(player.item_list_data)
 	item_list.show()
+	item_list.set_focus()
+	hide()
+	PlayerManager.player.state = PlayerManager.player.States.ITEM_LIST_OPENED
 
 func _on_request_pressed():
 	print("request pressed")

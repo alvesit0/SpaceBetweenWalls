@@ -8,8 +8,17 @@ var money: int
 @export var item_list_data: ListedItemListData
 @export var selected_placeable: PlaceableData
 
+enum States {
+	ITEM_PLACING,
+	MENU_OPENED,
+	ITEM_LIST_OPENED
+}
+
+var state: States
+
 func _ready():
 	PlayerManager.player = self
+	state = States.ITEM_PLACING
 
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("gboy_start"):

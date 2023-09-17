@@ -20,6 +20,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 theme = ExtResource("2_cjfgx")
 
 [node name="IngameMenu" parent="InventoryInterface" instance=ExtResource("3_kvq5s")]
@@ -31,6 +32,8 @@ layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
+offset_right = 492.0
+offset_bottom = 19.0
 grow_horizontal = 1
 grow_vertical = 1
 

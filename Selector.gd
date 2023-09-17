@@ -19,7 +19,8 @@ func _unhandled_input(event):
 	if moving:
 		return
 	for dir in inputs.keys():
-		if event.is_action_pressed(dir):
+		if event.is_action_pressed(dir) \
+		and PlayerManager.player.state == PlayerManager.player.States.ITEM_PLACING:
 			move(dir)
 
 func move(dir):

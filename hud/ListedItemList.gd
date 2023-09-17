@@ -1,26 +1,51 @@
-extends PanelContainer
+extends Control
 
 class_name ListedItemList
 
 const LISTED_ITEM = preload("res://hud/listed_item.tscn")
 const ALL_ICON = preload("res://question_mark.png")
 
-@onready var all_tab = $TabContainer/All
-@onready var all_items_container = $TabContainer/All/AllItemsContainer
+@onready var all_items_container = $TabContainer/AllItemsContainer
 @onready var tab_container = $TabContainer
+var tabindex: int
 
 func _ready() -> void:
 	tab_container.set_tab_icon(0, ALL_ICON)
 	tab_container.set_tab_title(0, "")
 	tab_container.set_tab_title(1, "R")
 	tab_container.set_tab_title(2, "E")
-	tab_container.set_tab_title(3, "F")
-	tab_container.set_tab_title(4, "M")
-	tab_container.set_tab_title(5, "O")
+	tab_container.set_tab_title(3, "M")
+	tab_container.set_tab_title(4, "O")
+	tab_container.set_tab_title(5, "F")
+	tabindex = 0
+	
+func _physics_process(_delta):
+	if Input.is_action_just_pressed("ui_right") \
+	and PlayerManager.player.state == PlayerManager.player.States.ITEM_LIST_OPENED:
+		if tabindex == 5:
+			tabindex = 0
+		else:
+			tabindex += 1
+		set_focus()
+		tab_container.set_current_tab(tabindex)
+		
+	if Input.is_action_just_pressed("ui_left")  \
+	and PlayerManager.player.state == PlayerManager.player.States.ITEM_LIST_OPENED:
+		if tabindex == 0:
+			tabindex = 5
+		else:
+			tabindex -= 1
+		set_focus()
+		tab_container.set_current_tab(tabindex)
 
 func set_listed_item_list(listed_item_list_data: ListedItemListData) -> void:
-	listed_item_list_data.inventory_updated.connect(populate_item_grid)
+	if !listed_item_list_data.is_connected("inventory_updated", populate_item_grid):
+		listed_item_list_data.inventory_updated.connect(populate_item_grid)
 	populate_item_grid(listed_item_list_data)
+	
+func set_focus() -> void:
+	if all_items_container.get_child(0):
+		all_items_container.get_child(0).grab_focus()
 	
 func clear_listed_item_list(listed_item_list_data: ListedItemListData) -> void:
 	listed_item_list_data.inventory_updated.disconnect(populate_item_grid)
@@ -37,5 +62,6 @@ func populate_item_grid(listed_item_list_data: ListedItemListData) -> void:
 		
 		if item_data:
 			slot.set_slot_data(item_data)
-	if all_items_container.get_children()[0]:
-		all_items_container.get_children()[0].grab_focus()
+	
+	#if all_items_container.get_child(0):
+	#	all_items_container.get_child(0).focus_neighbor_top = all_items_container.get_child(0).get_path()

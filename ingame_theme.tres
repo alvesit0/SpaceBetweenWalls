@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=14 format=3 uid="uid://brt1frgstdh0o"]
+[gd_resource type="Theme" load_steps=20 format=3 uid="uid://brt1frgstdh0o"]
 
 [ext_resource type="FontFile" uid="uid://4lcildi182c8" path="res://fonts/zeldadxt.ttf" id="1_ax5b6"]
 
@@ -29,8 +29,30 @@ anti_aliasing = false
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_0y7fu"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_24jtf"]
+bg_color = Color(0.533333, 0.752941, 0.439216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bv5hs"]
+bg_color = Color(0.2, 0.172549, 0.313726, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_axsk3"]
+bg_color = Color(0.0313726, 0.0941176, 0.12549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ank7d"]
+bg_color = Color(0.533333, 0.752941, 0.439216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8cnil"]
+bg_color = Color(0.0313726, 0.0941176, 0.12549, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p25gu"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mvmjf"]
-border_color = Color(1, 1, 1, 0)
+bg_color = Color(0.27451, 0.529412, 0.560784, 1)
+border_color = Color(0.27451, 0.529412, 0.560784, 1)
 border_blend = true
 anti_aliasing = false
 
@@ -49,7 +71,15 @@ TabBar/icons/decrement_highlight = null
 TabBar/icons/drop_mark = null
 TabBar/icons/increment = null
 TabBar/icons/increment_highlight = null
+TabContainer/colors/drop_mark_color = Color(1, 1, 1, 1)
+TabContainer/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+TabContainer/colors/font_hovered_color = Color(0.95, 0.95, 0.95, 1)
+TabContainer/colors/font_outline_color = Color(1, 1, 1, 1)
+TabContainer/colors/font_selected_color = Color(0.95, 0.95, 0.95, 1)
+TabContainer/colors/font_unselected_color = Color(0.7, 0.7, 0.7, 1)
+TabContainer/constants/icon_max_width = 0
 TabContainer/constants/icon_separation = 0
+TabContainer/constants/outline_size = 0
 TabContainer/constants/side_margin = 0
 TabContainer/icons/decrement = SubResource("CanvasTexture_7afp7")
 TabContainer/icons/decrement_highlight = SubResource("CanvasTexture_pveue")
@@ -58,5 +88,11 @@ TabContainer/icons/increment = SubResource("CanvasTexture_mywuu")
 TabContainer/icons/increment_highlight = SubResource("CanvasTexture_bc3fg")
 TabContainer/icons/menu = SubResource("CanvasTexture_lrxcf")
 TabContainer/icons/menu_highlight = SubResource("CanvasTexture_0y7fu")
+TabContainer/styles/panel = SubResource("StyleBoxFlat_24jtf")
+TabContainer/styles/tab_disabled = SubResource("StyleBoxFlat_bv5hs")
+TabContainer/styles/tab_hovered = SubResource("StyleBoxFlat_axsk3")
+TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_ank7d")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxFlat_8cnil")
+TabContainer/styles/tabbar_background = SubResource("StyleBoxEmpty_p25gu")
 VBoxContainer/constants/separation = 4
 VBoxContainer/styles/normal = SubResource("StyleBoxFlat_mvmjf")
