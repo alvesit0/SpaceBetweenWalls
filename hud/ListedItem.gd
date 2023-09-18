@@ -2,7 +2,7 @@ extends Button
 
 signal slot_selected(index: int)
 
-@onready var texture_rect = $TextureRect
+@export var texture_rect: TextureRect
 
 var placeable_data: PlaceableData
 

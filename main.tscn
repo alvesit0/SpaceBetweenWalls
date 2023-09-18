@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://chwo58nwqx6ka"]
+[gd_scene load_steps=8 format=3 uid="uid://chwo58nwqx6ka"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_4e4no"]
 [ext_resource type="Script" path="res://Main.gd" id="1_ikv4p"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://t3v3lvtccgrc" path="res://hud/ingame_menu.tscn" id="3_kvq5s"]
 [ext_resource type="Resource" uid="uid://c2njanicelbam" path="res://placeable/initial_inventory.tres" id="4_7eq43"]
 [ext_resource type="Resource" uid="uid://dqlytwlk3tm7f" path="res://placeable/resources/sofa/elegant/elegant_sofa.tres" id="5_6qa0d"]
-[ext_resource type="PackedScene" uid="uid://bkeyjxy4v4qob" path="res://hud/item_list.tscn" id="5_eo7hh"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_ikv4p")
@@ -23,19 +22,9 @@ offset_bottom = 40.0
 mouse_filter = 2
 theme = ExtResource("2_cjfgx")
 
-[node name="IngameMenu" parent="InventoryInterface" instance=ExtResource("3_kvq5s")]
+[node name="IngameMenu" parent="InventoryInterface" node_paths=PackedStringArray("player") instance=ExtResource("3_kvq5s")]
 layout_mode = 0
-
-[node name="ItemList" parent="InventoryInterface" instance=ExtResource("5_eo7hh")]
-visible = false
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 492.0
-offset_bottom = 19.0
-grow_horizontal = 1
-grow_vertical = 1
+player = NodePath("../../Player")
 
 [node name="Player" type="Node2D" parent="."]
 script = ExtResource("1_4e4no")

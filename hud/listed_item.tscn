@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://hud/ListedItem.gd" id="1_1k8sq"]
 [ext_resource type="Theme" uid="uid://brt1frgstdh0o" path="res://ingame_theme.tres" id="1_umhs4"]
 
-[node name="ListedItem" type="Button"]
+[node name="ListedItem" type="Button" node_paths=PackedStringArray("texture_rect")]
 texture_filter = 1
 custom_minimum_size = Vector2(160, 20)
 anchors_preset = 15
@@ -22,6 +22,7 @@ theme_override_colors/font_hover_pressed_color = Color(0.878431, 0.972549, 0.815
 action_mode = 0
 text = "Sofa"
 script = ExtResource("1_1k8sq")
+texture_rect = NodePath("TextureRect")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(20, 20)

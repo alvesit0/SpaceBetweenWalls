@@ -5,8 +5,8 @@ class_name ListedItemList
 const LISTED_ITEM = preload("res://hud/listed_item.tscn")
 const ALL_ICON = preload("res://question_mark.png")
 
-@onready var all_items_container = $TabContainer/AllItemsContainer
-@onready var tab_container = $TabContainer
+@export var all_items_container: VBoxContainer
+@export var tab_container: TabContainer
 var tabindex: int
 
 func _ready() -> void:
@@ -18,6 +18,7 @@ func _ready() -> void:
 	tab_container.set_tab_title(4, "O")
 	tab_container.set_tab_title(5, "F")
 	tabindex = 0
+	set_focus()
 	
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("ui_right") \
