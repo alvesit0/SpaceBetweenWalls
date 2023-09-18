@@ -13,7 +13,9 @@ script = ExtResource("1_ikv4p")
 
 [node name="Ship_1" parent="." instance=ExtResource("1_w4fao")]
 
-[node name="InventoryInterface" type="Control" parent="."]
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="InventoryInterface" type="Control" parent="HUD"]
 visible = false
 layout_mode = 3
 anchors_preset = 0
@@ -22,9 +24,9 @@ offset_bottom = 40.0
 mouse_filter = 2
 theme = ExtResource("2_cjfgx")
 
-[node name="IngameMenu" parent="InventoryInterface" node_paths=PackedStringArray("player") instance=ExtResource("3_kvq5s")]
+[node name="IngameMenu" parent="HUD/InventoryInterface" node_paths=PackedStringArray("player") instance=ExtResource("3_kvq5s")]
 layout_mode = 0
-player = NodePath("../../Player")
+player = NodePath("../../../Player")
 
 [node name="Player" type="Node2D" parent="."]
 script = ExtResource("1_4e4no")

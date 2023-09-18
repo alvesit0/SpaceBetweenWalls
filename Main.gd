@@ -1,7 +1,8 @@
 extends Node
 
-@onready var inventory_interface = $InventoryInterface
-@onready var ingame_menu = $InventoryInterface/IngameMenu
+@onready var inventory_interface = $HUD/InventoryInterface
+@onready var ingame_menu = $HUD/InventoryInterface/IngameMenu
+@onready var canvas_layer = $HUD
 #@onready var item_list = $InventoryInterface/ItemList
 @onready var player = $Player
 
@@ -17,7 +18,7 @@ func toggle_menu_interface() -> void:
 		PlayerManager.player.state = PlayerManager.player.States.ITEM_PLACING
 	else:
 		PlayerManager.player.state = PlayerManager.player.States.MENU_OPENED
-	for child in get_children():
+	for child in canvas_layer.get_children():
 		if child is ListedItemList:
 			child.queue_free()
 	ingame_menu.set_focus()
