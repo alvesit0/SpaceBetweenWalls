@@ -5,3 +5,4 @@
 [resource]
 script = ExtResource("1_njlif")
 tiles = Array[Vector2]([Vector2(13, 0), Vector2(13, 1)])
+patterindex = 7
