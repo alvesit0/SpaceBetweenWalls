@@ -1,6 +1,6 @@
 extends TileMap
 	
-@export var selector: Area2D
+@export var selector: Selector
 
 func _process(_delta) -> void:
 	if selector:

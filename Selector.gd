@@ -1,5 +1,7 @@
 extends Area2D
 
+class_name Selector
+
 var tile_size = 8
 var animation_speed = 5
 var moving = false

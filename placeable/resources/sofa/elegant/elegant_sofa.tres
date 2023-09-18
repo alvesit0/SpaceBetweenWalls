@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="PlaceableData" load_steps=6 format=3 uid="uid://dqlytwlk3tm7f"]
+[gd_resource type="Resource" script_class="PlaceableData" load_steps=7 format=3 uid="uid://dqlytwlk3tm7f"]
 
 [ext_resource type="Resource" uid="uid://b656oj8tgcdq7" path="res://placeable/resources/sofa/elegant/elegant_sofa_front.tres" id="1_u36r0"]
 [ext_resource type="Resource" uid="uid://ct02f1aahkwpb" path="res://placeable/resources/sofa/elegant/elegant_sofa_right.tres" id="2_sd7xl"]
 [ext_resource type="Resource" uid="uid://drcqe3t4yrlrq" path="res://placeable/resources/sofa/elegant/elegant_sofa_back.tres" id="3_nk5kg"]
 [ext_resource type="Resource" uid="uid://b61eq2rgrnptc" path="res://placeable/resources/sofa/elegant/elegant_sofa_left.tres" id="4_advnw"]
 [ext_resource type="Script" path="res://placeable/PlaceableData.gd" id="5_kdf3r"]
+[ext_resource type="Texture2D" uid="uid://b3clmuqdspwhb" path="res://tiles_resources/sofa/elegant_sofa_front.png" id="6_y2e51"]
 
 [resource]
 script = ExtResource("5_kdf3r")
@@ -12,3 +13,4 @@ name = "Elegant Sofa"
 available_rotations = Array[Resource("res://placeable/RotatedPlaceableData.gd")]([ExtResource("1_u36r0"), ExtResource("2_sd7xl"), ExtResource("3_nk5kg"), ExtResource("4_advnw")])
 current_rotation = ExtResource("1_u36r0")
 price = 80
+texture = ExtResource("6_y2e51")

@@ -1,5 +1,7 @@
 extends Button
 
+class_name ListedItem
+
 signal slot_selected(index: int)
 
 @export var texture_rect: TextureRect
