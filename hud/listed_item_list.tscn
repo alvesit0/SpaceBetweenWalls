@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bkeyjxy4v4qob"]
 
-[ext_resource type="Theme" uid="uid://brt1frgstdh0o" path="res://ingame_theme.tres" id="1_p5m5u"]
-[ext_resource type="Script" path="res://hud/ListedItemList.gd" id="1_u4rsn"]
+[ext_resource type="Theme" uid="uid://brt1frgstdh0o" path="res://ingame_theme.tres" id="1_fquys"]
+[ext_resource type="Script" path="res://hud/ListedItemList.gd" id="2_catmq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yg2x2"]
 bg_color = Color(0.203922, 0.407843, 0.337255, 1)
@@ -22,8 +22,8 @@ offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme = ExtResource("1_p5m5u")
-script = ExtResource("1_u4rsn")
+theme = ExtResource("1_fquys")
+script = ExtResource("2_catmq")
 all_items_container = NodePath("TabContainer/AllItemsContainer")
 tab_container = NodePath("TabContainer")
 
@@ -42,7 +42,7 @@ offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme = ExtResource("1_p5m5u")
+theme = ExtResource("1_fquys")
 theme_override_styles/panel = SubResource("StyleBoxFlat_yg2x2")
 
 [node name="TabContainer" type="TabContainer" parent="."]
@@ -62,40 +62,40 @@ grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 2
 mouse_filter = 2
-theme = ExtResource("1_p5m5u")
+theme = ExtResource("1_fquys")
 tab_alignment = 1
 clip_tabs = false
 
 [node name="AllItemsContainer" type="VBoxContainer" parent="TabContainer"]
 layout_mode = 2
-theme = ExtResource("1_p5m5u")
+theme = ExtResource("1_fquys")
 
 [node name="RusticItemsContainer" type="VBoxContainer" parent="TabContainer"]
 visible = false
 layout_mode = 2
 mouse_filter = 2
-theme = ExtResource("1_p5m5u")
+theme = ExtResource("1_fquys")
 
 [node name="ElegantItemsContainer" type="VBoxContainer" parent="TabContainer"]
 visible = false
 layout_mode = 2
 mouse_filter = 2
-theme = ExtResource("1_p5m5u")
+theme = ExtResource("1_fquys")
 
 [node name="ModernItemsContainer" type="VBoxContainer" parent="TabContainer"]
 visible = false
 layout_mode = 2
 mouse_filter = 2
-theme = ExtResource("1_p5m5u")
+theme = ExtResource("1_fquys")
 
 [node name="OtherworldlyItemsContainer" type="VBoxContainer" parent="TabContainer"]
 visible = false
 layout_mode = 2
 mouse_filter = 2
-theme = ExtResource("1_p5m5u")
+theme = ExtResource("1_fquys")
 
 [node name="FuturisticItemsContainer" type="VBoxContainer" parent="TabContainer"]
 visible = false
 layout_mode = 2
 mouse_filter = 2
-theme = ExtResource("1_p5m5u")
+theme = ExtResource("1_fquys")

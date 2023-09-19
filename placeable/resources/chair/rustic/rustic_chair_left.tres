@@ -5,3 +5,4 @@
 [resource]
 script = ExtResource("1_p65w8")
 tiles = Array[Vector2]([Vector2(12, 0), Vector2(12, 1)])
+dimensions = Vector2(7, 15)

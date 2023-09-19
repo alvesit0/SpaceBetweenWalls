@@ -5,3 +5,4 @@
 [resource]
 script = ExtResource("1_rsv3p")
 tiles = Array[Vector2]([Vector2(3, 0), Vector2(4, 0), Vector2(5, 0), Vector2(3, 1), Vector2(4, 1), Vector2(5, 1)])
+dimensions = Vector2(23, 15)

@@ -20,7 +20,17 @@ func _ready() -> void:
 	tabindex = 0
 	set_focus()
 	
-func _physics_process(_delta):
+func _input(event):
+	if Input.is_action_just_pressed("gboy_a") \
+	and PlayerManager.player.state == PlayerManager.player.States.ITEM_LIST_OPENED:
+		for child in all_items_container.get_children():
+			if child.has_focus() and child is ListedItem:
+				PlayerManager.player.selected_placeable = child.placeable_data
+				PlayerManager.player.state = PlayerManager.player.States.ITEM_PLACING
+				PlayerManager.player.placetimer = 5
+				queue_free()
+	
+func _process(delta):
 	if Input.is_action_just_pressed("ui_right") \
 	and PlayerManager.player.state == PlayerManager.player.States.ITEM_LIST_OPENED:
 		if tabindex == 5:
@@ -63,6 +73,3 @@ func populate_item_grid(listed_item_list_data: ListedItemListData) -> void:
 		
 		if item_data:
 			slot.set_slot_data(item_data)
-	
-	#if all_items_container.get_child(0):
-	#	all_items_container.get_child(0).focus_neighbor_top = all_items_container.get_child(0).get_path()
