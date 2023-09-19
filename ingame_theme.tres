@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=20 format=3 uid="uid://brt1frgstdh0o"]
+[gd_resource type="Theme" load_steps=19 format=3 uid="uid://brt1frgstdh0o"]
 
 [ext_resource type="FontFile" uid="uid://4lcildi182c8" path="res://fonts/zeldadxt.ttf" id="1_ax5b6"]
 
@@ -12,8 +12,6 @@ border_width_right = 2
 border_width_bottom = 1
 border_color = Color(0.8, 0.8, 0.8, 0)
 anti_aliasing = false
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_umcf7"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_7afp7"]
 
@@ -40,6 +38,11 @@ bg_color = Color(0.0313726, 0.0941176, 0.12549, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ank7d"]
 bg_color = Color(0.533333, 0.752941, 0.439216, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.878431, 0.972549, 0.815686, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8cnil"]
 bg_color = Color(0.0313726, 0.0941176, 0.12549, 1)
@@ -64,7 +67,6 @@ default_font = SubResource("FontVariation_ay5tv")
 default_font_size = 12
 Button/styles/focus = SubResource("StyleBoxEmpty_hnm1t")
 Button/styles/normal = SubResource("StyleBoxFlat_qvsyp")
-Button/styles/pressed = SubResource("StyleBoxEmpty_umcf7")
 TabBar/icons/close = null
 TabBar/icons/decrement = null
 TabBar/icons/decrement_highlight = null
@@ -78,7 +80,7 @@ TabContainer/colors/font_outline_color = Color(1, 1, 1, 1)
 TabContainer/colors/font_selected_color = Color(0.95, 0.95, 0.95, 1)
 TabContainer/colors/font_unselected_color = Color(0.7, 0.7, 0.7, 1)
 TabContainer/constants/icon_max_width = 0
-TabContainer/constants/icon_separation = 0
+TabContainer/constants/icon_separation = 4
 TabContainer/constants/outline_size = 0
 TabContainer/constants/side_margin = 0
 TabContainer/icons/decrement = SubResource("CanvasTexture_7afp7")

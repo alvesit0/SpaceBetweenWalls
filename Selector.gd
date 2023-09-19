@@ -20,12 +20,15 @@ func _ready():
 	position += Vector2.ONE * tile_size
 	area_entered.connect(_on_selector_area_entered)
 	area_exited.connect(_on_selector_area_exited)
+	
+func _physics_process(delta):
+	pass
 
-func _unhandled_input(event):
+func _process(_delta):
 	if moving:
 		return
 	for dir in inputs.keys():
-		if event.is_action_pressed(dir) \
+		if Input.is_action_pressed(dir) \
 		and PlayerManager.player.state == PlayerManager.player.States.ITEM_PLACING:
 			move(dir)
 
@@ -33,7 +36,6 @@ func move(dir):
 	ray.target_position = inputs[dir] * tile_size
 	ray.force_raycast_update()
 	if !ray.is_colliding():
-		#position += inputs[dir] * tile_size
 		var tween = create_tween()
 		tween.tween_property(self, "position",
 			position + inputs[dir] *    tile_size, 1.0/animation_speed).set_trans(Tween.TRANS_SINE)

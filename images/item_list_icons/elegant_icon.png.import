@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6tvkxvw6ipeg"
-path="res://.godot/imported/elegant_sofa_back.png-34bedd46f217dbd64a4c9a0cf446f046.ctex"
+uid="uid://3m0g4itown3w"
+path="res://.godot/imported/elegant_icon.png-fbf8932ead0fde4a68ce9122347eae91.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles_resources/sofa/elegant_sofa_back.png"
-dest_files=["res://.godot/imported/elegant_sofa_back.png-34bedd46f217dbd64a4c9a0cf446f046.ctex"]
+source_file="res://images/item_list_icons/elegant_icon.png"
+dest_files=["res://.godot/imported/elegant_icon.png-fbf8932ead0fde4a68ce9122347eae91.ctex"]
 
 [params]
 

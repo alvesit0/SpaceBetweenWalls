@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://jnxh370escw8"]
 
 [ext_resource type="Script" path="res://placeable/resources/Placeable.gd" id="1_w21k8"]
-[ext_resource type="Texture2D" uid="uid://bl8loxbkmx020" path="res://tiles_resources/gbjam-atlas.png" id="2_mgdar"]
+[ext_resource type="Texture2D" uid="uid://bl8loxbkmx020" path="res://images/gbjam-atlas.png" id="2_mgdar"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sno1v"]
 texture = ExtResource("2_mgdar")

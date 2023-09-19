@@ -16,11 +16,6 @@ func _physics_process(_delta):
 	collision.shape.size = rotation.dimensions
 	collision.position.x = collision.shape.size.x / 2
 	collision.position.y = collision.shape.size.y / 2
-	print("################################")
-	print("HITBOX INFO: ")
-	print(colliding)
-	print(collision.shape.size)
-	print(collision.position)
 
 func _on_hitbox_check_area_entered(body: Area2D) -> void:
 	if body is Placeable:
