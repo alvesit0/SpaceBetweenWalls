@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://dtovq1alm2afe"]
 
 [ext_resource type="Texture2D" uid="uid://bl8loxbkmx020" path="res://tiles_resources/gbjam-atlas.png" id="1_6r14o"]
-[ext_resource type="Script" path="res://Placeables.gd" id="2_6205d"]
+[ext_resource type="Script" path="res://PlaceableTilemap.gd" id="2_20wda"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_iwwrb"]
 tile_data = PackedInt32Array(0, 196613, 0, 65536, 196613, 1, 1, 262149, 0, 65537, 262149, 1, 2, 327685, 0, 65538, 327685, 1)
@@ -174,4 +174,4 @@ cell_quadrant_size = 8
 format = 2
 layer_0/name = "0"
 layer_0/tile_data = PackedInt32Array(0, 0, 65536)
-script = ExtResource("2_6205d")
+script = ExtResource("2_20wda")

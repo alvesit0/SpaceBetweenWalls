@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://w8tncmue01e"]
+
+[ext_resource type="Script" path="res://placeable/resources/PlaceableHitboxCheck.gd" id="1_wrgqp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gjkpy"]
+size = Vector2(8, 8)
+
+[node name="PlaceableHitboxCheck" type="Area2D" node_paths=PackedStringArray("collision")]
+script = ExtResource("1_wrgqp")
+collision = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_gjkpy")

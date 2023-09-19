@@ -20,15 +20,14 @@ func _ready() -> void:
 	tabindex = 0
 	set_focus()
 	
-func _input(_event):
-	
+func _input(event):
 	if Input.is_action_just_pressed("gboy_a") \
 	and PlayerManager.player.state == PlayerManager.player.States.ITEM_LIST_OPENED:
 		for child in all_items_container.get_children():
 			if child.has_focus() and child is ListedItem:
 				PlayerManager.player.selected_placeable = child.placeable_data
 				PlayerManager.player.state = PlayerManager.player.States.ITEM_PLACING
-				print(PlayerManager.player.selected_placeable.name)
+				PlayerManager.player.placetimer = 5
 				queue_free()
 	
 func _process(delta):

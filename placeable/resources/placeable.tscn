@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://jnxh370escw8"]
+[gd_scene load_steps=6 format=3 uid="uid://jnxh370escw8"]
 
 [ext_resource type="Script" path="res://placeable/resources/Placeable.gd" id="1_w21k8"]
 [ext_resource type="Texture2D" uid="uid://bl8loxbkmx020" path="res://tiles_resources/gbjam-atlas.png" id="2_mgdar"]
@@ -135,9 +135,13 @@ texture_region_size = Vector2i(8, 8)
 tile_size = Vector2i(8, 8)
 sources/0 = SubResource("TileSetAtlasSource_sno1v")
 
-[node name="Placeable" type="Node2D" node_paths=PackedStringArray("tilemap")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v81hh"]
+size = Vector2(8, 8)
+
+[node name="Placeable" type="Area2D" node_paths=PackedStringArray("tilemap", "collision")]
 script = ExtResource("1_w21k8")
 tilemap = NodePath("TileMap")
+collision = NodePath("CollisionShape2D")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -145,3 +149,7 @@ tile_set = SubResource("TileSet_md4an")
 cell_quadrant_size = 8
 format = 2
 layer_0/tile_data = PackedInt32Array(0, 196608, 0, 65536, 196608, 1, 1, 262144, 0, 65537, 262144, 1, 2, 327680, 0, 65538, 327680, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_v81hh")

@@ -13,7 +13,6 @@ func _on_inventory_pressed() -> void:
 	hide()
 	var item_list = ITEM_LIST.instantiate()
 	item_list.set_listed_item_list(player.item_list_data)
-	print(get_parent())
 	get_parent().get_parent().add_child(item_list)
 	PlayerManager.player.state = PlayerManager.player.States.ITEM_LIST_OPENED
 
