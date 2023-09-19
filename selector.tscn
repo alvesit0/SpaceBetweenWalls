@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://2lw1ftipq8j"]
+
+[ext_resource type="Script" path="res://Selector.gd" id="1_h3cs8"]
+[ext_resource type="Texture2D" uid="uid://blatlh7vy3gxk" path="res://images/selector/selector_corner_1.png" id="2_lv5bm"]
+[ext_resource type="Texture2D" uid="uid://cgpw7gy4c6553" path="res://selection.png" id="2_plt5r"]
+[ext_resource type="PackedScene" uid="uid://w8tncmue01e" path="res://placeable/resources/placeable_hitbox_check.tscn" id="3_6rpu6"]
+[ext_resource type="Texture2D" uid="uid://v45itqn28efr" path="res://images/selector/selector_corner_2.png" id="3_d2w84"]
+[ext_resource type="Texture2D" uid="uid://byyui7hyo4rto" path="res://images/selector/selector_corner_4.png" id="4_qhnwm"]
+[ext_resource type="Texture2D" uid="uid://nrn7w4nlfley" path="res://images/selector/selector_corner_3.png" id="5_v1a6x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qei8t"]
+size = Vector2(4, 4)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3juws"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_plt5r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Selector" type="Area2D"]
+script = ExtResource("1_h3cs8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_qei8t")
+
+[node name="UpperLeftCorner" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_lv5bm")
+
+[node name="UpperRightCorner" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("3_d2w84")
+
+[node name="LowerLeftCorner" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("4_qhnwm")
+
+[node name="LowerRightCorner" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("5_v1a6x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_3juws")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../..")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="CameraPivot" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="CameraPivot"]
+zoom = Vector2(2, 2)
+
+[node name="PlaceableHitboxCheck" parent="." instance=ExtResource("3_6rpu6")]
