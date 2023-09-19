@@ -5,3 +5,4 @@
 [resource]
 script = ExtResource("1_revwr")
 tiles = Array[Vector2]([Vector2(14, 0), Vector2(14, 1)])
+patterindex = 0

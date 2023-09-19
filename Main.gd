@@ -1,9 +1,9 @@
 extends Node
 
-@onready var inventory_interface = $HUD/InventoryInterface
-@onready var ingame_menu = $HUD/InventoryInterface/IngameMenu
-@onready var canvas_layer = $HUD
-@onready var player = $Player
+@export var inventory_interface: Control
+@export var ingame_menu: Control
+@export var canvas_layer: CanvasLayer
+@export var player: Player
 
 func _ready() -> void:
 	player.toggle_menu.connect(toggle_menu_interface)
