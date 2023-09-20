@@ -26,7 +26,6 @@ func _ready():
 	placetimer = 0
 
 func _physics_process(_delta):
-	print(state)
 	if Input.is_action_just_pressed("gboy_start") and !moving:
 		toggle_menu.emit()
 	if placetimer > 0:
