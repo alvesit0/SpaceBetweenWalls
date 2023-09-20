@@ -34,18 +34,22 @@ position = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_qei8t")
 
 [node name="UpperLeftCorner" type="Sprite2D" parent="."]
+z_index = 10
 texture_filter = 1
 texture = ExtResource("2_lv5bm")
 
 [node name="UpperRightCorner" type="Sprite2D" parent="."]
+z_index = 10
 texture_filter = 1
 texture = ExtResource("3_d2w84")
 
 [node name="LowerLeftCorner" type="Sprite2D" parent="."]
+z_index = 10
 texture_filter = 1
 texture = ExtResource("4_qhnwm")
 
 [node name="LowerRightCorner" type="Sprite2D" parent="."]
+z_index = 10
 texture_filter = 1
 texture = ExtResource("5_v1a6x")
 
