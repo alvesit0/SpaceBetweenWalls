@@ -7,6 +7,7 @@ extends Node
 
 func _ready() -> void:
 	player.toggle_menu.connect(toggle_menu_interface)
+	PlayerManager.player = player
 
 func toggle_menu_interface() -> void:
 	inventory_interface.visible = not inventory_interface.visible

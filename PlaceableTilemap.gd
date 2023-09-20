@@ -20,14 +20,23 @@ func _input(event):
 			rotate_selected()
 
 func place_placeable(initial_tile: Vector2i) -> void:
-	var placeable = PLACEABLE_SCENE.instantiate()
-	placeable.global_position = selector.global_position
-	add_child(placeable)
-	if selector.placeable_hitbox_check.colliding:
-		placeable.queue_free()
+	if PlayerManager.player.selected_placeable:
+		var placeable = PLACEABLE_SCENE.instantiate()
+		placeable.global_position = selector.global_position
+		placeable.update_data()
+		add_child(placeable)
+		if selector.placeable_hitbox_check.colliding:
+			placeable.queue_free()
+	elif selector.targeted_placeable:
+		PlayerManager.player.selected_placeable = selector.targeted_placeable.data
+		selector.targeted_placeable.queue_free()
 
 func remove_placeable() -> void:
-	selector.targeted_placeable.queue_free()
+	if PlayerManager.player.selected_placeable:
+		PlayerManager.player.selected_placeable = null
+	elif selector.targeted_placeable:
+		selector.targeted_placeable.queue_free()
 
 func rotate_selected() -> void: 
-	PlayerManager.player.selected_placeable._rotate()
+	if PlayerManager.player.selected_placeable:
+		PlayerManager.player.selected_placeable._rotate()

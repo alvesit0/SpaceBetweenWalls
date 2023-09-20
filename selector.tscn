@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://2lw1ftipq8j"]
+[gd_scene load_steps=11 format=3 uid="uid://2lw1ftipq8j"]
 
 [ext_resource type="Script" path="res://Selector.gd" id="1_h3cs8"]
 [ext_resource type="Texture2D" uid="uid://blatlh7vy3gxk" path="res://images/selector/selector_corner_1.png" id="2_lv5bm"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://v45itqn28efr" path="res://images/selector/selector_corner_2.png" id="3_d2w84"]
 [ext_resource type="Texture2D" uid="uid://byyui7hyo4rto" path="res://images/selector/selector_corner_4.png" id="4_qhnwm"]
 [ext_resource type="Texture2D" uid="uid://nrn7w4nlfley" path="res://images/selector/selector_corner_3.png" id="5_v1a6x"]
+[ext_resource type="PackedScene" uid="uid://jnxh370escw8" path="res://placeable/resources/placeable.tscn" id="8_7wq4c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qei8t"]
 size = Vector2(4, 4)
@@ -22,8 +23,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Selector" type="Area2D"]
+[node name="Selector" type="Area2D" node_paths=PackedStringArray("preview_placeable")]
 script = ExtResource("1_h3cs8")
+preview_placeable = NodePath("PreviewPlaceable")
+
+[node name="PreviewPlaceable" parent="." instance=ExtResource("8_7wq4c")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(4, 4)
