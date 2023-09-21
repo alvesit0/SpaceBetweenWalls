@@ -39,7 +39,7 @@ func _ready():
 func _process(_delta):
 	preview_placeable.update_data()
 	
-	if !PlayerManager.player.selected_placeable:
+	if PlayerManager.player and !PlayerManager.player.selected_placeable:
 		preview_placeable.visible = false
 	elif preview_placeable_timer > 0:
 		preview_placeable_timer -= 1

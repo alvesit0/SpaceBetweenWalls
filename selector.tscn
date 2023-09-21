@@ -67,6 +67,7 @@ root_node = NodePath("../..")
 [node name="CameraPivot" type="Node2D" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="CameraPivot"]
+offset = Vector2(4, 4)
 zoom = Vector2(2, 2)
 
 [node name="PlaceableHitboxCheck" parent="." instance=ExtResource("3_6rpu6")]

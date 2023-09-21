@@ -11,6 +11,8 @@ var placetimer: int
 @export var selected_placeable: PlaceableData
 
 enum States {
+	MAIN_MENU,
+	WATCHING_CUTSCENE,
 	ITEM_PLACING,
 	MOVING,
 	MENU_OPENED,
@@ -21,7 +23,7 @@ var state: States
 
 func _ready():
 	PlayerManager.player = self
-	state = States.ITEM_PLACING
+	state = States.MAIN_MENU
 	moving = false
 	placetimer = 0
 

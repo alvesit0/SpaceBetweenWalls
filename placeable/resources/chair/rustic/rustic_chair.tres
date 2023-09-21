@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://e3vua5xvhnr5" path="res://placeable/resources/chair/rustic/rustic_chair_right.tres" id="2_emnxe"]
 [ext_resource type="Resource" uid="uid://65rwkfrysijo" path="res://placeable/resources/chair/rustic/rustic_chair_back.tres" id="3_she28"]
 [ext_resource type="Resource" uid="uid://dbr28qg7p0bjs" path="res://placeable/resources/chair/rustic/rustic_chair_left.tres" id="4_yn2ef"]
-[ext_resource type="Texture2D" uid="uid://i4lrytnxkdh6" path="res://images/chair/rustic_chair_front.png" id="6_ddex8"]
+[ext_resource type="Texture2D" uid="uid://i4lrytnxkdh6" path="res://images/placeables/chair/rustic_chair_front.png" id="6_ddex8"]
 
 [resource]
 script = ExtResource("1_ptbb4")

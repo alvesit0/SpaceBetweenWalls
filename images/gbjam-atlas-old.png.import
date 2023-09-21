@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgpw7gy4c6553"
-path="res://.godot/imported/selection.png-9afcbfee80b52259f363fc780247c9b5.ctex"
+uid="uid://bl8loxbkmx020"
+path="res://.godot/imported/gbjam-atlas-old.png-dfd5ff28f5ecf5c7763e99a02b4be8a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://selection.png"
-dest_files=["res://.godot/imported/selection.png-9afcbfee80b52259f363fc780247c9b5.ctex"]
+source_file="res://images/gbjam-atlas-old.png"
+dest_files=["res://.godot/imported/gbjam-atlas-old.png-dfd5ff28f5ecf5c7763e99a02b4be8a1.ctex"]
 
 [params]
 

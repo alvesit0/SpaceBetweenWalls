@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5hw57t1vdh1p"]
+
+[ext_resource type="Theme" uid="uid://brt1frgstdh0o" path="res://ingame_theme.tres" id="1_pvl1l"]
+[ext_resource type="PackedScene" uid="uid://t3v3lvtccgrc" path="res://hud/ingame_menu.tscn" id="2_jyyse"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="InventoryInterface" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme = ExtResource("1_pvl1l")
+
+[node name="IngameMenu" parent="InventoryInterface" node_paths=PackedStringArray("player") instance=ExtResource("2_jyyse")]
+layout_mode = 0
+player = NodePath("")

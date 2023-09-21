@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3clmuqdspwhb"
-path="res://.godot/imported/elegant_sofa_front.png-fed030fb83a5304385c4e74b3d7560a8.ctex"
+uid="uid://c6tvkxvw6ipeg"
+path="res://.godot/imported/elegant_sofa_back.png-6895da88ff84a64aa52d07b16ce18315.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/sofa/elegant_sofa_front.png"
-dest_files=["res://.godot/imported/elegant_sofa_front.png-fed030fb83a5304385c4e74b3d7560a8.ctex"]
+source_file="res://images/placeables/sofa/elegant_sofa_back.png"
+dest_files=["res://.godot/imported/elegant_sofa_back.png-6895da88ff84a64aa52d07b16ce18315.ctex"]
 
 [params]
 
