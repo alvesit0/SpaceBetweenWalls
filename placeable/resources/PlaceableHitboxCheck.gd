@@ -11,16 +11,15 @@ func _ready():
 	area_exited.connect(_on_hitbox_check_area_exited)
 
 func _physics_process(_delta):
-	var rotation: RotatedPlaceableData = PlayerManager.player.selected_placeable.current_rotation
-	
-	collision.shape.size = rotation.dimensions
-	collision.position.x = collision.shape.size.x / 2
-	collision.position.y = collision.shape.size.y / 2
-	print("################################")
-	print("HITBOX INFO: ")
-	print(colliding)
-	print(collision.shape.size)
-	print(collision.position)
+	if PlayerManager.player.selected_placeable:
+		var rotation: RotatedPlaceableData = PlayerManager.player.selected_placeable.current_rotation
+		collision.shape.size = rotation.dimensions
+		collision.position.x = collision.shape.size.x / 2
+		collision.position.y = collision.shape.size.y / 2
+	else:
+		collision.shape.size = Vector2i(8, 8)
+		collision.position.x = 4
+		collision.position.y = 4
 
 func _on_hitbox_check_area_entered(body: Area2D) -> void:
 	if body is Placeable:

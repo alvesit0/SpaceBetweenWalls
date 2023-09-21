@@ -2,37 +2,34 @@
 
 [ext_resource type="Script" path="res://Player.gd" id="1_4e4no"]
 [ext_resource type="Script" path="res://Main.gd" id="1_ikv4p"]
-[ext_resource type="PackedScene" uid="uid://bivh14t8aek5t" path="res://ship_1.tscn" id="1_w4fao"]
-[ext_resource type="Theme" uid="uid://brt1frgstdh0o" path="res://ingame_theme.tres" id="2_cjfgx"]
-[ext_resource type="PackedScene" uid="uid://t3v3lvtccgrc" path="res://hud/ingame_menu.tscn" id="3_kvq5s"]
+[ext_resource type="PackedScene" uid="uid://dq1xq7ahmhtvy" path="res://main_menu.tscn" id="2_uedsb"]
 [ext_resource type="Resource" uid="uid://c2njanicelbam" path="res://placeable/initial_inventory.tres" id="4_7eq43"]
 [ext_resource type="Resource" uid="uid://dqlytwlk3tm7f" path="res://placeable/resources/sofa/elegant/elegant_sofa.tres" id="5_6qa0d"]
+[ext_resource type="Shader" path="res://gboy_filter.gdshader" id="8_uikug"]
 
-[node name="Main" type="Node" node_paths=PackedStringArray("inventory_interface", "ingame_menu", "canvas_layer", "player")]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3tqqw"]
+shader = ExtResource("8_uikug")
+shader_parameter/darkest = Color(0.0431373, 0.0235294, 0.188235, 1)
+shader_parameter/dark = Color(0.419608, 0.121569, 0.694118, 1)
+shader_parameter/light = Color(0.8, 0.203922, 0.584314, 1)
+shader_parameter/lightest = Color(0.972549, 0.890196, 0.768627, 1)
+
+[node name="Main" type="Node" node_paths=PackedStringArray("player")]
 script = ExtResource("1_ikv4p")
-inventory_interface = NodePath("HUD/InventoryInterface")
-ingame_menu = NodePath("HUD/InventoryInterface/IngameMenu")
-canvas_layer = NodePath("HUD")
 player = NodePath("Player")
 
-[node name="Ship_1" parent="." instance=ExtResource("1_w4fao")]
-
-[node name="HUD" type="CanvasLayer" parent="."]
-
-[node name="InventoryInterface" type="Control" parent="HUD"]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-mouse_filter = 2
-theme = ExtResource("2_cjfgx")
-
-[node name="IngameMenu" parent="HUD/InventoryInterface" node_paths=PackedStringArray("player") instance=ExtResource("3_kvq5s")]
-layout_mode = 0
-player = NodePath("../../../Player")
+[node name="MainMenu" parent="." instance=ExtResource("2_uedsb")]
 
 [node name="Player" type="Node2D" parent="."]
 script = ExtResource("1_4e4no")
 item_list_data = ExtResource("4_7eq43")
 selected_placeable = ExtResource("5_6qa0d")
+
+[node name="PostProcessing" type="CanvasLayer" parent="."]
+
+[node name="GBoyFilter" type="ColorRect" parent="PostProcessing"]
+material = SubResource("ShaderMaterial_3tqqw")
+offset_left = -337.0
+offset_top = -239.0
+offset_right = 490.0
+offset_bottom = 369.0

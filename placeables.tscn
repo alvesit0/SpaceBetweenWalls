@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://dtovq1alm2afe"]
 
-[ext_resource type="Texture2D" uid="uid://bl8loxbkmx020" path="res://tiles_resources/gbjam-atlas.png" id="1_6r14o"]
+[ext_resource type="Texture2D" uid="uid://bl8loxbkmx020" path="res://images/gbjam-atlas-old.png" id="1_xx50l"]
 [ext_resource type="Script" path="res://PlaceableTilemap.gd" id="2_20wda"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_iwwrb"]
@@ -28,7 +28,7 @@ tile_data = PackedInt32Array(0, 851973, 0, 65536, 851973, 1)
 tile_data = PackedInt32Array(0, 917509, 0, 65536, 917509, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jmpp3"]
-texture = ExtResource("1_6r14o")
+texture = ExtResource("1_xx50l")
 texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
 1:0/0 = 0
@@ -154,6 +154,18 @@ texture_region_size = Vector2i(8, 8)
 34:19/0 = 0
 35:19/0 = 0
 36:19/0 = 0
+24:0/0 = 0
+22:1/0 = 0
+24:1/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+18:2/0 = 0
+24:2/0 = 0
+21:3/0 = 0
+21:4/0 = 0
+16:5/0 = 0
+30:19/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_emc15"]
 tile_size = Vector2i(8, 8)

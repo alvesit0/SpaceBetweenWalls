@@ -3,7 +3,12 @@ extends Control
 class_name ListedItemList
 
 const LISTED_ITEM = preload("res://hud/listed_item.tscn")
-const ALL_ICON = preload("res://question_mark.png")
+const ALL_ICON = preload("res://images/item_list_icons/all_icon.png")
+const ELEGANT_ICON = preload("res://images/item_list_icons/elegant_icon.png")
+const MODERN_ICON = preload("res://images/item_list_icons/modern_icon.png")
+const OTHERWORLDLY_ICON = preload("res://images/item_list_icons/otherworldly_icon.png")
+const RUSTIC_ICON = preload("res://images/item_list_icons/rustic_icon.png")
+const FUTURISTIC_ICON = preload("res://images/item_list_icons/futuristic_icon.png")
 
 @export var all_items_container: VBoxContainer
 @export var tab_container: TabContainer
@@ -11,12 +16,17 @@ var tabindex: int
 
 func _ready() -> void:
 	tab_container.set_tab_icon(0, ALL_ICON)
+	tab_container.set_tab_icon(1, RUSTIC_ICON)
+	tab_container.set_tab_icon(2, ELEGANT_ICON)
+	tab_container.set_tab_icon(3, MODERN_ICON)
+	tab_container.set_tab_icon(4, OTHERWORLDLY_ICON)
+	tab_container.set_tab_icon(5, FUTURISTIC_ICON)
 	tab_container.set_tab_title(0, "")
-	tab_container.set_tab_title(1, "R")
-	tab_container.set_tab_title(2, "E")
-	tab_container.set_tab_title(3, "M")
-	tab_container.set_tab_title(4, "O")
-	tab_container.set_tab_title(5, "F")
+	tab_container.set_tab_title(1, "")
+	tab_container.set_tab_title(2, "")
+	tab_container.set_tab_title(3, "")
+	tab_container.set_tab_title(4, "")
+	tab_container.set_tab_title(5, "")
 	tabindex = 0
 	set_focus()
 	
@@ -55,15 +65,16 @@ func set_listed_item_list(listed_item_list_data: ListedItemListData) -> void:
 	populate_item_grid(listed_item_list_data)
 	
 func set_focus() -> void:
-	if all_items_container.get_child(0):
-		all_items_container.get_child(0).grab_focus()
+	if all_items_container.get_child(1):
+		all_items_container.get_child(1).grab_focus()
 	
 func clear_listed_item_list(listed_item_list_data: ListedItemListData) -> void:
 	listed_item_list_data.inventory_updated.disconnect(populate_item_grid)
 
 func populate_item_grid(listed_item_list_data: ListedItemListData) -> void:
 	for child in all_items_container.get_children():
-		child.queue_free()
+		if child is ListedItem:
+			child.queue_free()
 		
 	for item_data in listed_item_list_data.listed_items:
 		var slot = LISTED_ITEM.instantiate()

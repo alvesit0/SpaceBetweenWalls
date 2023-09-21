@@ -1,10 +1,34 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkeyjxy4v4qob"]
+[gd_scene load_steps=10 format=3 uid="uid://bkeyjxy4v4qob"]
 
 [ext_resource type="Theme" uid="uid://brt1frgstdh0o" path="res://ingame_theme.tres" id="1_fquys"]
 [ext_resource type="Script" path="res://hud/ListedItemList.gd" id="2_catmq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yg2x2"]
-bg_color = Color(0.203922, 0.407843, 0.337255, 1)
+bg_color = Color(0.533333, 0.752941, 0.439216, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ud42"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_th88w"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_32nih"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1i7qp"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t2xo2"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lktdq"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
 
 [node name="ItemList" type="Control" node_paths=PackedStringArray("all_items_container", "tab_container")]
 texture_filter = 1
@@ -24,7 +48,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("1_fquys")
 script = ExtResource("2_catmq")
-all_items_container = NodePath("TabContainer/AllItemsContainer")
+all_items_container = NodePath("TabContainer/AllItemsScrollContainer/AllItemsContainer")
 tab_container = NodePath("TabContainer")
 
 [node name="Panel" type="Panel" parent="."]
@@ -54,9 +78,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -537.0
+offset_left = -84.0
 offset_top = -72.0
-offset_right = 537.0
+offset_right = 84.0
 offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -64,37 +88,98 @@ focus_mode = 2
 mouse_filter = 2
 theme = ExtResource("1_fquys")
 tab_alignment = 1
-clip_tabs = false
 
-[node name="AllItemsContainer" type="VBoxContainer" parent="TabContainer"]
+[node name="AllItemsScrollContainer" type="ScrollContainer" parent="TabContainer"]
+custom_minimum_size = Vector2(160, 116)
 layout_mode = 2
-theme = ExtResource("1_fquys")
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6ud42")
+follow_focus = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
 
-[node name="RusticItemsContainer" type="VBoxContainer" parent="TabContainer"]
+[node name="AllItemsContainer" type="VBoxContainer" parent="TabContainer/AllItemsScrollContainer"]
+custom_minimum_size = Vector2(160, 120)
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("1_fquys")
+theme_override_constants/separation = 4
+
+[node name="RusticItemsScrollContainer" type="ScrollContainer" parent="TabContainer"]
+visible = false
+custom_minimum_size = Vector2(160, 116)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_th88w")
+follow_focus = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="RusticItemsContainer" type="VBoxContainer" parent="TabContainer/RusticItemsScrollContainer"]
 visible = false
 layout_mode = 2
 mouse_filter = 2
 theme = ExtResource("1_fquys")
 
-[node name="ElegantItemsContainer" type="VBoxContainer" parent="TabContainer"]
+[node name="ElegantItemsScrollContainer" type="ScrollContainer" parent="TabContainer"]
+visible = false
+custom_minimum_size = Vector2(160, 116)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_32nih")
+follow_focus = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="ElegantItemsContainer" type="VBoxContainer" parent="TabContainer/ElegantItemsScrollContainer"]
 visible = false
 layout_mode = 2
 mouse_filter = 2
 theme = ExtResource("1_fquys")
 
-[node name="ModernItemsContainer" type="VBoxContainer" parent="TabContainer"]
+[node name="ModernItemsScrollContainer" type="ScrollContainer" parent="TabContainer"]
+visible = false
+custom_minimum_size = Vector2(160, 116)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1i7qp")
+follow_focus = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="ModernItemsContainer" type="VBoxContainer" parent="TabContainer/ModernItemsScrollContainer"]
 visible = false
 layout_mode = 2
 mouse_filter = 2
 theme = ExtResource("1_fquys")
 
-[node name="OtherworldlyItemsContainer" type="VBoxContainer" parent="TabContainer"]
+[node name="OtherworldlyItemsScrollCotainer" type="ScrollContainer" parent="TabContainer"]
+visible = false
+custom_minimum_size = Vector2(160, 116)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_t2xo2")
+follow_focus = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="OtherworldlyItemsContainer" type="VBoxContainer" parent="TabContainer/OtherworldlyItemsScrollCotainer"]
 visible = false
 layout_mode = 2
 mouse_filter = 2
 theme = ExtResource("1_fquys")
 
-[node name="FuturisticItemsContainer" type="VBoxContainer" parent="TabContainer"]
+[node name="FuturisticItemsScrollContainer" type="ScrollContainer" parent="TabContainer"]
+visible = false
+custom_minimum_size = Vector2(160, 116)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_lktdq")
+follow_focus = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="FuturisticItemsContainer" type="VBoxContainer" parent="TabContainer/FuturisticItemsScrollContainer"]
 visible = false
 layout_mode = 2
 mouse_filter = 2
