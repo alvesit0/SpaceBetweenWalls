@@ -3,7 +3,7 @@ extends Area2D
 class_name PlaceableHitboxCheck
 
 @export var collision: CollisionShape2D
-var colliding_bodies: Array[Placeable]
+var colliding_bodies: Array[Node]
 var colliding: bool
 
 func _ready():
@@ -22,12 +22,23 @@ func _physics_process(_delta):
 		collision.position.y = 4
 
 func _on_hitbox_check_area_entered(body: Area2D) -> void:
-	if body is Placeable:
+	if !(body is WallTile) and PlayerManager.player.selected_placeable.goes_on_wall == true:
 		colliding = true
 		colliding_bodies.append(body)
-	
+	elif body is Placeable or body is UnplaceableTile:
+		colliding = true
+		colliding_bodies.append(body)
+	elif body is WallTile and PlayerManager.player.selected_placeable.goes_on_wall == false:
+		colliding = true
+		colliding_bodies.append(body)
+		
+
 func _on_hitbox_check_area_exited(body: Area2D) -> void:
-	if body is Placeable:
+	if !(body is WallTile) and PlayerManager.player.selected_placeable.goes_on_wall == true:
+		colliding_bodies.erase(body)
+	elif body is Placeable or body is UnplaceableTile:
+		colliding_bodies.erase(body)
+	elif body is WallTile and PlayerManager.player.selected_placeable.goes_on_wall == false:
 		colliding_bodies.erase(body)
 	if colliding_bodies.size() == 0:
 		colliding = false

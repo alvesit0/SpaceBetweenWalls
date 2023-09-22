@@ -7,6 +7,7 @@ class_name PlaceableData
 @export var current_rotation: RotatedPlaceableData
 @export var price: int
 @export var texture: Texture
+@export var goes_on_wall: bool
 var index: int
 
 func _ready() -> void:
