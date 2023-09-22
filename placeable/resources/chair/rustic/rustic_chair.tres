@@ -14,3 +14,4 @@ available_rotations = Array[Resource("res://placeable/RotatedPlaceableData.gd")]
 current_rotation = ExtResource("1_ldfdw")
 price = 30
 texture = ExtResource("6_ddex8")
+goes_on_wall = false

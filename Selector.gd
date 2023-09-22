@@ -36,7 +36,7 @@ func _ready():
 	preview_placeable.update_data()
 	preview_placeable_timer = 0
 
-func _process(_delta):
+func _process(delta):
 	preview_placeable.update_data()
 	
 	if PlayerManager.player and !PlayerManager.player.selected_placeable:
@@ -44,7 +44,7 @@ func _process(_delta):
 	elif preview_placeable_timer > 0:
 		preview_placeable_timer -= 1
 	else:
-		preview_placeable_timer = 20
+		preview_placeable_timer = 100 * delta
 		preview_placeable.visible = !preview_placeable.visible
 	
 	if move_cd > 0:
@@ -150,7 +150,7 @@ func move(dir):
 		moving = true
 		PlayerManager.player.moving = true
 		await tween.finished
-		move_cd = 2
+		move_cd = 5
 		moving = false
 		PlayerManager.player.moving = false
 
