@@ -39,6 +39,12 @@ func _input(event):
 				PlayerManager.player.state = PlayerManager.player.States.ITEM_PLACING
 				PlayerManager.player.placetimer = 5
 				queue_free()
+	if Input.is_action_just_pressed("gboy_start") \
+	or Input.is_action_just_pressed("gboy_b") \
+	and PlayerManager.player.state == PlayerManager.player.States.ITEM_LIST_OPENED:
+		for child in all_items_container.get_children():
+			PlayerManager.player.state = PlayerManager.player.States.ITEM_PLACING
+			queue_free()
 	
 func _process(delta):
 	if Input.is_action_just_pressed("ui_right") \

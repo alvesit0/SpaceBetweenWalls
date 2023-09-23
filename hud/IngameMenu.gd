@@ -2,25 +2,40 @@ extends Control
 
 @onready var inventory_button = $PanelContainer/VBoxContainer/Inventory
 @onready var v_box_container = $PanelContainer/VBoxContainer
+var selector: Selector
 
 const ITEM_LIST := preload("res://hud/listed_item_list.tscn")
+const FINISH_CONFIRM := preload("res://hud/finish_confirm.tscn")
 
 func set_focus() -> void:
 	inventory_button.grab_focus()
+	selector = get_parent().get_parent().selector
+	
+func _process(_delta):
+	if Input.is_action_just_pressed("gboy_b") \
+	and PlayerManager.player.state == PlayerManager.player.States.MENU_OPENED:
+		hide()
+		PlayerManager.player.state = PlayerManager.player.States.ITEM_PLACING
 
 func _on_inventory_pressed() -> void:
-	get_parent().hide()
 	hide()
 	var item_list = ITEM_LIST.instantiate()
 	item_list.set_listed_item_list(PlayerManager.player.item_list_data)
 	get_parent().get_parent().add_child(item_list)
 	PlayerManager.player.state = PlayerManager.player.States.ITEM_LIST_OPENED
 
-func _on_request_pressed():
-	print("request pressed")
-
 func _on_map_pressed():
-	print("map pressed")
+	hide()
+	selector.toggle_camera()
+	PlayerManager.player.state = PlayerManager.player.States.ZOOMED_OUT
 
 func _on_finish_pressed():
-	print("finish pressed")
+	hide()
+	selector.toggle_camera()
+	var finish_confirm = FINISH_CONFIRM.instantiate()
+	get_parent().get_parent().add_child(finish_confirm)
+	finish_confirm.finish_canceled.connect(_on_finish_canceled)
+	PlayerManager.player.state = PlayerManager.player.States.ON_CONFIRM_WINDOW
+	
+func _on_finish_canceled():
+	selector.toggle_camera()

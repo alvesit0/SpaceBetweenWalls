@@ -1,7 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://bivh14t8aek5t"]
+[gd_scene load_steps=13 format=3 uid="uid://bivh14t8aek5t"]
 
 [ext_resource type="Script" path="res://Ship1.gd" id="1_cbsi1"]
-[ext_resource type="PackedScene" uid="uid://c5hw57t1vdh1p" path="res://scenes/ingame_hud.tscn" id="1_e6gq2"]
 [ext_resource type="Texture2D" uid="uid://bl8loxbkmx020" path="res://images/gbjam-atlas-old.png" id="1_ks1k2"]
 [ext_resource type="PackedScene" uid="uid://dtovq1alm2afe" path="res://scenes/placeables_tilemap.tscn" id="3_44gms"]
 [ext_resource type="PackedScene" uid="uid://2lw1ftipq8j" path="res://scenes/selector.tscn" id="4_c88ud"]
@@ -281,10 +280,9 @@ tile_size = Vector2i(8, 8)
 sources/0 = SubResource("TileSetAtlasSource_y435p")
 sources/1 = SubResource("TileSetScenesCollectionSource_k3xix")
 
-[node name="Ship_1" type="Node2D"]
+[node name="Ship_1" type="Node2D" node_paths=PackedStringArray("selector")]
 script = ExtResource("1_cbsi1")
-
-[node name="HUD" parent="." instance=ExtResource("1_e6gq2")]
+selector = NodePath("Selector")
 
 [node name="TileMapBackground" type="TileMap" parent="."]
 texture_filter = 1
@@ -304,5 +302,11 @@ layer_0/tile_data = PackedInt32Array(196627, 1, 196608, 196626, 1, 196608, 19662
 layer_0/tile_data = PackedInt32Array()
 selector = NodePath("../Selector")
 
-[node name="Selector" parent="." instance=ExtResource("4_c88ud")]
+[node name="Selector" parent="." node_paths=PackedStringArray("zoomed_out_camera") instance=ExtResource("4_c88ud")]
 position = Vector2(50, 50)
+zoomed_out_camera = NodePath("../ZoomedOutCamera")
+
+[node name="ZoomedOutCamera" type="Camera2D" parent="."]
+position = Vector2(80, 72)
+enabled = false
+zoom = Vector2(0.75, 0.75)

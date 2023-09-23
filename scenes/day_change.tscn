@@ -2,8 +2,8 @@
 
 [ext_resource type="Theme" uid="uid://brt1frgstdh0o" path="res://ingame_theme.tres" id="1_7y25q"]
 [ext_resource type="Texture2D" uid="uid://yhnfh8rg058q" path="res://images/stars_loop.png" id="1_ql6co"]
-[ext_resource type="Script" path="res://scenes/DayChange.gd" id="2_1vq8o"]
 [ext_resource type="Texture2D" uid="uid://cd4h1mke45rw2" path="res://images/between_days.png" id="2_463gr"]
+[ext_resource type="Script" path="res://DayChange.gd" id="2_mp08x"]
 [ext_resource type="FontFile" uid="uid://dgt8dl70ius2f" path="res://fonts/pcsenior.ttf" id="4_0buee"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rjwif"]
@@ -79,11 +79,12 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 72.0
-offset_bottom = 72.0002
+offset_right = 320.0
+offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_7y25q")
-script = ExtResource("2_1vq8o")
+script = ExtResource("2_mp08x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

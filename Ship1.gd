@@ -1,4 +1,8 @@
 extends Node2D
 
+@export var selector: Selector
+
 func _ready():
+	get_parent().selector = selector
 	await Transition.resolve()
+	PlayerManager.player.state = PlayerManager.player.States.ITEM_PLACING

@@ -1,0 +1,95 @@
+[gd_scene load_steps=5 format=3 uid="uid://rbv6all4lw0g"]
+
+[ext_resource type="Theme" uid="uid://brt1frgstdh0o" path="res://ingame_theme.tres" id="1_h1cr8"]
+[ext_resource type="Script" path="res://hud/FinishConfirm.gd" id="2_jgknv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_de824"]
+bg_color = Color(0.203922, 0.407843, 0.337255, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.878431, 0.972549, 0.815686, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uvfu1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[node name="FinishConfirm" type="Control"]
+custom_minimum_size = Vector2(160, 144)
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+theme = ExtResource("1_h1cr8")
+script = ExtResource("2_jgknv")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -42.0
+offset_right = -1.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme = ExtResource("1_h1cr8")
+theme_override_styles/panel = SubResource("StyleBoxFlat_de824")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("1_h1cr8")
+theme_override_colors/font_color = Color(0.533333, 0.752941, 0.439216, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_uvfu1")
+text = "Finish furnishing?"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("1_h1cr8")
+alignment = 1
+
+[node name="NoButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+focus_neighbor_left = NodePath("../YesButton")
+focus_neighbor_right = NodePath("../YesButton")
+mouse_filter = 2
+theme = ExtResource("1_h1cr8")
+theme_override_colors/font_color = Color(0.533333, 0.752941, 0.439216, 1)
+theme_override_colors/font_pressed_color = Color(0.878431, 0.972549, 0.815686, 1)
+theme_override_colors/font_hover_color = Color(0.878431, 0.972549, 0.815686, 1)
+theme_override_colors/font_focus_color = Color(0.878431, 0.972549, 0.815686, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.878431, 0.972549, 0.815686, 1)
+action_mode = 0
+text = "No"
+
+[node name="YesButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+focus_neighbor_left = NodePath("../NoButton")
+focus_neighbor_right = NodePath("../NoButton")
+mouse_filter = 2
+theme = ExtResource("1_h1cr8")
+theme_override_colors/font_color = Color(0.533333, 0.752941, 0.439216, 1)
+theme_override_colors/font_pressed_color = Color(0.878431, 0.972549, 0.815686, 1)
+theme_override_colors/font_hover_color = Color(0.878431, 0.972549, 0.815686, 1)
+theme_override_colors/font_focus_color = Color(0.878431, 0.972549, 0.815686, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.878431, 0.972549, 0.815686, 1)
+action_mode = 0
+text = "Yes
+"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/NoButton" to="." method="_on_no_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/YesButton" to="." method="_on_yes_button_pressed"]

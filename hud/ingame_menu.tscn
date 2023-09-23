@@ -24,7 +24,7 @@ layout_mode = 0
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 88.0
-offset_bottom = 72.0
+offset_bottom = 56.0
 mouse_filter = 2
 theme = ExtResource("1_cjkii")
 theme_override_styles/panel = SubResource("StyleBoxFlat_de824")
@@ -40,7 +40,6 @@ layout_mode = 2
 focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath("../Finish")
 focus_neighbor_right = NodePath(".")
-focus_neighbor_bottom = NodePath("../Request")
 mouse_filter = 2
 theme = ExtResource("1_cjkii")
 theme_override_colors/font_color = Color(0.533333, 0.752941, 0.439216, 1)
@@ -51,27 +50,10 @@ theme_override_colors/font_hover_pressed_color = Color(0.878431, 0.972549, 0.815
 action_mode = 0
 text = "Catalogue"
 
-[node name="Request" type="Button" parent="PanelContainer/VBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-focus_neighbor_left = NodePath(".")
-focus_neighbor_top = NodePath("../Inventory")
-focus_neighbor_right = NodePath(".")
-focus_neighbor_bottom = NodePath("../Map")
-mouse_filter = 2
-theme_override_colors/font_color = Color(0.533333, 0.752941, 0.439216, 1)
-theme_override_colors/font_pressed_color = Color(0.878431, 0.972549, 0.815686, 1)
-theme_override_colors/font_hover_color = Color(0.878431, 0.972549, 0.815686, 1)
-theme_override_colors/font_focus_color = Color(0.878431, 0.972549, 0.815686, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.878431, 0.972549, 0.815686, 1)
-action_mode = 0
-text = "Request"
-
 [node name="Map" type="Button" parent="PanelContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 focus_neighbor_left = NodePath(".")
-focus_neighbor_top = NodePath("../Request")
 focus_neighbor_right = NodePath(".")
 focus_neighbor_bottom = NodePath("../Finish")
 mouse_filter = 2
@@ -100,6 +82,5 @@ action_mode = 0
 text = "Finish"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Inventory" to="." method="_on_inventory_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Request" to="." method="_on_request_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Map" to="." method="_on_map_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Finish" to="." method="_on_finish_pressed"]

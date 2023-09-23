@@ -16,6 +16,8 @@ const PLACEABLE_SCENE = preload("res://placeable/resources/placeable.tscn")
 @onready var upper_right_corner: Sprite2D = $UpperRightCorner
 @onready var lower_left_corner: Sprite2D = $LowerLeftCorner
 @onready var lower_right_corner: Sprite2D = $LowerRightCorner
+@onready var main_camera: Camera2D = $CameraPivot/Camera2D
+@export var zoomed_out_camera: Camera2D
 
 var targeted_placeable: Placeable
 var colliding_bodies: Array[Placeable]
@@ -56,6 +58,11 @@ func _process(delta):
 		and PlayerManager.player.state == PlayerManager.player.States.ITEM_PLACING \
 		and move_cd == 0:
 			move(dir)
+	
+	if PlayerManager.player.state == PlayerManager.player.States.ZOOMED_OUT \
+	and Input.is_action_just_pressed("gboy_b"):
+		toggle_camera()
+		PlayerManager.player.state = PlayerManager.player.States.ITEM_PLACING
 			
 	if !targeted_placeable and !PlayerManager.player.selected_placeable:
 		var new_upper_left: Vector2 = collision.position
@@ -150,9 +157,17 @@ func move(dir):
 		moving = true
 		PlayerManager.player.moving = true
 		await tween.finished
-		move_cd = 5
+		move_cd = 3
 		moving = false
 		PlayerManager.player.moving = false
+		
+func toggle_camera() -> void:
+	if main_camera.enabled:
+		main_camera.enabled = false
+		zoomed_out_camera.enabled = true
+	else:
+		main_camera.enabled = true
+		zoomed_out_camera.enabled = false
 
 func _on_selector_area_entered(body: Area2D) -> void:
 	if body is Placeable and body != preview_placeable:

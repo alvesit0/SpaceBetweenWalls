@@ -10,7 +10,6 @@ inventory_interface = NodePath("InventoryInterface")
 ingame_menu = NodePath("InventoryInterface/IngameMenu")
 
 [node name="InventoryInterface" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -19,4 +18,5 @@ mouse_filter = 2
 theme = ExtResource("1_pvl1l")
 
 [node name="IngameMenu" parent="InventoryInterface" instance=ExtResource("2_jyyse")]
+visible = false
 layout_mode = 0

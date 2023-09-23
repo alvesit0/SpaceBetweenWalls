@@ -4,6 +4,7 @@ class_name Main
 
 @export var hud: InGameHUD
 @export var player: Player
+var selector: Selector
 
 func _ready() -> void:
 	player.toggle_menu.connect(toggle_menu_interface)
@@ -13,8 +14,7 @@ func toggle_menu_interface() -> void:
 	if PlayerManager.player.state == PlayerManager.player.States.ITEM_PLACING \
 	or PlayerManager.player.state == PlayerManager.player.States.MENU_OPENED \
 	or PlayerManager.player.state == PlayerManager.player.States.ITEM_LIST_OPENED:
-		hud.inventory_interface.visible = not hud.inventory_interface.visible
-		hud.ingame_menu.visible = hud.inventory_interface.visible
+		hud.ingame_menu.visible = not hud.ingame_menu.visible
 		if PlayerManager.player.state != PlayerManager.player.States.ITEM_PLACING:
 			PlayerManager.player.state = PlayerManager.player.States.ITEM_PLACING
 		else:
