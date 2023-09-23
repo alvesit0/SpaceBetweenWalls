@@ -30,6 +30,10 @@ window/size/window_width_override=640
 window/size/window_height_override=576
 window/stretch/mode="viewport"
 
+[dotnet]
+
+project/assembly_name="GBJam"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/script-tabs/plugin.cfg")

@@ -3,16 +3,16 @@
 Elegant: Ello, gov'nor. You see, 
 Elegant: I am in dire need of adorning my vessel.
 Elegant: I want it to exude the same subtlety 
-Elegant: that graced the streets of Paridia.
-Elegant: every journey takes me further from 
+Elegant: that graced the streets of Londinia.
+Elegant: Every journey takes me further from 
 Elegant: my beloved Londinia, my home, 
 Elegant: and a place of such grandeur and charm.
 Elegant: In Londinia, we prided ourselves
 Elegant: on the most refined tastes. 
 Elegant: I long to carry that essence with me 
 Elegant: as I explore the cosmic expanse.
-Elegant: Might you assist me in this endeavor, 
-Elegant: dear friend?
+Elegant: Might you assist me in this endeavor, dear friend?
+Elegant: 
 - Listen again => talk_to_elegant
 - Let's decorate! => END!
 
@@ -67,7 +67,7 @@ Influencer: What do you say, honey?
 ~ talk_to_dandy
 
 Dandy: Howdy there, partner.
-Dandy:  I've been around the cosmic block a few times,
+Dandy: I've been around the cosmic block a few times,
 Dandy: done my fair share of interstellar shenanigans.
 Dandy: but now, well.
 Dandy: I reckon it's time for a different kind of adventure.
