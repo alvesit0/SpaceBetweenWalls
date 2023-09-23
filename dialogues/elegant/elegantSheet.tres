@@ -1,0 +1,60 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://pprc2moxiaau"]
+
+[ext_resource type="Texture2D" uid="uid://baynq6ogeyg0v" path="res://dialogues/elegant/elegantSheet.png" id="1_fvity"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvkgj"]
+atlas = ExtResource("1_fvity")
+region = Rect2(0, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qbhg"]
+atlas = ExtResource("1_fvity")
+region = Rect2(160, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7ro8"]
+atlas = ExtResource("1_fvity")
+region = Rect2(320, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_un1ro"]
+atlas = ExtResource("1_fvity")
+region = Rect2(480, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5h3bv"]
+atlas = ExtResource("1_fvity")
+region = Rect2(640, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2l3s"]
+atlas = ExtResource("1_fvity")
+region = Rect2(800, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_237tf"]
+atlas = ExtResource("1_fvity")
+region = Rect2(960, 0, 160, 144)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvkgj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qbhg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7ro8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_un1ro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5h3bv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2l3s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_237tf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
