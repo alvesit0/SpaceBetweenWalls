@@ -16,7 +16,7 @@ expand_margin_right = 4.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6y34w"]
 
-[node name="ExampleBalloon" type="CanvasLayer"]
+[node name="ElegantBalloon" type="CanvasLayer"]
 layer = 100
 script = ExtResource("1_fbbdc")
 

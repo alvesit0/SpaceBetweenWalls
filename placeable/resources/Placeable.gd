@@ -16,12 +16,13 @@ func update_data():
 		data = PlayerManager.player.selected_placeable
 	if PlayerManager.player and has_shape:
 		collision.shape = RectangleShape2D.new()
-		var rotation: RotatedPlaceableData = PlayerManager.player.selected_placeable.current_rotation
-		
-		collision.shape.size = rotation.dimensions
-		collision.position.x = collision.shape.size.x / 2
-		collision.position.y = collision.shape.size.y / 2
-		print(collision.shape)
+		if PlayerManager.player.selected_placeable:
+			var rotation: RotatedPlaceableData = PlayerManager.player.selected_placeable.current_rotation
+			
+			collision.shape.size = rotation.dimensions
+			collision.position.x = collision.shape.size.x / 2
+			collision.position.y = collision.shape.size.y / 2
+			print(collision.shape)
 	elif !has_shape:
 		collision.shape = null
 	if PlayerManager.player and PlayerManager.player.selected_placeable:
@@ -40,7 +41,10 @@ func update_data():
 			var new_coord: Vector2 = distance
 			new_coord.x += rotation.visual_tiles[i].x
 			new_coord.y += rotation.visual_tiles[i].y
-			tilemap.set_cell(1, new_coord, 0, rotation.visual_tiles[i], 0)
+			if !data.goes_on_wall:
+				tilemap.set_cell(1, new_coord, 0, rotation.visual_tiles[i], 0)
+			else:
+				tilemap.set_cell(0, new_coord, 0, rotation.visual_tiles[i], 0)
 		for i in range(object_coords.size()):
 			var new_coord: Vector2 = distance
 			new_coord.x += object_coords[i].x

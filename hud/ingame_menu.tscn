@@ -49,7 +49,7 @@ theme_override_colors/font_hover_color = Color(0.878431, 0.972549, 0.815686, 1)
 theme_override_colors/font_focus_color = Color(0.878431, 0.972549, 0.815686, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.878431, 0.972549, 0.815686, 1)
 action_mode = 0
-text = "Inventory"
+text = "Catalogue"
 
 [node name="Request" type="Button" parent="PanelContainer/VBoxContainer"]
 texture_filter = 1

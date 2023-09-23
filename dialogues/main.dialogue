@@ -13,10 +13,12 @@ Elegant: I long to carry that essence with me
 Elegant: as I explore the cosmic expanse.
 Elegant: Might you assist me in this endeavor, dear friend?
 Elegant: 
+- Let's furnish! => finish_elegant
 - Listen again => talk_to_elegant
-- Let's decorate! => END!
 
-=> END
+~ finish_elegant
+do PlayerManager.dialogue_finished.emit()
+=> END!
 
 ~ talk_to_nerd
 
@@ -30,15 +32,17 @@ Nerd: and VR simulations of distant galaxies.
 Nerd: The idea of piloting a vessel that looks like it 
 Nerd: just stepped out of a wormhole from a distant tomorrow
 Nerd: is, um, absolutely thrilling! 
-Nerd: I mean, I'll basically be Spock Solo!
+Nerd: I mean, I'll basically be Spock Solo! LMAO!
 Nerd: So, if you could, like, help me find the perfect ship.
 Nerd: And, perhaps, 
 Nerd: we could even swap favorite sci-fi series recommendations. 
 Nerd: What do you think?
+- Let's furnish! => finish_nerd
 - Listen again => talk_to_nerd
-- Let's decorate! => END!
 
-=> END
+~ finish_nerd
+do PlayerManager.dialogue_finished.emit()
+=> END!
 
 ~ talk_to_influencer
 
@@ -59,10 +63,12 @@ Influencer: So, if you could help me
 Influencer: I'll give your shop a shoutout 
 Influencer: to my million followers.
 Influencer: What do you say, honey?
+- Let's furnish! => finish_influencer
 - Listen again => talk_to_influencer
-- Let's decorate! => END!
 
-=> END
+~ finish_influencer
+do PlayerManager.dialogue_finished.emit()
+=> END!
 
 ~ talk_to_dandy
 
@@ -82,10 +88,12 @@ Dandy: So, what do ya got that
 Dandy: can help me mosey on down the path of 
 Dandy: peace and quiet?
 
+- Let's furnish! => finish_dandy
 - Listen again => talk_to_dandy
-- Let's decorate! => END!
 
-=> END
+~ finish_dandy
+do PlayerManager.dialogue_finished.emit()
+=> END!
 
 ~ talk_to_mindflayer
 
@@ -98,7 +106,10 @@ Mindflayer: ⏃⋏⎅ ⟟ ⏃⋔ ⟟⋏ ⌇⟒⏃⍀☊⊑ ⍜⎎ ⏃⎅⍜⍀�
 Mindflayer: ⏚⎍⏁ ⟟ ⊬⟒⏃⍀⋏ ⎎⍜⍀ ⏃ ⊑⟟⋏⏁ ⍜⎎ ⏁⊑⟒ 
 Mindflayer: ⍙⍜⍀⌰⎅ ⏃⏚⍜⎐⟒
 Mindflayer: ⏁⊑⏃⏁ ⏃⍀⟒ ⋔⊬ ⊑⍜⋔⟒?
-- Listen again? => talk_to_elegant
-- Let's decorate? => END!
 
-=> END
+- Let's furnish? => finish_mindflayer
+- Listen again? => talk_to_mindflayer
+
+~ finish_mindflayer
+do PlayerManager.dialogue_finished.emit()
+=> END!

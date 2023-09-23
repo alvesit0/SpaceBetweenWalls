@@ -2,11 +2,9 @@
 
 class_name DialogueLabel extends RichTextLabel
 
-
 signal spoke(letter: String, letter_index: int, speed: float)
 signal paused_typing(duration: float)
 signal finished_typing()
-
 
 ## The action to press to skip typing
 @export var skip_action: String = "ui_cancel"
@@ -16,7 +14,6 @@ signal finished_typing()
 
 ## Automatically have a brief pause when these characters are encountered
 @export var pause_at_characters: String = ".?!"
-
 
 var dialogue_line:
 	set(next_dialogue_line):

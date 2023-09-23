@@ -1,5 +1,7 @@
 extends Node
 
+class_name Main
+
 @export var hud: InGameHUD
 @export var player: Player
 

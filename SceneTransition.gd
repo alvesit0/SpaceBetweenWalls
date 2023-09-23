@@ -11,3 +11,6 @@ func resolve() -> void:
 func reset() -> void:
 	$AnimationPlayer.play("RESET")
 	await $AnimationPlayer.animation_finished
+	
+func resolve_no_await() -> void:
+	$AnimationPlayer.play_backwards("dissolve")

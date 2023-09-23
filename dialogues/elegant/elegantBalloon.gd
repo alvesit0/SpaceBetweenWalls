@@ -6,6 +6,8 @@ extends CanvasLayer
 @onready var responses_menu: VBoxContainer = $Balloon/Margin/ResponsesVBox/Responses
 @onready var response_template: RichTextLabel = %ResponseTemplate
 
+signal on_dialogue_finished
+
 ## The dialogue resource
 var resource: DialogueResource
 
@@ -81,6 +83,7 @@ func _ready() -> void:
 	response_template.hide()
 	balloon.hide()
 	balloon.custom_minimum_size.x = balloon.get_viewport_rect().size.x
+	dialogue_label.finished.connect(_on_dialogue_finished)
 
 	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
 
@@ -210,6 +213,8 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("ui_accept") and get_viewport().gui_get_focus_owner() == balloon:
 		next(dialogue_line.next_id)
 
-
 func _on_margin_resized() -> void:
 	handle_resize()
+	
+func _on_dialogue_finished():
+	on_dialogue_finished.emit()

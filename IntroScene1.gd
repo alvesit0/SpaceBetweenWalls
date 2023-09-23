@@ -5,7 +5,7 @@ extends Control
 @onready var third_scene = $ThirdScene
 @onready var animation_player = $AnimationPlayer
 
-const SECOND_SCENE = preload("res://intro_scene_2.tscn")
+const SECOND_SCENE = preload("res://scenes/intro_scene_2.tscn")
 var can_continue: bool
 
 func _ready():

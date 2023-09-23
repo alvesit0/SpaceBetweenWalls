@@ -1,13 +1,13 @@
 [gd_scene load_steps=14 format=3 uid="uid://bivh14t8aek5t"]
 
 [ext_resource type="Script" path="res://Ship1.gd" id="1_cbsi1"]
-[ext_resource type="PackedScene" uid="uid://c5hw57t1vdh1p" path="res://ingame_hud.tscn" id="1_e6gq2"]
+[ext_resource type="PackedScene" uid="uid://c5hw57t1vdh1p" path="res://scenes/ingame_hud.tscn" id="1_e6gq2"]
 [ext_resource type="Texture2D" uid="uid://bl8loxbkmx020" path="res://images/gbjam-atlas-old.png" id="1_ks1k2"]
-[ext_resource type="PackedScene" uid="uid://dtovq1alm2afe" path="res://placeables.tscn" id="3_44gms"]
-[ext_resource type="PackedScene" uid="uid://2lw1ftipq8j" path="res://selector.tscn" id="4_c88ud"]
-[ext_resource type="PackedScene" uid="uid://g0g6ntrqjnjc" path="res://unplaceable_tile.tscn" id="4_tgiki"]
-[ext_resource type="PackedScene" uid="uid://dm88liol1nxe4" path="res://floor_tile.tscn" id="5_4uisr"]
-[ext_resource type="PackedScene" uid="uid://c8qqq0rgsg6rl" path="res://wall_tile.tscn" id="5_svog1"]
+[ext_resource type="PackedScene" uid="uid://dtovq1alm2afe" path="res://scenes/placeables_tilemap.tscn" id="3_44gms"]
+[ext_resource type="PackedScene" uid="uid://2lw1ftipq8j" path="res://scenes/selector.tscn" id="4_c88ud"]
+[ext_resource type="PackedScene" uid="uid://g0g6ntrqjnjc" path="res://scenes/unplaceable_tile.tscn" id="4_tgiki"]
+[ext_resource type="PackedScene" uid="uid://dm88liol1nxe4" path="res://scenes/floor_tile.tscn" id="5_4uisr"]
+[ext_resource type="PackedScene" uid="uid://c8qqq0rgsg6rl" path="res://scenes/wall_tile.tscn" id="5_svog1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0asvq"]
 texture = ExtResource("1_ks1k2")

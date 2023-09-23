@@ -5,7 +5,7 @@ extends Control
 @onready var third_scene = $ThirdScene
 @onready var animation_player = $AnimationPlayer
 
-const SECOND_SCENE = preload("res://intro_scene_2.tscn")
+const DAY_CHANGE_SCENE = preload("res://scenes/day_change.tscn")
 var can_continue: bool
 
 func _ready():
@@ -18,7 +18,7 @@ func _process(_delta):
 	or Input.is_action_just_pressed("gboy_b") \
 	or Input.is_action_just_pressed("gboy_start"):
 		await Transition.dissolve()
-		get_parent().add_child(SECOND_SCENE.instantiate())
+		get_parent().add_child(DAY_CHANGE_SCENE.instantiate())
 		queue_free()
 
 func _on_timer_first_scene_timeout():

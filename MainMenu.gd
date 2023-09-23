@@ -1,6 +1,6 @@
 extends Control
 
-const INTRO_SCENE = preload("res://intro_scene_1.tscn")
+const INTRO_SCENE = preload("res://scenes/intro_scene_1.tscn")
 
 @export var start_button: Button
 @export var credits_button: Button
