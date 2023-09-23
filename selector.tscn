@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://2lw1ftipq8j"]
+[gd_scene load_steps=10 format=3 uid="uid://2lw1ftipq8j"]
 
 [ext_resource type="Script" path="res://Selector.gd" id="1_h3cs8"]
 [ext_resource type="Texture2D" uid="uid://blatlh7vy3gxk" path="res://images/selector/selector_corner_1.png" id="2_lv5bm"]
-[ext_resource type="Texture2D" uid="uid://cgpw7gy4c6553" path="res://selection.png" id="2_plt5r"]
 [ext_resource type="PackedScene" uid="uid://w8tncmue01e" path="res://placeable/resources/placeable_hitbox_check.tscn" id="3_6rpu6"]
 [ext_resource type="Texture2D" uid="uid://v45itqn28efr" path="res://images/selector/selector_corner_2.png" id="3_d2w84"]
 [ext_resource type="Texture2D" uid="uid://byyui7hyo4rto" path="res://images/selector/selector_corner_4.png" id="4_qhnwm"]
@@ -16,7 +15,7 @@ size = Vector2(4, 4)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_plt5r")
+"texture": null
 }],
 "loop": true,
 "name": &"default",

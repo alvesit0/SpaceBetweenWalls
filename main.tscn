@@ -1,24 +1,28 @@
-[gd_scene load_steps=8 format=3 uid="uid://chwo58nwqx6ka"]
+[gd_scene load_steps=9 format=3 uid="uid://chwo58nwqx6ka"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_4e4no"]
 [ext_resource type="Script" path="res://Main.gd" id="1_ikv4p"]
-[ext_resource type="PackedScene" uid="uid://dq1xq7ahmhtvy" path="res://main_menu.tscn" id="2_uedsb"]
+[ext_resource type="PackedScene" uid="uid://bivh14t8aek5t" path="res://ship_1.tscn" id="2_8swev"]
+[ext_resource type="PackedScene" uid="uid://c5hw57t1vdh1p" path="res://ingame_hud.tscn" id="3_r21ye"]
 [ext_resource type="Resource" uid="uid://c2njanicelbam" path="res://placeable/initial_inventory.tres" id="4_7eq43"]
 [ext_resource type="Resource" uid="uid://dqlytwlk3tm7f" path="res://placeable/resources/sofa/elegant/elegant_sofa.tres" id="5_6qa0d"]
 [ext_resource type="Shader" path="res://gboy_filter.gdshader" id="8_uikug"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3tqqw"]
 shader = ExtResource("8_uikug")
-shader_parameter/darkest = Color(0.0431373, 0.0235294, 0.188235, 1)
-shader_parameter/dark = Color(0.419608, 0.121569, 0.694118, 1)
-shader_parameter/light = Color(0.8, 0.203922, 0.584314, 1)
-shader_parameter/lightest = Color(0.972549, 0.890196, 0.768627, 1)
+shader_parameter/darkest = Color(0.0313726, 0.0941176, 0.12549, 1)
+shader_parameter/dark = Color(0.203922, 0.407843, 0.337255, 1)
+shader_parameter/light = Color(0.533333, 0.752941, 0.439216, 1)
+shader_parameter/lightest = Color(0.878431, 0.972549, 0.815686, 1)
 
-[node name="Main" type="Node" node_paths=PackedStringArray("player")]
+[node name="Main" type="Node" node_paths=PackedStringArray("hud", "player")]
 script = ExtResource("1_ikv4p")
+hud = NodePath("HUD")
 player = NodePath("Player")
 
-[node name="MainMenu" parent="." instance=ExtResource("2_uedsb")]
+[node name="Ship_1" parent="." instance=ExtResource("2_8swev")]
+
+[node name="HUD" parent="." instance=ExtResource("3_r21ye")]
 
 [node name="Player" type="Node2D" parent="."]
 script = ExtResource("1_4e4no")

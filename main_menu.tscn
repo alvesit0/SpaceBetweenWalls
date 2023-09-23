@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dq1xq7ahmhtvy"]
+[gd_scene load_steps=5 format=3 uid="uid://dq1xq7ahmhtvy"]
 
 [ext_resource type="Theme" uid="uid://brt1frgstdh0o" path="res://ingame_theme.tres" id="1_c6jhq"]
 [ext_resource type="Script" path="res://MainMenu.gd" id="1_fkatb"]
 [ext_resource type="FontFile" uid="uid://dgt8dl70ius2f" path="res://fonts/pcsenior.ttf" id="2_1wyrn"]
+[ext_resource type="Texture2D" uid="uid://gwu63ypawync" path="res://start_screen_prov.png" id="2_2jjnl"]
 
 [node name="MainMenu" type="Control" node_paths=PackedStringArray("start_button", "credits_button")]
 layout_mode = 3
@@ -11,12 +12,13 @@ script = ExtResource("1_fkatb")
 start_button = NodePath("VBoxContainer/StartGame")
 credits_button = NodePath("VBoxContainer/Credits")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_right = 160.0
 offset_bottom = 144.0
 mouse_filter = 2
-color = Color(0.0313726, 0.0941176, 0.12549, 1)
+texture = ExtResource("2_2jjnl")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

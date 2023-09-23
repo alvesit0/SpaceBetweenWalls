@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PlaceableData" load_steps=5 format=3 uid="uid://cqi673lpyv721"]
+
+[ext_resource type="Script" path="res://placeable/PlaceableData.gd" id="1_hwc4c"]
+[ext_resource type="Script" path="res://placeable/RotatedPlaceableData.gd" id="1_j7iye"]
+[ext_resource type="Texture2D" uid="uid://ddr24dipaut3r" path="res://images/placeables/painting/modern_painting.png" id="3_vrpdo"]
+
+[sub_resource type="Resource" id="Resource_pe7t1"]
+script = ExtResource("1_j7iye")
+tiles = Array[Vector2]([])
+visual_tiles = Array[Vector2]([])
+dimensions = Vector2(0, 0)
+
+[resource]
+script = ExtResource("1_hwc4c")
+name = "Modern Painting"
+available_rotations = Array[ExtResource("1_j7iye")]([SubResource("Resource_pe7t1")])
+price = 200
+texture = ExtResource("3_vrpdo")
+goes_on_wall = true

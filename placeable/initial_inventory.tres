@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="ListedItemListData" load_steps=12 format=3 uid="uid://c2njanicelbam"]
+[gd_resource type="Resource" script_class="ListedItemListData" load_steps=9 format=3 uid="uid://c2njanicelbam"]
 
 [ext_resource type="Script" path="res://hud/ListedItemListData.gd" id="1_87e7x"]
 [ext_resource type="Resource" uid="uid://8f05jdw6k3iu" path="res://placeable/resources/chair/rustic/rustic_chair.tres" id="1_hj2ep"]
 [ext_resource type="Script" path="res://hud/ListedItemData.gd" id="2_5bhpr"]
 [ext_resource type="Resource" uid="uid://dqlytwlk3tm7f" path="res://placeable/resources/sofa/elegant/elegant_sofa.tres" id="3_eqt8s"]
+[ext_resource type="Resource" uid="uid://qmcdrdgul6yn" path="res://placeable/resources/painting/rustic/rustic_painting.tres" id="4_pmk4a"]
 
 [sub_resource type="Resource" id="Resource_407w4"]
 script = ExtResource("2_5bhpr")
@@ -13,26 +14,10 @@ placeable_data = ExtResource("1_hj2ep")
 script = ExtResource("2_5bhpr")
 placeable_data = ExtResource("3_eqt8s")
 
-[sub_resource type="Resource" id="Resource_g4dnd"]
-script = ExtResource("2_5bhpr")
-placeable_data = ExtResource("1_hj2ep")
-
-[sub_resource type="Resource" id="Resource_uiabm"]
-script = ExtResource("2_5bhpr")
-placeable_data = ExtResource("3_eqt8s")
-
-[sub_resource type="Resource" id="Resource_w2hne"]
-script = ExtResource("2_5bhpr")
-placeable_data = ExtResource("3_eqt8s")
-
-[sub_resource type="Resource" id="Resource_ekxb2"]
-script = ExtResource("2_5bhpr")
-placeable_data = ExtResource("3_eqt8s")
-
 [sub_resource type="Resource" id="Resource_dlsiv"]
 script = ExtResource("2_5bhpr")
-placeable_data = ExtResource("1_hj2ep")
+placeable_data = ExtResource("4_pmk4a")
 
 [resource]
 script = ExtResource("1_87e7x")
-listed_items = Array[ExtResource("2_5bhpr")]([SubResource("Resource_407w4"), SubResource("Resource_modb0"), SubResource("Resource_g4dnd"), SubResource("Resource_uiabm"), SubResource("Resource_w2hne"), SubResource("Resource_ekxb2"), SubResource("Resource_dlsiv")])
+listed_items = Array[ExtResource("2_5bhpr")]([SubResource("Resource_407w4"), SubResource("Resource_modb0"), SubResource("Resource_dlsiv")])

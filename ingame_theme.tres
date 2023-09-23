@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=19 format=3 uid="uid://brt1frgstdh0o"]
+[gd_resource type="Theme" load_steps=21 format=3 uid="uid://brt1frgstdh0o"]
 
 [ext_resource type="FontFile" uid="uid://4lcildi182c8" path="res://fonts/zeldadxt.ttf" id="1_ax5b6"]
 
@@ -12,6 +12,10 @@ border_width_right = 2
 border_width_bottom = 1
 border_color = Color(0.8, 0.8, 0.8, 0)
 anti_aliasing = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_15b65"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ydc6f"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_7afp7"]
 
@@ -67,6 +71,8 @@ default_font = SubResource("FontVariation_ay5tv")
 default_font_size = 12
 Button/styles/focus = SubResource("StyleBoxEmpty_hnm1t")
 Button/styles/normal = SubResource("StyleBoxFlat_qvsyp")
+Button/styles/pressed = SubResource("StyleBoxEmpty_15b65")
+PanelContainer/styles/panel = SubResource("StyleBoxEmpty_ydc6f")
 TabBar/icons/close = null
 TabBar/icons/decrement = null
 TabBar/icons/decrement_highlight = null

@@ -23,7 +23,7 @@ var state: States
 
 func _ready():
 	PlayerManager.player = self
-	state = States.MAIN_MENU
+	state = States.ITEM_PLACING
 	moving = false
 	placetimer = 0
 
