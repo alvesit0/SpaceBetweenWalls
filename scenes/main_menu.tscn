@@ -53,6 +53,7 @@ theme_override_colors/font_focus_color = Color(0.878431, 0.972549, 0.815686, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.878431, 0.972549, 0.815686, 1)
 theme_override_fonts/font = ExtResource("2_1wyrn")
 theme_override_font_sizes/font_size = 8
+action_mode = 0
 text = "Start Game"
 
 [node name="Credits" type="Button" parent="VBoxContainer"]

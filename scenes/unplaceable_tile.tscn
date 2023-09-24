@@ -1,8 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://g0g6ntrqjnjc"]
+[gd_scene load_steps=4 format=3 uid="uid://g0g6ntrqjnjc"]
 
 [ext_resource type="Script" path="res://UnplaceableTile.gd" id="1_mq8bk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7kofg"]
+size = Vector2(6, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m2xa8"]
 size = Vector2(6, 6)
 
 [node name="UnplaceableTile" type="Area2D"]
@@ -10,3 +13,8 @@ script = ExtResource("1_mq8bk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_7kofg")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_m2xa8")

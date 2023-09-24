@@ -13,6 +13,8 @@ var placed_placeables: Array[PlaceableData]
 @export var item_list_data: ListedItemListData
 @export var selected_placeable: PlaceableData
 
+const DAY_1_RESULTS = preload("res://scenes/ship1_results.tscn")
+
 enum States {
 	MAIN_MENU,
 	WATCHING_CUTSCENE,
@@ -56,4 +58,9 @@ func add_funds(value: int) -> void:
 	
 func transition_stage() -> void:
 	state = States.ON_RESULTS_SCREEN
-	pass
+	await Transition.resolve()
+	var results
+	match current_day:
+		1: 
+			results = DAY_1_RESULTS.instantiate()
+			get_parent().add_child(results)

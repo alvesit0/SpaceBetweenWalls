@@ -13,8 +13,11 @@ func _ready():
 
 func _on_timer_timeout():
 	await Transition.dissolve()
+	var scene
 	match PlayerManager.player.current_day:
-		1: get_parent().add_child(FIRST_DAY_DIALOGE.instantiate())
+		1: 
+			scene = FIRST_DAY_DIALOGE.instantiate()
+			get_parent().add_child(scene)
 		
 	PlayerManager.player.state = PlayerManager.player.States.ITEM_PLACING
 	queue_free()

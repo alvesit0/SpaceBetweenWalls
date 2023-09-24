@@ -62,6 +62,7 @@ sprite_frames = SubResource("SpriteFrames_3juws")
 root_node = NodePath("../..")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(4, 4)
 
 [node name="CameraPivot" type="Node2D" parent="."]
 

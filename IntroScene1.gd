@@ -1,5 +1,7 @@
 extends Control
 
+class_name IntroScene1
+
 @onready var first_scene = $FirstScene
 @onready var second_scene = $SecondScene
 @onready var third_scene = $ThirdScene
@@ -7,16 +9,19 @@ extends Control
 
 const SECOND_SCENE = preload("res://scenes/intro_scene_2.tscn")
 var can_continue: bool
+var continue_pressed: bool
 
 func _ready():
 	can_continue = false
+	continue_pressed = false
 	Transition.reset()
 	
-func _process(_delta):
-	if can_continue \
-	and Input.is_action_just_pressed("gboy_a") \
-	or Input.is_action_just_pressed("gboy_b") \
-	or Input.is_action_just_pressed("gboy_start"):
+func _input(event):
+	if can_continue and !continue_pressed \
+	and (Input.is_action_just_pressed("gboy_a")
+	or Input.is_action_just_pressed("gboy_b")
+	or Input.is_action_just_pressed("gboy_start")):
+		continue_pressed = true
 		await Transition.dissolve()
 		get_parent().add_child(SECOND_SCENE.instantiate())
 		queue_free()
