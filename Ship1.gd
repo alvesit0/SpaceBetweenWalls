@@ -1,4 +1,4 @@
-extends Node2D
+extends Ship
 
 @export var selector: Selector
 

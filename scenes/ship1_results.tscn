@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cqyyg3iccowed"]
+
+[node name="Ship1Results" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 144.0
+color = Color(0.878431, 0.972549, 0.815686, 1)

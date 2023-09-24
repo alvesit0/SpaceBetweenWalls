@@ -14,9 +14,14 @@ func set_focus() -> void:
 	no_button.grab_focus()
 
 func _on_yes_button_pressed():
-	print("yes pressed!!!")
+	await Transition.dissolve()
+	PlayerManager.player.transition_stage()
+	for child in get_parent().get_parent().get_children():
+		if child is Ship:
+			child.queue_free()
+	get_parent().queue_free()
 
 func _on_no_button_pressed():
 	PlayerManager.player.state = PlayerManager.player.States.ITEM_PLACING
-	queue_free()
 	finish_canceled.emit()
+	queue_free()

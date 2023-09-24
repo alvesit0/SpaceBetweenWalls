@@ -21,7 +21,8 @@ enum States {
 	MENU_OPENED,
 	ITEM_LIST_OPENED,
 	ZOOMED_OUT,
-	ON_CONFIRM_WINDOW
+	ON_CONFIRM_WINDOW,
+	ON_RESULTS_SCREEN
 }
 
 var state: States
@@ -52,3 +53,7 @@ func remove_funds(value: int) -> bool:
 		
 func add_funds(value: int) -> void:
 	funds += value
+	
+func transition_stage() -> void:
+	state = States.ON_RESULTS_SCREEN
+	pass
