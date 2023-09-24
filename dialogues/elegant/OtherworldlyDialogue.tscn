@@ -1,0 +1,113 @@
+[gd_scene load_steps=18 format=3 uid="uid://dhewxmc0usb0c"]
+
+[ext_resource type="Script" path="res://dialogues/elegant/OtherworldlyDialogue.gd" id="1_lq771"]
+[ext_resource type="Resource" uid="uid://dpuhq0nnncor0" path="res://dialogues/main.dialogue" id="2_6s2r5"]
+[ext_resource type="Texture2D" uid="uid://ddb3tcxt5up65" path="res://dialogues/elegant/OtherworldySheet.png" id="2_xxywo"]
+[ext_resource type="AudioStream" uid="uid://bmimftt12dkrp" path="res://sound/music/client.wav" id="4_1y2m6"]
+[ext_resource type="AudioStream" uid="uid://i1tbtcl0i43c" path="res://sound/otherworldHabla.wav" id="5_4n8rj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4fei"]
+atlas = ExtResource("2_xxywo")
+region = Rect2(0, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bf6ju"]
+atlas = ExtResource("2_xxywo")
+region = Rect2(160, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u51ug"]
+atlas = ExtResource("2_xxywo")
+region = Rect2(320, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ecbh"]
+atlas = ExtResource("2_xxywo")
+region = Rect2(480, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8reu"]
+atlas = ExtResource("2_xxywo")
+region = Rect2(640, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imj7r"]
+atlas = ExtResource("2_xxywo")
+region = Rect2(800, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ieww1"]
+atlas = ExtResource("2_xxywo")
+region = Rect2(960, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skkt0"]
+atlas = ExtResource("2_xxywo")
+region = Rect2(1120, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81x76"]
+atlas = ExtResource("2_xxywo")
+region = Rect2(1280, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nly6"]
+atlas = ExtResource("2_xxywo")
+region = Rect2(1440, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8p66e"]
+atlas = ExtResource("2_xxywo")
+region = Rect2(1600, 0, 160, 144)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0784p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4fei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bf6ju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u51ug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ecbh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8reu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imj7r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ieww1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skkt0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81x76")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nly6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8p66e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="OtherworldlyDialogue" type="Node2D" node_paths=PackedStringArray("animated_sprite", "talking_sounds")]
+script = ExtResource("1_lq771")
+dialogue_resource = ExtResource("2_6s2r5")
+animated_sprite = NodePath("AnimatedSprite2D")
+talking_sounds = NodePath("TalkingSounds")
+metadata/_edit_vertical_guides_ = []
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(80, 72)
+sprite_frames = SubResource("SpriteFrames_0784p")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_1y2m6")
+volume_db = -6.0
+autoplay = true
+
+[node name="TalkingSounds" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_4n8rj")
+volume_db = -6.0

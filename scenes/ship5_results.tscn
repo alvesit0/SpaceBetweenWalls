@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://b13aq5t1axcpm"]
 
 [ext_resource type="Theme" uid="uid://brt1frgstdh0o" path="res://ingame_theme.tres" id="1_cbnda"]
-[ext_resource type="Script" path="res://Ship1Results.gd" id="2_6rmxe"]
+[ext_resource type="Script" path="res://Ship5Results.gd" id="2_k06i7"]
 [ext_resource type="FontFile" uid="uid://03csj1uxxf2d" path="res://fonts/prstartk.ttf" id="3_o1qk0"]
 [ext_resource type="FontFile" uid="uid://dgt8dl70ius2f" path="res://fonts/pcsenior.ttf" id="4_4hq1m"]
 
-[node name="Ship1Results" type="Control"]
+[node name="Ship5Results" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,7 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_cbnda")
-script = ExtResource("2_6rmxe")
+script = ExtResource("2_k06i7")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0

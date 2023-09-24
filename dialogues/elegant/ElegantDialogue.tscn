@@ -1,10 +1,67 @@
-[gd_scene load_steps=6 format=3 uid="uid://d24quf6ymd41n"]
+[gd_scene load_steps=14 format=3 uid="uid://d24quf6ymd41n"]
 
 [ext_resource type="Script" path="res://dialogues/elegant/ElegantDialogue.gd" id="1_7rgv0"]
 [ext_resource type="Resource" uid="uid://dpuhq0nnncor0" path="res://dialogues/main.dialogue" id="2_pkdsc"]
-[ext_resource type="SpriteFrames" uid="uid://pprc2moxiaau" path="res://dialogues/elegant/elegantSheet.tres" id="3_52qu0"]
+[ext_resource type="Texture2D" uid="uid://baynq6ogeyg0v" path="res://dialogues/elegant/elegantSheet.png" id="3_n0jvj"]
 [ext_resource type="AudioStream" uid="uid://bmimftt12dkrp" path="res://sound/music/client.wav" id="4_c42yx"]
 [ext_resource type="AudioStream" uid="uid://bwq8geg38k862" path="res://sound/eleganteHabla.wav" id="5_oerbr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6t8h"]
+atlas = ExtResource("3_n0jvj")
+region = Rect2(0, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqw34"]
+atlas = ExtResource("3_n0jvj")
+region = Rect2(160, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pah3l"]
+atlas = ExtResource("3_n0jvj")
+region = Rect2(320, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmthd"]
+atlas = ExtResource("3_n0jvj")
+region = Rect2(480, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tleoq"]
+atlas = ExtResource("3_n0jvj")
+region = Rect2(640, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qa14e"]
+atlas = ExtResource("3_n0jvj")
+region = Rect2(800, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmcku"]
+atlas = ExtResource("3_n0jvj")
+region = Rect2(960, 0, 160, 144)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ahxvy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6t8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqw34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pah3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmthd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tleoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qa14e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmcku")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="ElegantDialogue" type="Node2D" node_paths=PackedStringArray("animated_sprite", "talking_sounds")]
 script = ExtResource("1_7rgv0")
@@ -16,7 +73,7 @@ metadata/_edit_vertical_guides_ = []
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(80, 72)
-sprite_frames = ExtResource("3_52qu0")
+sprite_frames = SubResource("SpriteFrames_ahxvy")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_c42yx")

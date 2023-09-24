@@ -14,6 +14,10 @@ var placed_placeables: Array[PlaceableData]
 @export var selected_placeable: PlaceableData
 
 const DAY_1_RESULTS = preload("res://scenes/ship1_results.tscn")
+const DAY_2_RESULTS = preload("res://scenes/ship2_results.tscn")
+const DAY_3_RESULTS = preload("res://scenes/ship3_results.tscn")
+const DAY_4_RESULTS = preload("res://scenes/ship4_results.tscn")
+const DAY_5_RESULTS = preload("res://scenes/ship5_results.tscn")
 
 enum States {
 	MAIN_MENU,
@@ -63,4 +67,16 @@ func transition_stage() -> void:
 	match current_day:
 		1: 
 			results = DAY_1_RESULTS.instantiate()
+			get_parent().add_child(results)
+		2: 
+			results = DAY_2_RESULTS.instantiate()
+			get_parent().add_child(results)
+		3: 
+			results = DAY_3_RESULTS.instantiate()
+			get_parent().add_child(results)
+		4: 
+			results = DAY_4_RESULTS.instantiate()
+			get_parent().add_child(results)
+		5: 
+			results = DAY_5_RESULTS.instantiate()
 			get_parent().add_child(results)

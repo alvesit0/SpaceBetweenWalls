@@ -30,13 +30,17 @@ Nerd: a bit of a sci-fi enthusiast,
 Nerd: spending countless hours immersed in holovids 
 Nerd: and VR simulations of distant galaxies.
 Nerd: The idea of piloting a vessel that looks like it 
-Nerd: just stepped out of a wormhole from a distant tomorrow
+Nerd: just stepped out of a wormhole 
+Nerd: from a distant tomorrow
 Nerd: is, um, absolutely thrilling! 
 Nerd: I mean, I'll basically be Spock Solo! LMAO!
-Nerd: So, if you could, like, help me find the perfect ship.
+Nerd: So, if you could, like, 
+Nerd: help me find the perfect ship.
 Nerd: And, perhaps, 
-Nerd: we could even swap favorite sci-fi series recommendations. 
+Nerd: we could even 
+Nerd: swap favorite sci-fi series recommendations?
 Nerd: What do you think?
+Nerd: 
 - Let's furnish! => finish_nerd
 - Listen again => talk_to_nerd
 
@@ -52,7 +56,8 @@ Influencer: your decor collection.
 Influencer: I'm known for bringing the latest 
 Influencer: and greatest styles to the cosmos, 
 Influencer: and right now, I'm on a mission to elevate 
-Influencer: my own spacecraft to interstellar levels of chicness.
+Influencer: my own spacecraft to interstellar levels 
+Influencer: of chicness.
 Influencer: Picture this:
 Influencer: a ship with curves smoother than my favorite 
 Influencer: holographic lipstick,
@@ -63,6 +68,7 @@ Influencer: So, if you could help me
 Influencer: I'll give your shop a shoutout 
 Influencer: to my million followers.
 Influencer: What do you say, honey?
+Influencer: 
 - Let's furnish! => finish_influencer
 - Listen again => talk_to_influencer
 
@@ -87,6 +93,7 @@ Dandy: I wanna live the simple life now, partner.
 Dandy: So, what do ya got that
 Dandy: can help me mosey on down the path of 
 Dandy: peace and quiet?
+Dandy: 
 
 - Let's furnish! => finish_dandy
 - Listen again => talk_to_dandy
@@ -106,6 +113,7 @@ Mindflayer: ⏃⋏⎅ ⟟ ⏃⋔ ⟟⋏ ⌇⟒⏃⍀☊⊑ ⍜⎎ ⏃⎅⍜⍀�
 Mindflayer: ⏚⎍⏁ ⟟ ⊬⟒⏃⍀⋏ ⎎⍜⍀ ⏃ ⊑⟟⋏⏁ ⍜⎎ ⏁⊑⟒ 
 Mindflayer: ⍙⍜⍀⌰⎅ ⏃⏚⍜⎐⟒
 Mindflayer: ⏁⊑⏃⏁ ⏃⍀⟒ ⋔⊬ ⊑⍜⋔⟒?
+Mindflayer: 
 
 - Let's furnish? => finish_mindflayer
 - Listen again? => talk_to_mindflayer

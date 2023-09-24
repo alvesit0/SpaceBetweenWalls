@@ -1,0 +1,120 @@
+[gd_scene load_steps=19 format=3 uid="uid://8ffxfyxqn13v"]
+
+[ext_resource type="Script" path="res://dialogues/elegant/RusticDialogue.gd" id="1_a56h6"]
+[ext_resource type="Resource" uid="uid://dpuhq0nnncor0" path="res://dialogues/main.dialogue" id="2_btsyw"]
+[ext_resource type="Texture2D" uid="uid://c7ktc6w58i4dp" path="res://dialogues/elegant/DandySheet.png" id="3_8kn6d"]
+[ext_resource type="AudioStream" uid="uid://bmimftt12dkrp" path="res://sound/music/client.wav" id="4_r62cl"]
+[ext_resource type="AudioStream" uid="uid://8akks3ebjc6l" path="res://sound/rusticoHabla.wav" id="4_uj2vi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4fu2"]
+atlas = ExtResource("3_8kn6d")
+region = Rect2(0, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6bee"]
+atlas = ExtResource("3_8kn6d")
+region = Rect2(160, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7hcf"]
+atlas = ExtResource("3_8kn6d")
+region = Rect2(320, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eiap6"]
+atlas = ExtResource("3_8kn6d")
+region = Rect2(480, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_358ok"]
+atlas = ExtResource("3_8kn6d")
+region = Rect2(640, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k281o"]
+atlas = ExtResource("3_8kn6d")
+region = Rect2(800, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcc72"]
+atlas = ExtResource("3_8kn6d")
+region = Rect2(960, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aq8d7"]
+atlas = ExtResource("3_8kn6d")
+region = Rect2(1120, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aaqjx"]
+atlas = ExtResource("3_8kn6d")
+region = Rect2(1280, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fq0v6"]
+atlas = ExtResource("3_8kn6d")
+region = Rect2(1440, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vf7wl"]
+atlas = ExtResource("3_8kn6d")
+region = Rect2(1600, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyxqc"]
+atlas = ExtResource("3_8kn6d")
+region = Rect2(1760, 0, 160, 144)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_khi6g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4fu2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6bee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7hcf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eiap6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_358ok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k281o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcc72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aq8d7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aaqjx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fq0v6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vf7wl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyxqc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="RusticDialogue" type="Node2D" node_paths=PackedStringArray("animated_sprite", "talking_sounds")]
+script = ExtResource("1_a56h6")
+dialogue_resource = ExtResource("2_btsyw")
+animated_sprite = NodePath("AnimatedSprite2D")
+talking_sounds = NodePath("TalkingSounds")
+metadata/_edit_vertical_guides_ = []
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(80, 72)
+sprite_frames = SubResource("SpriteFrames_khi6g")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_r62cl")
+volume_db = -6.0
+autoplay = true
+
+[node name="TalkingSounds" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_uj2vi")
+volume_db = -6.0
