@@ -3,6 +3,10 @@ extends TileMap
 @export var selector: Selector
 @onready var PLACEABLE_SCENE = preload("res://placeable/resources/placeable.tscn")
 
+@onready var place_sound = $PlaceSound
+@onready var rotate_sound = $RotateSound
+@onready var move_sound = $MoveSound
+
 func _input(event):
 	if selector:
 		if Input.is_action_just_pressed("gboy_a") \
@@ -29,8 +33,10 @@ func place_placeable(initial_tile: Vector2i) -> void:
 		or !PlayerManager.player.remove_funds(placeable.data.price):
 			placeable.queue_free()
 		else:
+			place_sound.play()
 			PlayerManager.player.placed_placeables.append(placeable.data)
 	elif selector.targeted_placeable:
+		move_sound.play()
 		PlayerManager.player.add_funds(selector.targeted_placeable.data.price)
 		PlayerManager.player.selected_placeable = selector.targeted_placeable.data
 		PlayerManager.player.placed_placeables.erase(selector.targeted_placeable.data)
@@ -46,4 +52,5 @@ func remove_placeable() -> void:
 
 func rotate_selected() -> void: 
 	if PlayerManager.player.selected_placeable:
+		rotate_sound.play()
 		PlayerManager.player.selected_placeable._rotate()

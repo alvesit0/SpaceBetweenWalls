@@ -6,6 +6,7 @@ class_name IntroScene1
 @onready var second_scene = $SecondScene
 @onready var third_scene = $ThirdScene
 @onready var animation_player = $AnimationPlayer
+@onready var menu_accept_sounds = $MenuAcceptSounds
 
 const SECOND_SCENE = preload("res://scenes/intro_scene_2.tscn")
 const MUSIC = preload("res://sound/music/intro.wav")
@@ -27,6 +28,7 @@ func _input(event):
 	and (Input.is_action_just_pressed("gboy_a")
 	or Input.is_action_just_pressed("gboy_b")
 	or Input.is_action_just_pressed("gboy_start")):
+		menu_accept_sounds.play()
 		continue_pressed = true
 		await Transition.dissolve()
 		get_parent().add_child(SECOND_SCENE.instantiate())

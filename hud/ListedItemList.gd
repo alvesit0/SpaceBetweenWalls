@@ -12,6 +12,10 @@ const FUTURISTIC_ICON = preload("res://images/item_list_icons/futuristic_icon.pn
 
 @export var all_items_container: VBoxContainer
 @export var tab_container: TabContainer
+
+@onready var back_sound = $BackSound
+@onready var move_sound = $MoveSound
+
 var tabindex: int
 
 func _ready() -> void:
@@ -33,6 +37,7 @@ func _ready() -> void:
 func _input(event):
 	if Input.is_action_just_pressed("gboy_a") \
 	and PlayerManager.player.state == PlayerManager.player.States.ITEM_LIST_OPENED:
+		back_sound.play()
 		for child in all_items_container.get_children():
 			if child.has_focus() and child is ListedItem:
 				PlayerManager.player.selected_placeable = child.placeable_data
@@ -42,6 +47,7 @@ func _input(event):
 	if Input.is_action_just_pressed("gboy_start") \
 	or Input.is_action_just_pressed("gboy_b") \
 	and PlayerManager.player.state == PlayerManager.player.States.ITEM_LIST_OPENED:
+		back_sound.play()
 		for child in all_items_container.get_children():
 			PlayerManager.player.state = PlayerManager.player.States.ITEM_PLACING
 			queue_free()
@@ -49,6 +55,7 @@ func _input(event):
 func _process(delta):
 	if Input.is_action_just_pressed("ui_right") \
 	and PlayerManager.player.state == PlayerManager.player.States.ITEM_LIST_OPENED:
+		move_sound.play()
 		if tabindex == 5:
 			tabindex = 0
 		else:
@@ -58,12 +65,16 @@ func _process(delta):
 		
 	if Input.is_action_just_pressed("ui_left")  \
 	and PlayerManager.player.state == PlayerManager.player.States.ITEM_LIST_OPENED:
+		move_sound.play()
 		if tabindex == 0:
 			tabindex = 5
 		else:
 			tabindex -= 1
 		set_focus()
 		tab_container.set_current_tab(tabindex)
+	
+	if Input.is_action_just_pressed("ui_up") or Input.is_action_just_pressed("ui_down"):
+		move_sound.play()
 
 func set_listed_item_list(listed_item_list_data: ListedItemListData) -> void:
 	if !listed_item_list_data.is_connected("inventory_updated", populate_item_grid):

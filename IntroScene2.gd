@@ -6,6 +6,7 @@ class_name IntroScene2
 @onready var second_scene = $SecondScene
 @onready var third_scene = $ThirdScene
 @onready var animation_player = $AnimationPlayer
+@onready var menu_accept_sounds = $MenuAcceptSounds
 
 const DAY_CHANGE_SCENE = preload("res://scenes/day_change.tscn")
 var can_continue: bool
@@ -20,6 +21,7 @@ func _input(event):
 	and (Input.is_action_just_pressed("gboy_a")
 	or Input.is_action_just_pressed("gboy_b")
 	or Input.is_action_just_pressed("gboy_start")):
+		menu_accept_sounds.play()
 		continue_pressed = true
 		await Transition.dissolve()
 		for child in get_parent().get_children():

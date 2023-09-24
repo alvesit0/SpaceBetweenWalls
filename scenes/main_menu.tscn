@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dq1xq7ahmhtvy"]
+[gd_scene load_steps=18 format=3 uid="uid://dq1xq7ahmhtvy"]
 
 [ext_resource type="Theme" uid="uid://brt1frgstdh0o" path="res://ingame_theme.tres" id="1_c6jhq"]
 [ext_resource type="Script" path="res://MainMenu.gd" id="1_fkatb"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://04y8n7tgqot0" path="res://images/title.png" id="3_cwxpm"]
 [ext_resource type="AudioStream" uid="uid://d0xiluklakru5" path="res://sound/music/main_title.wav" id="5_we5tq"]
 [ext_resource type="FontFile" uid="uid://cgdcgu5psutj" path="res://fonts/TINY.TTF" id="7_fwn2m"]
+[ext_resource type="AudioStream" uid="uid://bxpou53vsn00q" path="res://sound/menuPrincipal.wav" id="8_p5m8o"]
+[ext_resource type="AudioStream" uid="uid://cg8jsisjkwk35" path="res://sound/menuGeneralesSeleccion.wav" id="9_rnalk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e7whv"]
 atlas = ExtResource("2_r3b0o")
@@ -100,7 +102,7 @@ texture_filter = 1
 position = Vector2(80, 0)
 sprite_frames = SubResource("SpriteFrames_toovs")
 autoplay = "default"
-frame_progress = 0.155889
+frame_progress = 0.0412092
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatedSprite2D"]
 position = Vector2(0, 72)
@@ -510,6 +512,14 @@ theme_override_font_sizes/font_size = 8
 text = "Gabriel Machado"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MenuSelectSounds" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_rnalk")
+volume_db = -6.0
+
+[node name="MenuAcceptSounds" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_p5m8o")
+volume_db = -6.0
 
 [connection signal="pressed" from="VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]

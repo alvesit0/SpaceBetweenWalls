@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+class_name Baloon
+
 @onready var balloon: ColorRect = $Balloon
 @onready var margin: MarginContainer = $Balloon/Margin
 @onready var dialogue_label: DialogueLabel = $Balloon/Margin/VBox/DialogueLabel
@@ -85,7 +87,10 @@ func _ready() -> void:
 	response_template.hide()
 	balloon.hide()
 	balloon.custom_minimum_size.x = balloon.get_viewport_rect().size.x
-	dialogue_label.finished.connect(_on_dialogue_finished)
+	dialogue_label.finished_typing.connect(_on_dialogue_finished)
+	#dialogue_label.finished_typing.connect(_on_finished_typing)
+	dialogue_label.paused_typing.connect(_on_paused_typing)
+	dialogue_label.spoke.connect(_on_spoke)
 
 	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
 
@@ -221,8 +226,8 @@ func _on_margin_resized() -> void:
 func _on_dialogue_finished():
 	on_dialogue_finished.emit()
 	
-func _on_paused_typing():
+func _on_paused_typing(duration: float):
 	on_paused_typing.emit()
 	
-func _on_spoke():
+func _on_spoke(letter: String, letter_index: int, speed: float):
 	on_spoke.emit()

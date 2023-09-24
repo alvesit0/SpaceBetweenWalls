@@ -9,6 +9,8 @@ var move_cd = 0
 
 const PLACEABLE_SCENE = preload("res://placeable/resources/placeable.tscn")
 
+@onready var move_sound = $MoveSound
+
 @onready var placeable_hitbox_check: PlaceableHitboxCheck = $PlaceableHitboxCheck
 @onready var ray: RayCast2D = $RayCast2D
 @onready var collision: CollisionShape2D = $CollisionShape2D
@@ -58,6 +60,8 @@ func _process(delta):
 		and PlayerManager.player.state == PlayerManager.player.States.ITEM_PLACING \
 		and move_cd == 0:
 			move(dir)
+			if PlayerManager.player.selected_placeable:
+				move_sound.play()
 	
 	if PlayerManager.player.state == PlayerManager.player.States.ZOOMED_OUT \
 	and (Input.is_action_just_pressed("gboy_b") or Input.is_action_just_pressed("gboy_start")):

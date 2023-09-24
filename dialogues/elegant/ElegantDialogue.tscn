@@ -1,22 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://d24quf6ymd41n"]
+[gd_scene load_steps=6 format=3 uid="uid://d24quf6ymd41n"]
 
 [ext_resource type="Script" path="res://dialogues/elegant/ElegantDialogue.gd" id="1_7rgv0"]
 [ext_resource type="Resource" uid="uid://dpuhq0nnncor0" path="res://dialogues/main.dialogue" id="2_pkdsc"]
 [ext_resource type="SpriteFrames" uid="uid://pprc2moxiaau" path="res://dialogues/elegant/elegantSheet.tres" id="3_52qu0"]
 [ext_resource type="AudioStream" uid="uid://bmimftt12dkrp" path="res://sound/music/client.wav" id="4_c42yx"]
+[ext_resource type="AudioStream" uid="uid://bwq8geg38k862" path="res://sound/eleganteHabla.wav" id="5_oerbr"]
 
-[node name="ElegantDialogue" type="Node2D"]
+[node name="ElegantDialogue" type="Node2D" node_paths=PackedStringArray("animated_sprite", "talking_sounds")]
 script = ExtResource("1_7rgv0")
 dialogue_resource = ExtResource("2_pkdsc")
+animated_sprite = NodePath("AnimatedSprite2D")
+talking_sounds = NodePath("TalkingSounds")
 metadata/_edit_vertical_guides_ = []
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(80, 72)
 sprite_frames = ExtResource("3_52qu0")
-autoplay = "default"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_c42yx")
 volume_db = -6.0
 autoplay = true
+
+[node name="TalkingSounds" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_oerbr")
+volume_db = -6.0

@@ -1,10 +1,11 @@
-[gd_scene load_steps=62 format=3 uid="uid://b5w5sm2e0xsqt"]
+[gd_scene load_steps=63 format=3 uid="uid://b5w5sm2e0xsqt"]
 
 [ext_resource type="Script" path="res://IntroScene1.gd" id="1_guv6m"]
 [ext_resource type="Texture2D" uid="uid://bcnrtrvmdgpdp" path="res://images/intro/first_scene_1.png" id="2_kf463"]
 [ext_resource type="Texture2D" uid="uid://phn54vdinp11" path="res://images/intro/first_scene_2.png" id="3_2odnd"]
 [ext_resource type="Texture2D" uid="uid://0ac2gb0loq28" path="res://images/intro/first_scene_3.png" id="4_ikm1o"]
 [ext_resource type="Texture2D" uid="uid://be81kwmu1p8sr" path="res://images/intro/intro_arrow.png" id="5_365qx"]
+[ext_resource type="AudioStream" uid="uid://cg8jsisjkwk35" path="res://sound/menuGeneralesSeleccion.wav" id="6_hljue"]
 
 [sub_resource type="Animation" id="Animation_g8o78"]
 resource_name = "RESET"
@@ -487,6 +488,10 @@ autostart = true
 wait_time = 4.5
 one_shot = true
 autostart = true
+
+[node name="MenuAcceptSounds" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_hljue")
+volume_db = -6.0
 
 [connection signal="animation_finished" from="ThirdScene" to="." method="_on_third_scene_animation_finished"]
 [connection signal="timeout" from="TimerFirstScene" to="." method="_on_timer_first_scene_timeout"]

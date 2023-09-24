@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://rbv6all4lw0g"]
+[gd_scene load_steps=7 format=3 uid="uid://rbv6all4lw0g"]
 
 [ext_resource type="Theme" uid="uid://brt1frgstdh0o" path="res://ingame_theme.tres" id="1_h1cr8"]
 [ext_resource type="Script" path="res://hud/FinishConfirm.gd" id="2_jgknv"]
+[ext_resource type="AudioStream" uid="uid://cg8jsisjkwk35" path="res://sound/menuGeneralesSeleccion.wav" id="3_c02n8"]
+[ext_resource type="AudioStream" uid="uid://dvfuvhq2abo35" path="res://sound/menuGeneralesMover.wav" id="4_do3oo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_de824"]
 bg_color = Color(0.203922, 0.407843, 0.337255, 1)
@@ -90,6 +92,18 @@ theme_override_colors/font_hover_pressed_color = Color(0.878431, 0.972549, 0.815
 action_mode = 0
 text = "Yes
 "
+
+[node name="BackSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_c02n8")
+volume_db = -6.0
+max_distance = 7415.0
+panning_strength = 0.0
+
+[node name="MoveSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_do3oo")
+volume_db = -6.0
+max_distance = 6835.0
+panning_strength = 0.0
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/NoButton" to="." method="_on_no_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/YesButton" to="." method="_on_yes_button_pressed"]

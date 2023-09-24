@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bkeyjxy4v4qob"]
+[gd_scene load_steps=12 format=3 uid="uid://bkeyjxy4v4qob"]
 
 [ext_resource type="Theme" uid="uid://brt1frgstdh0o" path="res://ingame_theme.tres" id="1_fquys"]
 [ext_resource type="Script" path="res://hud/ListedItemList.gd" id="2_catmq"]
+[ext_resource type="AudioStream" uid="uid://cg8jsisjkwk35" path="res://sound/menuGeneralesSeleccion.wav" id="3_yjptm"]
+[ext_resource type="AudioStream" uid="uid://dvfuvhq2abo35" path="res://sound/menuGeneralesMover.wav" id="4_x5n67"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yg2x2"]
 bg_color = Color(0.533333, 0.752941, 0.439216, 1)
@@ -184,3 +186,15 @@ visible = false
 layout_mode = 2
 mouse_filter = 2
 theme = ExtResource("1_fquys")
+
+[node name="BackSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_yjptm")
+volume_db = -6.0
+max_distance = 7415.0
+panning_strength = 0.0
+
+[node name="MoveSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_x5n67")
+volume_db = -6.0
+max_distance = 6835.0
+panning_strength = 0.0
