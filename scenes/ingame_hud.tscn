@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5hw57t1vdh1p"]
+[gd_scene load_steps=5 format=3 uid="uid://c5hw57t1vdh1p"]
 
 [ext_resource type="Script" path="res://HUD.gd" id="1_jt7js"]
 [ext_resource type="Theme" uid="uid://brt1frgstdh0o" path="res://ingame_theme.tres" id="1_pvl1l"]
 [ext_resource type="PackedScene" uid="uid://t3v3lvtccgrc" path="res://hud/ingame_menu.tscn" id="2_jyyse"]
+[ext_resource type="PackedScene" uid="uid://cbikls8fgv3a4" path="res://hud/funds_interface.tscn" id="4_wg2vi"]
 
 [node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("inventory_interface", "ingame_menu")]
 script = ExtResource("1_jt7js")
@@ -12,11 +13,14 @@ ingame_menu = NodePath("InventoryInterface/IngameMenu")
 [node name="InventoryInterface" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 160.0
+offset_bottom = 144.0
 mouse_filter = 2
 theme = ExtResource("1_pvl1l")
 
 [node name="IngameMenu" parent="InventoryInterface" instance=ExtResource("2_jyyse")]
 visible = false
 layout_mode = 0
+
+[node name="FundsInterface" parent="InventoryInterface" instance=ExtResource("4_wg2vi")]
+layout_mode = 1

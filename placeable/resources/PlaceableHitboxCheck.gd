@@ -29,11 +29,14 @@ func _on_hitbox_check_area_entered(body: Area2D) -> void:
 		if PlayerManager.player.selected_placeable and PlayerManager.player.selected_placeable.goes_on_wall == false:
 			colliding = true
 			colliding_bodies.append(body)
+		elif PlayerManager.player.selected_placeable and PlayerManager.player.selected_placeable.goes_on_wall == true:
+			colliding = false
 	elif body is FloorTile:
 		if PlayerManager.player.selected_placeable and PlayerManager.player.selected_placeable.goes_on_wall == true:
-			print("entered")
 			colliding = true
 			colliding_bodies.append(body)
+		elif PlayerManager.player.selected_placeable and PlayerManager.player.selected_placeable.goes_on_wall == false:
+			colliding = false
 
 func _on_hitbox_check_area_exited(body: Area2D) -> void:
 	if body is Placeable or body is UnplaceableTile:
@@ -43,7 +46,6 @@ func _on_hitbox_check_area_exited(body: Area2D) -> void:
 			colliding_bodies.erase(body)
 	elif body is FloorTile:
 		if PlayerManager.player.selected_placeable and PlayerManager.player.selected_placeable.goes_on_wall == true:
-			print("left")
 			colliding_bodies.erase(body)
 	if colliding_bodies.size() == 0:
 		colliding = false

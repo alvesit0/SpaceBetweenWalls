@@ -34,9 +34,6 @@ func update_data():
 		var distance: Vector2
 		distance.x = initial_tile.x - object_coords[0].x
 		distance.y = initial_tile.y - object_coords[0].y
-		#if collision.shape:
-		#	collision.position.x += object_coords[0].x / 2
-		#	collision.position.y += object_coords[0].y / 2
 		for i in range(rotation.visual_tiles.size()):
 			var new_coord: Vector2 = distance
 			new_coord.x += rotation.visual_tiles[i].x

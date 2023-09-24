@@ -5,6 +5,7 @@ class_name Main
 @export var hud: InGameHUD
 @export var player: Player
 var selector: Selector
+var placed_placeables: Array[PlaceableData]
 
 func _ready() -> void:
 	player.toggle_menu.connect(toggle_menu_interface)

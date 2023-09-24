@@ -8,6 +8,11 @@ class_name PlaceableData
 @export var price: int
 @export var texture: Texture
 @export var goes_on_wall: bool
+@export var rustic_value: int
+@export var elegant_value: int
+@export var modern_value: int
+@export var futuristic_value: int
+@export var otherworldly_value: int
 var index: int
 
 func _ready() -> void:

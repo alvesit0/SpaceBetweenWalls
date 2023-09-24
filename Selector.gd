@@ -60,7 +60,7 @@ func _process(delta):
 			move(dir)
 	
 	if PlayerManager.player.state == PlayerManager.player.States.ZOOMED_OUT \
-	and Input.is_action_just_pressed("gboy_b"):
+	and (Input.is_action_just_pressed("gboy_b") or Input.is_action_just_pressed("gboy_start")):
 		toggle_camera()
 		PlayerManager.player.state = PlayerManager.player.States.ITEM_PLACING
 			

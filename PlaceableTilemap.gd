@@ -25,16 +25,23 @@ func place_placeable(initial_tile: Vector2i) -> void:
 		placeable.global_position = selector.global_position
 		placeable.update_data()
 		add_child(placeable)
-		if selector.placeable_hitbox_check.colliding:
+		if selector.placeable_hitbox_check.colliding \
+		or !PlayerManager.player.remove_funds(placeable.data.price):
 			placeable.queue_free()
+		else:
+			PlayerManager.player.placed_placeables.append(placeable.data)
 	elif selector.targeted_placeable:
+		PlayerManager.player.add_funds(selector.targeted_placeable.data.price)
 		PlayerManager.player.selected_placeable = selector.targeted_placeable.data
+		PlayerManager.player.placed_placeables.erase(selector.targeted_placeable.data)
 		selector.targeted_placeable.queue_free()
 
 func remove_placeable() -> void:
 	if PlayerManager.player.selected_placeable:
 		PlayerManager.player.selected_placeable = null
 	elif selector.targeted_placeable:
+		PlayerManager.player.add_funds(selector.targeted_placeable.data.price)
+		PlayerManager.player.placed_placeables.erase(selector.targeted_placeable.data)
 		selector.targeted_placeable.queue_free()
 
 func rotate_selected() -> void: 

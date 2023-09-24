@@ -4,10 +4,11 @@ class_name Player
 
 signal toggle_menu
 
-var money: int
 var placetimer: int
 var current_day: int
 var earnings: int
+var funds: int
+var placed_placeables: Array[PlaceableData]
 @export var moving: bool
 @export var item_list_data: ListedItemListData
 @export var selected_placeable: PlaceableData
@@ -32,6 +33,7 @@ func _ready():
 	placetimer = 0
 	current_day = 1
 	earnings = 0
+	funds = 0
 
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("gboy_start") \
@@ -40,3 +42,13 @@ func _physics_process(_delta):
 		toggle_menu.emit()
 	if placetimer > 0:
 		placetimer -= 1
+		
+func remove_funds(value: int) -> bool:
+	if value > funds:
+		return false
+	else:
+		funds -= value
+		return true
+		
+func add_funds(value: int) -> void:
+	funds += value
