@@ -22,6 +22,9 @@ func _input(event):
 	or Input.is_action_just_pressed("gboy_start")):
 		continue_pressed = true
 		await Transition.dissolve()
+		for child in get_parent().get_children():
+			if child is AudioStreamPlayer2D:
+				child.queue_free()
 		get_parent().add_child(DAY_CHANGE_SCENE.instantiate())
 		queue_free()
 

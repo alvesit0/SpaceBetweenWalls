@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Player.gd" id="1_4e4no"]
 [ext_resource type="Script" path="res://Main.gd" id="1_ikv4p"]
-[ext_resource type="PackedScene" uid="uid://dq1xq7ahmhtvy" path="res://scenes/main_menu.tscn" id="2_tkxf4"]
 [ext_resource type="Resource" uid="uid://c2njanicelbam" path="res://placeable/initial_inventory.tres" id="4_7eq43"]
+[ext_resource type="PackedScene" uid="uid://dq1xq7ahmhtvy" path="res://scenes/main_menu.tscn" id="5_xy7se"]
 [ext_resource type="Shader" path="res://gboy_filter.gdshader" id="8_uikug"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3tqqw"]
@@ -17,8 +17,6 @@ shader_parameter/lightest = Color(0.878431, 0.972549, 0.815686, 1)
 script = ExtResource("1_ikv4p")
 player = NodePath("Player")
 
-[node name="MainMenu" parent="." instance=ExtResource("2_tkxf4")]
-
 [node name="Player" type="Node2D" parent="."]
 script = ExtResource("1_4e4no")
 item_list_data = ExtResource("4_7eq43")
@@ -31,3 +29,5 @@ offset_left = -337.0
 offset_top = -239.0
 offset_right = 490.0
 offset_bottom = 369.0
+
+[node name="MainMenu" parent="." instance=ExtResource("5_xy7se")]

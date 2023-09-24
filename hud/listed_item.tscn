@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://owj7uw3y8l8x"]
+[gd_scene load_steps=4 format=3 uid="uid://owj7uw3y8l8x"]
 
 [ext_resource type="Script" path="res://hud/ListedItem.gd" id="1_1k8sq"]
 [ext_resource type="Theme" uid="uid://brt1frgstdh0o" path="res://ingame_theme.tres" id="1_umhs4"]
+[ext_resource type="FontFile" uid="uid://cgdcgu5psutj" path="res://fonts/TINY.TTF" id="3_40s5b"]
 
-[node name="ListedItem" type="Button" node_paths=PackedStringArray("texture_rect")]
+[node name="ListedItem" type="Button" node_paths=PackedStringArray("texture_rect", "price_label")]
 texture_filter = 1
 custom_minimum_size = Vector2(160, 20)
 anchors_preset = 8
@@ -29,6 +30,7 @@ button_mask = 0
 text = "Sofa"
 script = ExtResource("1_1k8sq")
 texture_rect = NodePath("TextureRect")
+price_label = NodePath("PriceLabel")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
@@ -48,3 +50,22 @@ grow_vertical = 2
 mouse_filter = 2
 expand_mode = 1
 stretch_mode = 5
+
+[node name="PriceLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -7.00005
+offset_bottom = 6.99995
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.203922, 0.407843, 0.337255, 1)
+theme_override_fonts/font = ExtResource("3_40s5b")
+theme_override_font_sizes/font_size = 6
+text = "6789$"
+horizontal_alignment = 1
+vertical_alignment = 1

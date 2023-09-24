@@ -11,6 +11,7 @@ const INGAME_HUD_SCENE = preload("res://scenes/ingame_hud.tscn")
 func _ready():
 	await Transition.resolve()
 	var balloon: Node = Balloon.instantiate()
+	
 	add_child(balloon)
 	PlayerManager.dialogue_finished.connect(_on_dilogue_finished)
 	balloon.start(dialogue_resource, dialogue_start)

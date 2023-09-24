@@ -6,6 +6,8 @@ extends CanvasLayer
 @onready var responses_menu: VBoxContainer = $Balloon/Margin/ResponsesVBox/Responses
 @onready var response_template: RichTextLabel = %ResponseTemplate
 
+signal on_spoke
+signal on_paused_typing
 signal on_dialogue_finished
 
 ## The dialogue resource
@@ -218,3 +220,9 @@ func _on_margin_resized() -> void:
 	
 func _on_dialogue_finished():
 	on_dialogue_finished.emit()
+	
+func _on_paused_typing():
+	on_paused_typing.emit()
+	
+func _on_spoke():
+	on_spoke.emit()

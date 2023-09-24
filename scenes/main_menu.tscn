@@ -1,24 +1,110 @@
-[gd_scene load_steps=5 format=3 uid="uid://dq1xq7ahmhtvy"]
+[gd_scene load_steps=16 format=3 uid="uid://dq1xq7ahmhtvy"]
 
 [ext_resource type="Theme" uid="uid://brt1frgstdh0o" path="res://ingame_theme.tres" id="1_c6jhq"]
 [ext_resource type="Script" path="res://MainMenu.gd" id="1_fkatb"]
 [ext_resource type="FontFile" uid="uid://dgt8dl70ius2f" path="res://fonts/pcsenior.ttf" id="2_1wyrn"]
-[ext_resource type="Texture2D" uid="uid://gwu63ypawync" path="res://start_screen_prov.png" id="2_2jjnl"]
+[ext_resource type="Texture2D" uid="uid://3xmglhmteo3a" path="res://images/credits.png" id="2_r3b0o"]
+[ext_resource type="Texture2D" uid="uid://04y8n7tgqot0" path="res://images/title.png" id="3_cwxpm"]
+[ext_resource type="AudioStream" uid="uid://d0xiluklakru5" path="res://sound/music/main_title.wav" id="5_we5tq"]
+[ext_resource type="FontFile" uid="uid://cgdcgu5psutj" path="res://fonts/TINY.TTF" id="7_fwn2m"]
 
-[node name="MainMenu" type="Control" node_paths=PackedStringArray("start_button", "credits_button")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7whv"]
+atlas = ExtResource("2_r3b0o")
+region = Rect2(0, 0, 160, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6joc"]
+atlas = ExtResource("2_r3b0o")
+region = Rect2(160, 0, 160, 288)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_toovs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7whv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6joc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="Animation" id="Animation_urqyw"]
+resource_name = "move_everything"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 144)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8n254"]
+_data = {
+"move_everything": SubResource("Animation_urqyw")
+}
+
+[sub_resource type="Animation" id="Animation_vsaf5"]
+resource_name = "dissolve_credits"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bvexk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_spgun"]
+_data = {
+"RESET": SubResource("Animation_bvexk"),
+"dissolve_credits": SubResource("Animation_vsaf5")
+}
+
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("start_button", "credits_button", "credit_roll_list", "credits_roll")]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_fkatb")
 start_button = NodePath("VBoxContainer/StartGame")
 credits_button = NodePath("VBoxContainer/Credits")
+credit_roll_list = [NodePath("CreditsRoll/Programming"), NodePath("CreditsRoll/Dialogues"), NodePath("CreditsRoll/Art"), NodePath("CreditsRoll/Music"), NodePath("CreditsRoll/SoundFX"), NodePath("CreditsRoll/SpecialThanks")]
+credits_roll = NodePath("CreditsRoll")
 
-[node name="ColorRect" type="TextureRect" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-layout_mode = 0
-offset_right = 160.0
-offset_bottom = 144.0
-mouse_filter = 2
-texture = ExtResource("2_2jjnl")
+position = Vector2(80, 0)
+sprite_frames = SubResource("SpriteFrames_toovs")
+autoplay = "default"
+frame_progress = 0.155889
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatedSprite2D"]
+position = Vector2(0, 72)
+texture = ExtResource("3_cwxpm")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -51,6 +137,8 @@ theme_override_colors/font_pressed_color = Color(0.878431, 0.972549, 0.815686, 1
 theme_override_colors/font_hover_color = Color(0.878431, 0.972549, 0.815686, 1)
 theme_override_colors/font_focus_color = Color(0.878431, 0.972549, 0.815686, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.878431, 0.972549, 0.815686, 1)
+theme_override_colors/font_outline_color = Color(0.0313726, 0.0941176, 0.12549, 1)
+theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_1wyrn")
 theme_override_font_sizes/font_size = 8
 action_mode = 0
@@ -68,8 +156,361 @@ theme_override_colors/font_pressed_color = Color(0.878431, 0.972549, 0.815686, 1
 theme_override_colors/font_hover_color = Color(0.878431, 0.972549, 0.815686, 1)
 theme_override_colors/font_focus_color = Color(0.878431, 0.972549, 0.815686, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.878431, 0.972549, 0.815686, 1)
+theme_override_colors/font_outline_color = Color(0.0313726, 0.0941176, 0.12549, 1)
+theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_1wyrn")
 theme_override_font_sizes/font_size = 8
+action_mode = 0
 text = "Credits"
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_we5tq")
+volume_db = -6.0
+autoplay = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8n254")
+}
+
+[node name="CreditsAnimPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_spgun")
+}
+
+[node name="GBJamLabel" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 129.0
+offset_top = 137.0
+offset_right = 185.0
+offset_bottom = 153.0
+theme = ExtResource("1_c6jhq")
+theme_override_colors/font_color = Color(0.0313726, 0.0941176, 0.12549, 1)
+theme_override_fonts/font = ExtResource("7_fwn2m")
+theme_override_font_sizes/font_size = 6
+text = "GBJam11"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 2
+layout_mode = 0
+offset_left = 21.0
+offset_top = -103.0
+offset_right = 141.0
+offset_bottom = -18.0
+color = Color(0, 0, 0, 1)
+
+[node name="CreditsRoll" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Programming" type="Control" parent="CreditsRoll"]
+anchors_preset = 0
+offset_left = 32.0
+offset_top = -87.0
+offset_right = 132.0
+offset_bottom = -17.0
+
+[node name="Programming" type="Label" parent="CreditsRoll/Programming"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -44.0
+offset_top = 5.0
+offset_right = 44.0
+offset_bottom = 16.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.533333, 0.752941, 0.439216, 1)
+theme_override_fonts/font = ExtResource("2_1wyrn")
+theme_override_font_sizes/font_size = 8
+text = "Programming"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AlvesitoLabel" type="Label" parent="CreditsRoll/Programming"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -44.0
+offset_top = 20.0
+offset_right = 44.0
+offset_bottom = 31.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.878431, 0.972549, 0.815686, 1)
+theme_override_fonts/font = ExtResource("2_1wyrn")
+theme_override_font_sizes/font_size = 8
+text = "Alvesito"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dialogues" type="Control" parent="CreditsRoll"]
+visible = false
+anchors_preset = 0
+offset_left = 32.0
+offset_top = -87.0
+offset_right = 132.0
+offset_bottom = -17.0
+
+[node name="Dialogues" type="Label" parent="CreditsRoll/Dialogues"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -44.0
+offset_top = 5.0
+offset_right = 44.0
+offset_bottom = 16.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.533333, 0.752941, 0.439216, 1)
+theme_override_fonts/font = ExtResource("2_1wyrn")
+theme_override_font_sizes/font_size = 8
+text = "Dialogues"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ZehaiLabel" type="Label" parent="CreditsRoll/Dialogues"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -44.0
+offset_top = 20.0
+offset_right = 44.0
+offset_bottom = 31.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.878431, 0.972549, 0.815686, 1)
+theme_override_fonts/font = ExtResource("2_1wyrn")
+theme_override_font_sizes/font_size = 8
+text = "Zehai"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Art" type="Control" parent="CreditsRoll"]
+visible = false
+anchors_preset = 0
+offset_left = 32.0
+offset_top = -98.0
+offset_right = 132.0
+offset_bottom = -28.0
+
+[node name="Art" type="Label" parent="CreditsRoll/Art"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -44.0
+offset_top = 5.0
+offset_right = 44.0
+offset_bottom = 16.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.533333, 0.752941, 0.439216, 1)
+theme_override_fonts/font = ExtResource("2_1wyrn")
+theme_override_font_sizes/font_size = 8
+text = "Art"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CarmentwoLabel" type="Label" parent="CreditsRoll/Art"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -44.0
+offset_top = 20.0
+offset_right = 44.0
+offset_bottom = 31.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.878431, 0.972549, 0.815686, 1)
+theme_override_fonts/font = ExtResource("2_1wyrn")
+theme_override_font_sizes/font_size = 8
+text = "Carmentwo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BulletLabel" type="Label" parent="CreditsRoll/Art"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -44.0
+offset_top = 32.0
+offset_right = 44.0
+offset_bottom = 43.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.878431, 0.972549, 0.815686, 1)
+theme_override_fonts/font = ExtResource("2_1wyrn")
+theme_override_font_sizes/font_size = 8
+text = "BulletCorp
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ZehaiLabel" type="Label" parent="CreditsRoll/Art"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -44.0
+offset_top = 44.0
+offset_right = 44.0
+offset_bottom = 55.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.878431, 0.972549, 0.815686, 1)
+theme_override_fonts/font = ExtResource("2_1wyrn")
+theme_override_font_sizes/font_size = 8
+text = "Zehai
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music" type="Control" parent="CreditsRoll"]
+visible = false
+anchors_preset = 0
+offset_left = 32.0
+offset_top = -87.0
+offset_right = 132.0
+offset_bottom = -17.0
+
+[node name="Music" type="Label" parent="CreditsRoll/Music"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -44.0
+offset_top = 5.0
+offset_right = 44.0
+offset_bottom = 16.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.533333, 0.752941, 0.439216, 1)
+theme_override_fonts/font = ExtResource("2_1wyrn")
+theme_override_font_sizes/font_size = 8
+text = "Dialogues"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MimiLabel" type="Label" parent="CreditsRoll/Music"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -44.0
+offset_top = 20.0
+offset_right = 44.0
+offset_bottom = 31.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.878431, 0.972549, 0.815686, 1)
+theme_override_fonts/font = ExtResource("2_1wyrn")
+theme_override_font_sizes/font_size = 8
+text = "Mimi"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SoundFX" type="Control" parent="CreditsRoll"]
+visible = false
+anchors_preset = 0
+offset_left = 32.0
+offset_top = -87.0
+offset_right = 132.0
+offset_bottom = -17.0
+
+[node name="SoundFX" type="Label" parent="CreditsRoll/SoundFX"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -44.0
+offset_top = 5.0
+offset_right = 44.0
+offset_bottom = 16.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.533333, 0.752941, 0.439216, 1)
+theme_override_fonts/font = ExtResource("2_1wyrn")
+theme_override_font_sizes/font_size = 8
+text = "Sound Effects"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BulletLabel" type="Label" parent="CreditsRoll/SoundFX"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -44.0
+offset_top = 20.0
+offset_right = 44.0
+offset_bottom = 31.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.878431, 0.972549, 0.815686, 1)
+theme_override_fonts/font = ExtResource("2_1wyrn")
+theme_override_font_sizes/font_size = 8
+text = "Bullet"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpecialThanks" type="Control" parent="CreditsRoll"]
+visible = false
+anchors_preset = 0
+offset_left = 32.0
+offset_top = -87.0
+offset_right = 132.0
+offset_bottom = -17.0
+
+[node name="SpecialThanks" type="Label" parent="CreditsRoll/SpecialThanks"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -44.0
+offset_top = 5.0
+offset_right = 44.0
+offset_bottom = 16.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.533333, 0.752941, 0.439216, 1)
+theme_override_fonts/font = ExtResource("2_1wyrn")
+theme_override_font_sizes/font_size = 8
+text = "Special Thanks"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GabiLabel" type="Label" parent="CreditsRoll/SpecialThanks"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -44.0
+offset_top = 20.0
+offset_right = 44.0
+offset_bottom = 31.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.878431, 0.972549, 0.815686, 1)
+theme_override_fonts/font = ExtResource("2_1wyrn")
+theme_override_font_sizes/font_size = 8
+text = "Gabriel Machado"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
