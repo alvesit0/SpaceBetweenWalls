@@ -9,7 +9,7 @@ class_name Ship5Results
 
 const WIN_MUSIC = preload("res://sound/music/win.wav")
 const LOSS_MUSIC = preload("res://sound/music/loss.wav")
-const DAY_CHANGE = preload("res://scenes/day_change.tscn")
+const ENDING = preload("res://scenes/ending.tscn")
 
 var points: int
 
@@ -22,11 +22,11 @@ func _ready():
 func calculate_rating() -> String:
 	var placeables: Array[PlaceableData] = PlayerManager.player.placed_placeables
 	for p in placeables:
-		points += p.elegant_value * 1.2
-		points += p.rustic_value * 0.2
-		points += p.futuristic_value * -0.4
-		points += p.modern_value * -0.2
-		points += p.otherworldly_value * -1
+		points += p.elegant_value * --0.8
+		points += p.rustic_value * -1
+		points += p.futuristic_value * 0.6
+		points += p.modern_value * -0.6
+		points += p.otherworldly_value * 1
 	points = snapped(points, 0.01)
 	if points > 45:
 		audio.stream = WIN_MUSIC
@@ -78,6 +78,6 @@ func _input(event):
 	if Input.is_action_just_pressed("gboy_a") or Input.is_action_just_pressed("gboy_select"):
 		PlayerManager.player.current_day += 1
 		await Transition.dissolve()
-		var scene = DAY_CHANGE.instantiate()
+		var scene = ENDING.instantiate()
 		get_parent().add_child(scene)
 		queue_free()

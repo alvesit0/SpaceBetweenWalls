@@ -28,7 +28,6 @@ script = ExtResource("1_4e4no")
 item_list_data = ExtResource("4_7eq43")
 
 [node name="PostProcessing" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="GBoyFilter" type="ColorRect" parent="PostProcessing"]
 material = SubResource("ShaderMaterial_3tqqw")

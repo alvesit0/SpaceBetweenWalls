@@ -22,11 +22,11 @@ func _ready():
 func calculate_rating() -> String:
 	var placeables: Array[PlaceableData] = PlayerManager.player.placed_placeables
 	for p in placeables:
-		points += p.elegant_value * 1.2
-		points += p.rustic_value * 0.2
+		points += p.elegant_value * 0.6
+		points += p.rustic_value * 1
 		points += p.futuristic_value * -0.4
-		points += p.modern_value * -0.2
-		points += p.otherworldly_value * -1
+		points += p.modern_value * -0.6
+		points += p.otherworldly_value * -0.6
 	points = snapped(points, 0.01)
 	if points > 45:
 		audio.stream = WIN_MUSIC
