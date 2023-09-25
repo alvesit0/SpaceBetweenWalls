@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Player.gd" id="1_4e4no"]
 [ext_resource type="Script" path="res://Main.gd" id="1_ikv4p"]
-[ext_resource type="PackedScene" uid="uid://bivh14t8aek5t" path="res://scenes/ship_1.tscn" id="2_yb7qp"]
 [ext_resource type="Resource" uid="uid://c2njanicelbam" path="res://placeable/initial_inventory.tres" id="4_7eq43"]
+[ext_resource type="PackedScene" uid="uid://cpu61m5x1i5hv" path="res://scenes/ship_5.tscn" id="5_kalkw"]
 [ext_resource type="PackedScene" uid="uid://c5hw57t1vdh1p" path="res://scenes/ingame_hud.tscn" id="6_g5hay"]
 [ext_resource type="Shader" path="res://gboy_filter.gdshader" id="8_uikug"]
 
@@ -19,10 +19,6 @@ script = ExtResource("1_ikv4p")
 hud = NodePath("HUD")
 player = NodePath("Player")
 
-[node name="Ship_1" parent="." instance=ExtResource("2_yb7qp")]
-
-[node name="HUD" parent="." instance=ExtResource("6_g5hay")]
-
 [node name="Player" type="Node2D" parent="."]
 script = ExtResource("1_4e4no")
 item_list_data = ExtResource("4_7eq43")
@@ -35,3 +31,7 @@ offset_left = -337.0
 offset_top = -239.0
 offset_right = 490.0
 offset_bottom = 369.0
+
+[node name="Ship_5" parent="." instance=ExtResource("5_kalkw")]
+
+[node name="HUD" parent="." instance=ExtResource("6_g5hay")]

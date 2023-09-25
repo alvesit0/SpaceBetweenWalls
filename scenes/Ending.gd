@@ -12,13 +12,14 @@ const MAIN_MENU = preload("res://scenes/main_menu.tscn")
 @onready var texture_rect = $TextureRect
 
 func _ready():
-	await Transition.resolve()
 	if PlayerManager.player.earnings > 500:
 		texture_rect.texture = GOOD_ENDING
 		audio.stream = WIN_MUSIC
 	else:
 		texture_rect.texture = BAD_ENDING
 		audio.stream = LOSS_MUSIC
+	audio.play()
+	await Transition.resolve()
 
 func _input(event):
 	if Input.is_action_just_pressed("gboy_a") \
