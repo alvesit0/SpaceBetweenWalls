@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="PlaceableData" load_steps=5 format=3 uid="uid://b5ei8bnmemkll"]
+
+[ext_resource type="Resource" uid="uid://bke14phardlkl" path="res://placeable/resources/lamp/otherworldly/otherworldly_lamp_left.tres" id="2_0k13k"]
+[ext_resource type="Resource" uid="uid://bn81qvihd5vmj" path="res://placeable/resources/lamp/otherworldly/otherworldly_lamp_right.tres" id="5_2mmal"]
+[ext_resource type="Script" path="res://placeable/PlaceableData.gd" id="5_sfne6"]
+[ext_resource type="Texture2D" uid="uid://du32hkut138mw" path="res://placeable/resources/lamp/otherworldly/lamparaOtherwordly1.png" id="6_sgqid"]
+
+[resource]
+script = ExtResource("5_sfne6")
+name = "Tentacle"
+available_rotations = Array[Resource("res://placeable/RotatedPlaceableData.gd")]([ExtResource("5_2mmal"), ExtResource("2_0k13k")])
+current_rotation = ExtResource("5_2mmal")
+price = 40
+texture = ExtResource("6_sgqid")
+goes_on_wall = false
+rustic_value = 0
+elegant_value = 0
+modern_value = 0
+futuristic_value = 0
+otherworldly_value = 6

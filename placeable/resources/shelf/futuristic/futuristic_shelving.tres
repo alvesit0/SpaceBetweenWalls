@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="PlaceableData" load_steps=7 format=3 uid="uid://cxyhc44cbgawi"]
+
+[ext_resource type="Resource" uid="uid://ced7t42g7fae3" path="res://placeable/resources/shelf/futuristic/futuristic_shelving_front.tres" id="1_amghs"]
+[ext_resource type="Script" path="res://placeable/PlaceableData.gd" id="1_dvp2x"]
+[ext_resource type="Resource" uid="uid://bm6r4paqob82q" path="res://placeable/resources/shelf/futuristic/futuristic_shelving_right.tres" id="2_yf3ph"]
+[ext_resource type="Resource" uid="uid://bs6rgsh6ddmsx" path="res://placeable/resources/shelf/futuristic/futuristic_shelving_back.tres" id="3_jwc5o"]
+[ext_resource type="Texture2D" uid="uid://bsbinq8lkbfxl" path="res://placeable/resources/shelf/futuristic/estanteriaFuturista1.png" id="3_qk7ni"]
+[ext_resource type="Resource" uid="uid://chqqhjv0e6es4" path="res://placeable/resources/shelf/futuristic/futuristic_shelving_left.tres" id="4_bgy1j"]
+
+[resource]
+script = ExtResource("1_dvp2x")
+name = "Circuit Box"
+available_rotations = Array[Resource("res://placeable/RotatedPlaceableData.gd")]([ExtResource("1_amghs"), ExtResource("2_yf3ph"), ExtResource("3_jwc5o"), ExtResource("4_bgy1j")])
+current_rotation = ExtResource("1_amghs")
+price = 90
+texture = ExtResource("3_qk7ni")
+goes_on_wall = false
+rustic_value = 0
+elegant_value = 0
+modern_value = 2
+futuristic_value = 7
+otherworldly_value = 2

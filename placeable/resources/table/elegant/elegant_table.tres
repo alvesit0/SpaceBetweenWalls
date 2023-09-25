@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="PlaceableData" load_steps=5 format=3 uid="uid://cljmp3ce53d7x"]
+
+[ext_resource type="Script" path="res://placeable/PlaceableData.gd" id="1_d1i2d"]
+[ext_resource type="Resource" uid="uid://d222hieagn8ni" path="res://placeable/resources/table/elegant/elegant_table_front.tres" id="1_rgjf1"]
+[ext_resource type="Texture2D" uid="uid://dyes40q33ve76" path="res://placeable/resources/table/elegant/mesaElegante1.png" id="2_a2aow"]
+[ext_resource type="Resource" uid="uid://fi23o4h3fut2" path="res://placeable/resources/table/elegant/elegant_table_right.tres" id="2_sfa44"]
+
+[resource]
+script = ExtResource("1_d1i2d")
+name = "E. Table"
+available_rotations = Array[Resource("res://placeable/RotatedPlaceableData.gd")]([ExtResource("1_rgjf1"), ExtResource("2_sfa44")])
+current_rotation = ExtResource("1_rgjf1")
+price = 65
+texture = ExtResource("2_a2aow")
+goes_on_wall = false
+rustic_value = 2
+elegant_value = 6
+modern_value = 0
+futuristic_value = 0
+otherworldly_value = 0

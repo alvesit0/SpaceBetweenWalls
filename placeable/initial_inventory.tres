@@ -1,14 +1,34 @@
-[gd_resource type="Resource" script_class="ListedItemListData" load_steps=12 format=3 uid="uid://c2njanicelbam"]
+[gd_resource type="Resource" script_class="ListedItemListData" load_steps=37 format=3 uid="uid://c2njanicelbam"]
 
 [ext_resource type="Script" path="res://hud/ListedItemListData.gd" id="1_87e7x"]
 [ext_resource type="Resource" uid="uid://8f05jdw6k3iu" path="res://placeable/resources/chair/rustic/rustic_chair.tres" id="1_hj2ep"]
 [ext_resource type="Script" path="res://hud/ListedItemData.gd" id="2_5bhpr"]
+[ext_resource type="Resource" uid="uid://cxyhc44cbgawi" path="res://placeable/resources/shelf/futuristic/futuristic_shelving.tres" id="3_1p1xl"]
 [ext_resource type="Resource" uid="uid://dqlytwlk3tm7f" path="res://placeable/resources/sofa/elegant/elegant_sofa.tres" id="3_eqt8s"]
 [ext_resource type="Resource" uid="uid://qmcdrdgul6yn" path="res://placeable/resources/painting/rustic/rustic_painting.tres" id="4_pmk4a"]
+[ext_resource type="Resource" uid="uid://cq1ywo3fag0k7" path="res://placeable/resources/tv/modern/modern_tv.tres" id="4_tmneu"]
+[ext_resource type="Resource" uid="uid://rkv6tbdydnih" path="res://placeable/resources/sofa/modern/modern_sofa.tres" id="5_orjrt"]
+[ext_resource type="Resource" uid="uid://cqi673lpyv721" path="res://placeable/resources/painting/modern/modern_painting.tres" id="6_wyc4h"]
+[ext_resource type="Resource" uid="uid://b5ei8bnmemkll" path="res://placeable/resources/lamp/otherworldly/otherworldly_lamp.tres" id="7_osyqt"]
+[ext_resource type="Resource" uid="uid://cljmp3ce53d7x" path="res://placeable/resources/table/elegant/elegant_table.tres" id="9_e6c2q"]
+[ext_resource type="Resource" uid="uid://da5mp6lomlkf6" path="res://placeable/resources/bed/modern/modern_bed.tres" id="10_ht7ku"]
+[ext_resource type="Resource" uid="uid://bs61d0da4wg7" path="res://placeable/resources/window/rustic/rustic_window.tres" id="11_yn0wn"]
 
 [sub_resource type="Resource" id="Resource_rahv3"]
 script = ExtResource("2_5bhpr")
 placeable_data = ExtResource("3_eqt8s")
+
+[sub_resource type="Resource" id="Resource_xqsud"]
+script = ExtResource("2_5bhpr")
+placeable_data = ExtResource("9_e6c2q")
+
+[sub_resource type="Resource" id="Resource_q8mi2"]
+script = ExtResource("2_5bhpr")
+placeable_data = ExtResource("4_tmneu")
+
+[sub_resource type="Resource" id="Resource_juqrg"]
+script = ExtResource("2_5bhpr")
+placeable_data = ExtResource("3_1p1xl")
 
 [sub_resource type="Resource" id="Resource_407w4"]
 script = ExtResource("2_5bhpr")
@@ -22,6 +42,58 @@ placeable_data = ExtResource("3_eqt8s")
 script = ExtResource("2_5bhpr")
 placeable_data = ExtResource("4_pmk4a")
 
+[sub_resource type="Resource" id="Resource_200ud"]
+script = ExtResource("2_5bhpr")
+placeable_data = ExtResource("5_orjrt")
+
+[sub_resource type="Resource" id="Resource_ul1bb"]
+script = ExtResource("2_5bhpr")
+placeable_data = ExtResource("6_wyc4h")
+
+[sub_resource type="Resource" id="Resource_wilnv"]
+script = ExtResource("2_5bhpr")
+placeable_data = ExtResource("7_osyqt")
+
+[sub_resource type="Resource" id="Resource_3n5w2"]
+script = ExtResource("2_5bhpr")
+placeable_data = ExtResource("3_1p1xl")
+
+[sub_resource type="Resource" id="Resource_uveey"]
+script = ExtResource("2_5bhpr")
+placeable_data = ExtResource("9_e6c2q")
+
+[sub_resource type="Resource" id="Resource_1gdei"]
+script = ExtResource("2_5bhpr")
+placeable_data = ExtResource("10_ht7ku")
+
+[sub_resource type="Resource" id="Resource_qhd0n"]
+script = ExtResource("2_5bhpr")
+placeable_data = ExtResource("11_yn0wn")
+
+[sub_resource type="Resource" id="Resource_nptwv"]
+script = ExtResource("2_5bhpr")
+placeable_data = ExtResource("4_tmneu")
+
+[sub_resource type="Resource" id="Resource_7fxmd"]
+script = ExtResource("2_5bhpr")
+placeable_data = ExtResource("5_orjrt")
+
+[sub_resource type="Resource" id="Resource_jk4dg"]
+script = ExtResource("2_5bhpr")
+placeable_data = ExtResource("6_wyc4h")
+
+[sub_resource type="Resource" id="Resource_oar06"]
+script = ExtResource("2_5bhpr")
+placeable_data = ExtResource("10_ht7ku")
+
+[sub_resource type="Resource" id="Resource_reaxb"]
+script = ExtResource("2_5bhpr")
+placeable_data = ExtResource("4_tmneu")
+
+[sub_resource type="Resource" id="Resource_vlqvg"]
+script = ExtResource("2_5bhpr")
+placeable_data = ExtResource("7_osyqt")
+
 [sub_resource type="Resource" id="Resource_luewa"]
 script = ExtResource("2_5bhpr")
 placeable_data = ExtResource("1_hj2ep")
@@ -30,11 +102,15 @@ placeable_data = ExtResource("1_hj2ep")
 script = ExtResource("2_5bhpr")
 placeable_data = ExtResource("4_pmk4a")
 
+[sub_resource type="Resource" id="Resource_iicjt"]
+script = ExtResource("2_5bhpr")
+placeable_data = ExtResource("11_yn0wn")
+
 [resource]
 script = ExtResource("1_87e7x")
-listed_items = Array[ExtResource("2_5bhpr")]([SubResource("Resource_407w4"), SubResource("Resource_modb0"), SubResource("Resource_dlsiv")])
-rustic_listed_items = Array[ExtResource("2_5bhpr")]([SubResource("Resource_luewa"), SubResource("Resource_dv4mn")])
-elegant_listed_items = Array[ExtResource("2_5bhpr")]([SubResource("Resource_rahv3")])
-modern_listed_items = Array[ExtResource("2_5bhpr")]([])
-futuristic_listed_items = Array[ExtResource("2_5bhpr")]([])
-otherworldly_listed_items = Array[ExtResource("2_5bhpr")]([])
+listed_items = Array[ExtResource("2_5bhpr")]([SubResource("Resource_407w4"), SubResource("Resource_modb0"), SubResource("Resource_dlsiv"), SubResource("Resource_200ud"), SubResource("Resource_ul1bb"), SubResource("Resource_wilnv"), SubResource("Resource_3n5w2"), SubResource("Resource_uveey"), SubResource("Resource_1gdei"), SubResource("Resource_qhd0n"), SubResource("Resource_nptwv")])
+rustic_listed_items = Array[ExtResource("2_5bhpr")]([SubResource("Resource_luewa"), SubResource("Resource_dv4mn"), SubResource("Resource_iicjt")])
+elegant_listed_items = Array[ExtResource("2_5bhpr")]([SubResource("Resource_rahv3"), SubResource("Resource_xqsud"), SubResource("Resource_q8mi2")])
+modern_listed_items = Array[ExtResource("2_5bhpr")]([SubResource("Resource_7fxmd"), SubResource("Resource_jk4dg"), SubResource("Resource_oar06"), SubResource("Resource_reaxb")])
+futuristic_listed_items = Array[ExtResource("2_5bhpr")]([SubResource("Resource_juqrg")])
+otherworldly_listed_items = Array[ExtResource("2_5bhpr")]([SubResource("Resource_vlqvg")])

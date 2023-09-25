@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="PlaceableData" load_steps=7 format=3 uid="uid://da5mp6lomlkf6"]
+
+[ext_resource type="Resource" uid="uid://diwl145xbe8js" path="res://placeable/resources/bed/modern/modern_bed_right.tres" id="2_bew61"]
+[ext_resource type="Resource" uid="uid://bbmoscydcvsoj" path="res://placeable/resources/bed/modern/modern_bed_front.tres" id="3_4821c"]
+[ext_resource type="Resource" uid="uid://du8j1su5crt0d" path="res://placeable/resources/bed/modern/modern_bed_back.tres" id="3_kirj6"]
+[ext_resource type="Resource" uid="uid://bcbr7iqu4c1mj" path="res://placeable/resources/bed/modern/modern_bed_left.tres" id="4_wh55j"]
+[ext_resource type="Script" path="res://placeable/PlaceableData.gd" id="5_x5263"]
+[ext_resource type="Texture2D" uid="uid://cmpsomla5ktgf" path="res://placeable/resources/bed/modern/camaModerna1.png" id="6_iarwd"]
+
+[resource]
+script = ExtResource("5_x5263")
+name = "Modern Bed"
+available_rotations = Array[Resource("res://placeable/RotatedPlaceableData.gd")]([ExtResource("3_4821c"), ExtResource("2_bew61"), ExtResource("3_kirj6"), ExtResource("4_wh55j")])
+current_rotation = ExtResource("3_4821c")
+price = 85
+texture = ExtResource("6_iarwd")
+goes_on_wall = false
+rustic_value = 0
+elegant_value = 1
+modern_value = 8
+futuristic_value = 5
+otherworldly_value = 0

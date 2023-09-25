@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="PlaceableData" load_steps=8 format=3 uid="uid://rkv6tbdydnih"]
+
+[ext_resource type="Resource" uid="uid://cw4bhhyfbsrkx" path="res://placeable/resources/sofa/modern/modern_sofa_front.tres" id="1_57teh"]
+[ext_resource type="Resource" uid="uid://b656oj8tgcdq7" path="res://placeable/resources/sofa/elegant/elegant_sofa_front.tres" id="1_l1gkw"]
+[ext_resource type="Resource" uid="uid://bmlpyik34m5bf" path="res://placeable/resources/sofa/modern/modern_sofa_right.tres" id="2_b76qh"]
+[ext_resource type="Resource" uid="uid://juwec2qdr1y" path="res://placeable/resources/sofa/modern/modern_sofa_back.tres" id="3_arkl1"]
+[ext_resource type="Resource" uid="uid://cu0ia84nbo48u" path="res://placeable/resources/sofa/modern/modern_sofa_left.tres" id="4_v8vl0"]
+[ext_resource type="Script" path="res://placeable/PlaceableData.gd" id="5_ggxd4"]
+[ext_resource type="Texture2D" uid="uid://dwim31pfojkd0" path="res://placeable/resources/sofa/modern/sofaModerno1.png" id="6_8h25u"]
+
+[resource]
+script = ExtResource("5_ggxd4")
+name = "Modern Sofa"
+available_rotations = Array[Resource("res://placeable/RotatedPlaceableData.gd")]([ExtResource("1_57teh"), ExtResource("2_b76qh"), ExtResource("3_arkl1"), ExtResource("4_v8vl0")])
+current_rotation = ExtResource("1_l1gkw")
+price = 90
+texture = ExtResource("6_8h25u")
+goes_on_wall = false
+rustic_value = 0
+elegant_value = 0
+modern_value = 9
+futuristic_value = 2
+otherworldly_value = 0

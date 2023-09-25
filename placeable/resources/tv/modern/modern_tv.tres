@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="PlaceableData" load_steps=7 format=3 uid="uid://cq1ywo3fag0k7"]
+
+[ext_resource type="Script" path="res://placeable/PlaceableData.gd" id="1_1fa22"]
+[ext_resource type="Resource" uid="uid://bhavmd5a4m030" path="res://placeable/resources/tv/modern/modern_tv_front.tres" id="1_fw1e6"]
+[ext_resource type="Resource" uid="uid://dqlolf3pm0d32" path="res://placeable/resources/tv/modern/modern_tv_right.tres" id="2_v6p3e"]
+[ext_resource type="Texture2D" uid="uid://cqjuunpnt3nuq" path="res://placeable/resources/tv/modern/teleModernaElegante1.png" id="3_fkueh"]
+[ext_resource type="Resource" uid="uid://7n51acnkr0s8" path="res://placeable/resources/tv/modern/modern_tv_back.tres" id="3_hsyk7"]
+[ext_resource type="Resource" uid="uid://bpsyrby8kttwn" path="res://placeable/resources/tv/modern/modern_tv_left.tres" id="4_wd38m"]
+
+[resource]
+script = ExtResource("1_1fa22")
+name = "Plasma TV"
+available_rotations = Array[Resource("res://placeable/RotatedPlaceableData.gd")]([ExtResource("1_fw1e6"), ExtResource("2_v6p3e"), ExtResource("3_hsyk7"), ExtResource("4_wd38m")])
+current_rotation = ExtResource("1_fw1e6")
+price = 100
+texture = ExtResource("3_fkueh")
+goes_on_wall = false
+rustic_value = 1
+elegant_value = 5
+modern_value = 9
+futuristic_value = 3
+otherworldly_value = 0
