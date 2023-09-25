@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="PlaceableData" load_steps=7 format=3 uid="uid://cfnyr5vq6o6ij"]
+
+[ext_resource type="Resource" uid="uid://beo72hhi17m5m" path="res://placeable/resources/sofa/rustic/rustic_sofa_front.tres" id="1_tafyq"]
+[ext_resource type="Resource" uid="uid://dx4trkdgg83sr" path="res://placeable/resources/sofa/rustic/rustic_sofa_right.tres" id="2_m4qfe"]
+[ext_resource type="Resource" uid="uid://cdvw5fdlkyqoe" path="res://placeable/resources/sofa/rustic/rustic_sofa_back.tres" id="3_e1fgt"]
+[ext_resource type="Resource" uid="uid://de5cysi4xt511" path="res://placeable/resources/sofa/rustic/rustic_sofa_left.tres" id="4_eyrrb"]
+[ext_resource type="Script" path="res://placeable/PlaceableData.gd" id="5_74m7n"]
+[ext_resource type="Texture2D" uid="uid://c87eie3cgia4o" path="res://placeable/resources/sofa/rustic/sofaRustico1.png" id="6_6mhsl"]
+
+[resource]
+script = ExtResource("5_74m7n")
+name = "Rustic Sofa"
+available_rotations = Array[Resource("res://placeable/RotatedPlaceableData.gd")]([ExtResource("1_tafyq"), ExtResource("2_m4qfe"), ExtResource("3_e1fgt"), ExtResource("4_eyrrb")])
+current_rotation = ExtResource("1_tafyq")
+price = 65
+texture = ExtResource("6_6mhsl")
+goes_on_wall = false
+rustic_value = 7
+elegant_value = 3
+modern_value = 1
+futuristic_value = 0
+otherworldly_value = 0

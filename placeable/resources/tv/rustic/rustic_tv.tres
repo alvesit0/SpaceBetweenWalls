@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="PlaceableData" load_steps=7 format=3 uid="uid://ddl3aexkmrx6o"]
+
+[ext_resource type="Resource" uid="uid://c5tixgc7eqnub" path="res://placeable/resources/tv/rustic/rustic_tv_front.tres" id="1_gs8vf"]
+[ext_resource type="Resource" uid="uid://63ke7m7je1m1" path="res://placeable/resources/tv/rustic/rustic_tv_right.tres" id="2_f5cgj"]
+[ext_resource type="Resource" uid="uid://cgd11bcbo0wfx" path="res://placeable/resources/tv/rustic/rustic_tv_back.tres" id="3_kwwa3"]
+[ext_resource type="Resource" uid="uid://crdf457ffnyru" path="res://placeable/resources/tv/rustic/rustic_tv_left.tres" id="4_h36hu"]
+[ext_resource type="Script" path="res://placeable/PlaceableData.gd" id="5_evgm4"]
+[ext_resource type="Texture2D" uid="uid://dvpmih0ktshsj" path="res://placeable/resources/tv/rustic/teleRustica1.png" id="6_o44jw"]
+
+[resource]
+script = ExtResource("5_evgm4")
+name = "CRT"
+available_rotations = Array[Resource("res://placeable/RotatedPlaceableData.gd")]([ExtResource("1_gs8vf"), ExtResource("2_f5cgj"), ExtResource("3_kwwa3"), ExtResource("4_h36hu")])
+current_rotation = ExtResource("1_gs8vf")
+price = 60
+texture = ExtResource("6_o44jw")
+goes_on_wall = false
+rustic_value = 7
+elegant_value = 1
+modern_value = 0
+futuristic_value = 0
+otherworldly_value = 0

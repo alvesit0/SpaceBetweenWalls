@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="PlaceableData" load_steps=7 format=3 uid="uid://8f0fl3or72tv"]
+
+[ext_resource type="Resource" uid="uid://c1j7r50wdlrhb" path="res://placeable/resources/tv/futuristic/futuristic_tv_front.tres" id="1_4ohau"]
+[ext_resource type="Resource" uid="uid://1kf88lt2gta0" path="res://placeable/resources/tv/futuristic/futuristic_tv_right.tres" id="2_4vmj8"]
+[ext_resource type="Resource" uid="uid://n47sp3cohxo8" path="res://placeable/resources/tv/futuristic/futuristic_tv_back.tres" id="3_338jb"]
+[ext_resource type="Resource" uid="uid://bk3tc8ilign7l" path="res://placeable/resources/tv/futuristic/futuristic_tv_left.tres" id="4_mnmro"]
+[ext_resource type="Script" path="res://placeable/PlaceableData.gd" id="5_20qgr"]
+[ext_resource type="Texture2D" uid="uid://bm1f2bh84m5up" path="res://placeable/resources/tv/futuristic/teleFuturista1.png" id="6_x78th"]
+
+[resource]
+script = ExtResource("5_20qgr")
+name = "Holo. TV"
+available_rotations = Array[Resource("res://placeable/RotatedPlaceableData.gd")]([ExtResource("1_4ohau"), ExtResource("2_4vmj8"), ExtResource("3_338jb"), ExtResource("4_mnmro")])
+current_rotation = ExtResource("1_4ohau")
+price = 150
+texture = ExtResource("6_x78th")
+goes_on_wall = false
+rustic_value = 0
+elegant_value = 0
+modern_value = 3
+futuristic_value = 12
+otherworldly_value = 2

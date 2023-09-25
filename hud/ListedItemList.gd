@@ -17,6 +17,7 @@ const FUTURISTIC_ICON = preload("res://images/item_list_icons/futuristic_icon.pn
 @export var otherworldly_items_container: VBoxContainer
 @export var futuristic_items_container: VBoxContainer
 @export var tab_container: TabContainer
+@onready var all_items_scroll_container = $TabContainer/AllItemsScrollContainer
 var current_tab: VBoxContainer
 
 @onready var back_sound = $BackSound
@@ -39,6 +40,7 @@ func _ready() -> void:
 	tab_container.set_tab_title(5, "")
 	tabindex = 0
 	current_tab = all_items_container
+	all_items_scroll_container.set_deferred("scroll_vertical", 0)
 	set_focus()
 	
 func _input(event):

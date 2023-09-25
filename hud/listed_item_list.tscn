@@ -113,6 +113,7 @@ theme = ExtResource("1_fquys")
 theme_override_constants/separation = 4
 
 [node name="RusticItemsScrollContainer" type="ScrollContainer" parent="TabContainer"]
+visible = false
 custom_minimum_size = Vector2(160, 116)
 layout_mode = 2
 mouse_filter = 2
@@ -127,6 +128,7 @@ mouse_filter = 2
 theme = ExtResource("1_fquys")
 
 [node name="ElegantItemsScrollContainer" type="ScrollContainer" parent="TabContainer"]
+visible = false
 custom_minimum_size = Vector2(160, 116)
 layout_mode = 2
 mouse_filter = 2
@@ -141,6 +143,7 @@ mouse_filter = 2
 theme = ExtResource("1_fquys")
 
 [node name="ModernItemsScrollContainer" type="ScrollContainer" parent="TabContainer"]
+visible = false
 custom_minimum_size = Vector2(160, 116)
 layout_mode = 2
 mouse_filter = 2
@@ -155,6 +158,7 @@ mouse_filter = 2
 theme = ExtResource("1_fquys")
 
 [node name="OtherworldlyItemsScrollCotainer" type="ScrollContainer" parent="TabContainer"]
+visible = false
 custom_minimum_size = Vector2(160, 116)
 layout_mode = 2
 mouse_filter = 2
@@ -169,6 +173,7 @@ mouse_filter = 2
 theme = ExtResource("1_fquys")
 
 [node name="FuturisticItemsScrollContainer" type="ScrollContainer" parent="TabContainer"]
+visible = false
 custom_minimum_size = Vector2(160, 116)
 layout_mode = 2
 mouse_filter = 2

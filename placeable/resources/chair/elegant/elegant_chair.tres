@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="PlaceableData" load_steps=7 format=3 uid="uid://bnxvdnvenan4j"]
+
+[ext_resource type="Resource" uid="uid://lvojkymm5gjr" path="res://placeable/resources/chair/elegant/elegant_chair_front.tres" id="1_pbbuc"]
+[ext_resource type="Resource" uid="uid://cm2lyknxijvgh" path="res://placeable/resources/chair/elegant/elegant_chair_right.tres" id="2_jlu5o"]
+[ext_resource type="Resource" uid="uid://3adb7glqgsth" path="res://placeable/resources/chair/elegant/elegant_chair_back.tres" id="3_basp8"]
+[ext_resource type="Resource" uid="uid://cxyqjsfde3upb" path="res://placeable/resources/chair/elegant/elegant_chair_left.tres" id="4_bq085"]
+[ext_resource type="Script" path="res://placeable/PlaceableData.gd" id="5_br2eh"]
+[ext_resource type="Texture2D" uid="uid://ylwrulkykakc" path="res://placeable/resources/chair/elegant/sillaElegante1.png" id="6_2tq3m"]
+
+[resource]
+script = ExtResource("5_br2eh")
+name = "Elegant Chair"
+available_rotations = Array[Resource("res://placeable/RotatedPlaceableData.gd")]([ExtResource("1_pbbuc"), ExtResource("2_jlu5o"), ExtResource("3_basp8"), ExtResource("4_bq085")])
+current_rotation = ExtResource("1_pbbuc")
+price = 55
+texture = ExtResource("6_2tq3m")
+goes_on_wall = false
+rustic_value = 2
+elegant_value = 7
+modern_value = 1
+futuristic_value = 0
+otherworldly_value = 1

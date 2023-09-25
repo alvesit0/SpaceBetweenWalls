@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PlaceableData" load_steps=4 format=3 uid="uid://ce46wt4p6xuvr"]
+
+[ext_resource type="Resource" uid="uid://ctm8ag18tjvpd" path="res://placeable/resources/lamp/rustic/rustic_lamp_front.tres" id="1_rvn0v"]
+[ext_resource type="Script" path="res://placeable/PlaceableData.gd" id="2_18d4f"]
+[ext_resource type="Texture2D" uid="uid://bbthpbmd85bge" path="res://placeable/resources/lamp/rustic/lamparaRustica1.png" id="3_n00s2"]
+
+[resource]
+script = ExtResource("2_18d4f")
+name = "Rustic Lamp"
+available_rotations = Array[Resource("res://placeable/RotatedPlaceableData.gd")]([ExtResource("1_rvn0v")])
+current_rotation = ExtResource("1_rvn0v")
+price = 30
+texture = ExtResource("3_n00s2")
+goes_on_wall = false
+rustic_value = 5
+elegant_value = 2
+modern_value = 2
+futuristic_value = 0
+otherworldly_value = 0

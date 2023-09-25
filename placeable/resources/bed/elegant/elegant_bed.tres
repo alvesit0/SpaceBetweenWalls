@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="PlaceableData" load_steps=7 format=3 uid="uid://dehr8j8wdxet1"]
+
+[ext_resource type="Resource" uid="uid://cwbt2deypxx2e" path="res://placeable/resources/bed/elegant/elegant_bed_front.tres" id="1_3cp4p"]
+[ext_resource type="Resource" uid="uid://btf64hymwbwiw" path="res://placeable/resources/bed/elegant/elegant_bed_right.tres" id="2_sgdvc"]
+[ext_resource type="Resource" uid="uid://qdob131fj064" path="res://placeable/resources/bed/elegant/elegant_bed_back.tres" id="3_kl06m"]
+[ext_resource type="Resource" uid="uid://disj3d2ph7128" path="res://placeable/resources/bed/elegant/elegant_bed_left.tres" id="4_2pkwi"]
+[ext_resource type="Script" path="res://placeable/PlaceableData.gd" id="5_1bnoo"]
+[ext_resource type="Texture2D" uid="uid://onpmls0mwscq" path="res://placeable/resources/bed/elegant/camaElegante1.png" id="6_g7id5"]
+
+[resource]
+script = ExtResource("5_1bnoo")
+name = "Elegant Bed"
+available_rotations = Array[Resource("res://placeable/RotatedPlaceableData.gd")]([ExtResource("1_3cp4p"), ExtResource("2_sgdvc"), ExtResource("3_kl06m"), ExtResource("4_2pkwi")])
+current_rotation = ExtResource("1_3cp4p")
+price = 95
+texture = ExtResource("6_g7id5")
+goes_on_wall = false
+rustic_value = 0
+elegant_value = 1
+modern_value = 2
+futuristic_value = 11
+otherworldly_value = 6

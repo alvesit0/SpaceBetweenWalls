@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="PlaceableData" load_steps=7 format=3 uid="uid://cai33c58ye2cs"]
+
+[ext_resource type="Resource" uid="uid://b56q57qkqkjhl" path="res://placeable/resources/chair/otherworldly/otherworldly_chair_front.tres" id="1_8anft"]
+[ext_resource type="Resource" uid="uid://bok5l72mv2wqn" path="res://placeable/resources/chair/otherworldly/otherworldly_chair_right.tres" id="2_mksdj"]
+[ext_resource type="Resource" uid="uid://cn1c8q0qjqgml" path="res://placeable/resources/chair/otherworldly/otherworldly_chair_back.tres" id="3_2d7xo"]
+[ext_resource type="Resource" uid="uid://dahnn5gwbsr4c" path="res://placeable/resources/chair/otherworldly/otherworldly_chair_left.tres" id="4_htt7f"]
+[ext_resource type="Script" path="res://placeable/PlaceableData.gd" id="5_6mfvv"]
+[ext_resource type="Texture2D" uid="uid://cfc5jl0gew2c" path="res://placeable/resources/chair/otherworldly/sillaOtherworldly1.png" id="6_y4xap"]
+
+[resource]
+script = ExtResource("5_6mfvv")
+name = "Alien Chair"
+available_rotations = Array[Resource("res://placeable/RotatedPlaceableData.gd")]([ExtResource("1_8anft"), ExtResource("2_mksdj"), ExtResource("3_2d7xo"), ExtResource("4_htt7f")])
+current_rotation = ExtResource("1_8anft")
+price = 60
+texture = ExtResource("6_y4xap")
+goes_on_wall = false
+rustic_value = 0
+elegant_value = 1
+modern_value = 0
+futuristic_value = 2
+otherworldly_value = 5

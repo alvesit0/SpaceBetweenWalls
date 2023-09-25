@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PlaceableData" load_steps=4 format=3 uid="uid://ha8ltagjaysg"]
+
+[ext_resource type="Resource" uid="uid://lqhemvswmkb4" path="res://placeable/resources/lamp/futuristic/fururistic_lamp_front.tres" id="1_50che"]
+[ext_resource type="Script" path="res://placeable/PlaceableData.gd" id="2_fqa0s"]
+[ext_resource type="Texture2D" uid="uid://bnagm3gwxuiee" path="res://placeable/resources/lamp/modern/lamparaModerna1.png" id="3_r2o3r"]
+
+[resource]
+script = ExtResource("2_fqa0s")
+name = "Modern Lamp"
+available_rotations = Array[Resource("res://placeable/RotatedPlaceableData.gd")]([ExtResource("1_50che")])
+current_rotation = ExtResource("1_50che")
+price = 45
+texture = ExtResource("3_r2o3r")
+goes_on_wall = false
+rustic_value = 0
+elegant_value = 1
+modern_value = 6
+futuristic_value = 1
+otherworldly_value = 1

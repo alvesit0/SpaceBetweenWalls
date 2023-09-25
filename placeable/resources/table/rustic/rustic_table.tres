@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="PlaceableData" load_steps=5 format=3 uid="uid://cgaknjhpwb32y"]
+
+[ext_resource type="Resource" uid="uid://dn0kq7ybbpqgm" path="res://placeable/resources/table/rustic/rustic_table_front.tres" id="1_dg4xq"]
+[ext_resource type="Resource" uid="uid://c1bwurxutt0jo" path="res://placeable/resources/table/rustic/rustic_table_right.tres" id="2_wcnbj"]
+[ext_resource type="Script" path="res://placeable/PlaceableData.gd" id="3_oy14d"]
+[ext_resource type="Texture2D" uid="uid://blb5bgb72huaw" path="res://placeable/resources/table/rustic/mesaRustica1.png" id="4_brdp2"]
+
+[resource]
+script = ExtResource("3_oy14d")
+name = "Simple Table"
+available_rotations = Array[Resource("res://placeable/RotatedPlaceableData.gd")]([ExtResource("1_dg4xq"), ExtResource("2_wcnbj")])
+current_rotation = ExtResource("1_dg4xq")
+price = 40
+texture = ExtResource("4_brdp2")
+goes_on_wall = false
+rustic_value = 6
+elegant_value = 1
+modern_value = 4
+futuristic_value = 1
+otherworldly_value = 0

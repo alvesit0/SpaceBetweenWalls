@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PlaceableData" load_steps=4 format=3 uid="uid://cfmco6ecp8dnf"]
+
+[ext_resource type="Resource" uid="uid://dytv2t5ejycki" path="res://placeable/resources/window/otherworldly/otherworldly_window_front.tres" id="1_ahru0"]
+[ext_resource type="Script" path="res://placeable/PlaceableData.gd" id="2_uq6mv"]
+[ext_resource type="Texture2D" uid="uid://c4v38dm0l6btb" path="res://placeable/resources/window/otherworldly/ventanaOtherworldly.png" id="3_4o7jo"]
+
+[resource]
+script = ExtResource("2_uq6mv")
+name = "Eye Window"
+available_rotations = Array[Resource("res://placeable/RotatedPlaceableData.gd")]([ExtResource("1_ahru0")])
+current_rotation = ExtResource("1_ahru0")
+price = 60
+texture = ExtResource("3_4o7jo")
+goes_on_wall = true
+rustic_value = 0
+elegant_value = 0
+modern_value = 1
+futuristic_value = 2
+otherworldly_value = 6

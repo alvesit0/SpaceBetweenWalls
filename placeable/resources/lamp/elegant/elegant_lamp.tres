@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PlaceableData" load_steps=4 format=3 uid="uid://b65s0f78f5nt7"]
+
+[ext_resource type="Resource" uid="uid://bf1ahmyllo4nv" path="res://placeable/resources/lamp/elegant/elegant_lamp_front.tres" id="1_0d3cy"]
+[ext_resource type="Script" path="res://placeable/PlaceableData.gd" id="3_xgbug"]
+[ext_resource type="Texture2D" uid="uid://c7s3nupbxxr5" path="res://placeable/resources/lamp/elegant/lamparaElegante1.png" id="4_4oqb4"]
+
+[resource]
+script = ExtResource("3_xgbug")
+name = "Chandelier"
+available_rotations = Array[Resource("res://placeable/RotatedPlaceableData.gd")]([ExtResource("1_0d3cy")])
+current_rotation = ExtResource("1_0d3cy")
+price = 40
+texture = ExtResource("4_4oqb4")
+goes_on_wall = false
+rustic_value = 2
+elegant_value = 6
+modern_value = 0
+futuristic_value = 0
+otherworldly_value = 2

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="RotatedPlaceableData" load_steps=2 format=3 uid="uid://c1j7r50wdlrhb"]
+
+[ext_resource type="Script" path="res://placeable/RotatedPlaceableData.gd" id="1_og673"]
+
+[resource]
+script = ExtResource("1_og673")
+tiles = Array[Vector2]([Vector2(30, 11), Vector2(31, 11), Vector2(32, 11)])
+visual_tiles = Array[Vector2]([Vector2(30, 10), Vector2(31, 10), Vector2(32, 10)])
+dimensions = Vector2(22, 6)

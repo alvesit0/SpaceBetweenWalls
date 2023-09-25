@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="PlaceableData" load_steps=7 format=3 uid="uid://dsryxevc426w"]
+
+[ext_resource type="Resource" uid="uid://dso04brb7ijdn" path="res://placeable/resources/bed/futuristic/futuristic_bed_front.tres" id="1_u71ju"]
+[ext_resource type="Resource" uid="uid://bp1hjwmwrl5wr" path="res://placeable/resources/bed/futuristic/futuristic_bed_right.tres" id="2_85npr"]
+[ext_resource type="Resource" uid="uid://cdaqjpbhbe5i1" path="res://placeable/resources/bed/futuristic/futuristic_bed_back.tres" id="3_usmfn"]
+[ext_resource type="Resource" uid="uid://bvyx0n845gcyu" path="res://placeable/resources/bed/futuristic/futuristic_bed_left.tres" id="4_712ii"]
+[ext_resource type="Script" path="res://placeable/PlaceableData.gd" id="5_b3mn2"]
+[ext_resource type="Texture2D" uid="uid://clljv3yyfk5a" path="res://placeable/resources/bed/futuristic/camaFuturista1.png" id="6_wm8ml"]
+
+[resource]
+script = ExtResource("5_b3mn2")
+name = "Cryo Bed"
+available_rotations = Array[Resource("res://placeable/RotatedPlaceableData.gd")]([ExtResource("1_u71ju"), ExtResource("2_85npr"), ExtResource("3_usmfn"), ExtResource("4_712ii")])
+current_rotation = ExtResource("1_u71ju")
+price = 95
+texture = ExtResource("6_wm8ml")
+goes_on_wall = false
+rustic_value = 0
+elegant_value = 1
+modern_value = 2
+futuristic_value = 11
+otherworldly_value = 6

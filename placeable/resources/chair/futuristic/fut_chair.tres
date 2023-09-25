@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="PlaceableData" load_steps=7 format=3 uid="uid://dc44etqsppsb3"]
+
+[ext_resource type="Resource" uid="uid://31c2wucw37st" path="res://placeable/resources/chair/futuristic/fut_chair_front.tres" id="1_i8ugs"]
+[ext_resource type="Resource" uid="uid://7ougecrfette" path="res://placeable/resources/chair/futuristic/fut_chair_right.tres" id="2_mvrry"]
+[ext_resource type="Resource" uid="uid://viudh53330lt" path="res://placeable/resources/chair/futuristic/fut_chair_left.tres" id="3_ggfej"]
+[ext_resource type="Resource" uid="uid://c1qmu8f4l07eu" path="res://placeable/resources/chair/futuristic/fut_chair_back.tres" id="4_uplcp"]
+[ext_resource type="Script" path="res://placeable/PlaceableData.gd" id="5_pwm8t"]
+[ext_resource type="Texture2D" uid="uid://ccql34qkpbhlc" path="res://placeable/resources/chair/futuristic/sillaFuturista1.png" id="6_mcgwu"]
+
+[resource]
+script = ExtResource("5_pwm8t")
+name = "Hover Chair"
+available_rotations = Array[Resource("res://placeable/RotatedPlaceableData.gd")]([ExtResource("1_i8ugs"), ExtResource("2_mvrry"), ExtResource("4_uplcp"), ExtResource("3_ggfej")])
+current_rotation = ExtResource("1_i8ugs")
+price = 65
+texture = ExtResource("6_mcgwu")
+goes_on_wall = false
+rustic_value = 0
+elegant_value = 0
+modern_value = 3
+futuristic_value = 6
+otherworldly_value = 1

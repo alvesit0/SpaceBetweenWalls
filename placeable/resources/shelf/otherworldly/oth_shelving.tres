@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="PlaceableData" load_steps=7 format=3 uid="uid://dw0ildo8tsviw"]
+
+[ext_resource type="Resource" uid="uid://d30dbculkg04h" path="res://placeable/resources/shelf/otherworldly/oth_shelving_front.tres" id="1_bpxml"]
+[ext_resource type="Resource" uid="uid://bo1jeu4i6fxm4" path="res://placeable/resources/shelf/otherworldly/oth_shelving_right.tres" id="2_fjfgb"]
+[ext_resource type="Resource" uid="uid://c3v2s78h7vdc1" path="res://placeable/resources/shelf/otherworldly/oth_shelving_back.tres" id="3_ip5gl"]
+[ext_resource type="Resource" uid="uid://bdtvixx3ign4i" path="res://placeable/resources/shelf/otherworldly/oth_shelving_left.tres" id="4_ijxrj"]
+[ext_resource type="Script" path="res://placeable/PlaceableData.gd" id="5_71j0t"]
+[ext_resource type="Texture2D" uid="uid://cp6emko1ayctw" path="res://placeable/resources/shelf/otherworldly/estanteriaOtherwordly1.png" id="6_vr7dp"]
+
+[resource]
+script = ExtResource("5_71j0t")
+name = "Wall of flesh"
+available_rotations = Array[Resource("res://placeable/RotatedPlaceableData.gd")]([ExtResource("1_bpxml"), ExtResource("2_fjfgb"), ExtResource("3_ip5gl"), ExtResource("4_ijxrj")])
+current_rotation = ExtResource("1_bpxml")
+price = 80
+texture = ExtResource("6_vr7dp")
+goes_on_wall = false
+rustic_value = 0
+elegant_value = 0
+modern_value = 0
+futuristic_value = 0
+otherworldly_value = 8
