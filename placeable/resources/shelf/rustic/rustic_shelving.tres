@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="PlaceableData" load_steps=6 format=3 uid="uid://nvbc3h11oskw"]
+
+[ext_resource type="Resource" uid="uid://lqc6mci74bb5" path="res://placeable/resources/shelf/rustic/rustic_shelving_front.tres" id="1_4l451"]
+[ext_resource type="Resource" uid="uid://cl5430krocdea" path="res://placeable/resources/shelf/rustic/rustic_shelving_right.tres" id="2_1h7tx"]
+[ext_resource type="Resource" uid="uid://sfbvcin7ri6j" path="res://placeable/resources/shelf/rustic/rustic_shelving_back.tres" id="3_yddap"]
+[ext_resource type="Script" path="res://placeable/PlaceableData.gd" id="5_8l4sl"]
+[ext_resource type="Texture2D" uid="uid://c1w28f66r53fq" path="res://placeable/resources/shelf/rustic/estanteriaRustica1.png" id="6_8ge82"]
+
+[resource]
+script = ExtResource("5_8l4sl")
+name = "Bookshelf"
+available_rotations = Array[Resource("res://placeable/RotatedPlaceableData.gd")]([ExtResource("1_4l451"), ExtResource("2_1h7tx"), ExtResource("3_yddap"), ExtResource("2_1h7tx")])
+current_rotation = ExtResource("1_4l451")
+price = 70
+texture = ExtResource("6_8ge82")
+goes_on_wall = false
+rustic_value = 5
+elegant_value = 3
+modern_value = 2
+futuristic_value = 0
+otherworldly_value = 0

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ListedItemListData" load_steps=98 format=3 uid="uid://c2njanicelbam"]
+[gd_resource type="Resource" script_class="ListedItemListData" load_steps=110 format=3 uid="uid://c2njanicelbam"]
 
 [ext_resource type="Script" path="res://hud/ListedItemListData.gd" id="1_87e7x"]
 [ext_resource type="Resource" uid="uid://8f05jdw6k3iu" path="res://placeable/resources/chair/rustic/rustic_chair.tres" id="1_hj2ep"]
@@ -22,6 +22,7 @@
 [ext_resource type="Resource" uid="uid://bopivy8qiafj6" path="res://placeable/resources/window/futuristic/futuristic_window.tres" id="12_bm2ri"]
 [ext_resource type="Resource" uid="uid://8f0fl3or72tv" path="res://placeable/resources/tv/futuristic/futuristic_tv.tres" id="13_hsc5h"]
 [ext_resource type="Resource" uid="uid://cai33c58ye2cs" path="res://placeable/resources/chair/otherworldly/otherworldly_chair.tres" id="16_6ylbb"]
+[ext_resource type="Resource" uid="uid://bukajlmlnjk2h" path="res://placeable/resources/table/futuristic/futuristic_table.tres" id="16_c64f8"]
 [ext_resource type="Resource" uid="uid://b65s0f78f5nt7" path="res://placeable/resources/lamp/elegant/elegant_lamp.tres" id="17_bvrp5"]
 [ext_resource type="Resource" uid="uid://ce46wt4p6xuvr" path="res://placeable/resources/lamp/rustic/rustic_lamp.tres" id="18_omreo"]
 [ext_resource type="Resource" uid="uid://ha8ltagjaysg" path="res://placeable/resources/lamp/modern/modern_lamp.tres" id="19_4fgqb"]
@@ -34,6 +35,9 @@
 [ext_resource type="Resource" uid="uid://dc44etqsppsb3" path="res://placeable/resources/chair/futuristic/fut_chair.tres" id="30_e20cq"]
 [ext_resource type="Resource" uid="uid://ddl3aexkmrx6o" path="res://placeable/resources/tv/rustic/rustic_tv.tres" id="31_tuxsa"]
 [ext_resource type="Resource" uid="uid://cfnyr5vq6o6ij" path="res://placeable/resources/sofa/rustic/rustic_sofa.tres" id="32_tcrlg"]
+[ext_resource type="Resource" uid="uid://ckgf4ltl4lhqd" path="res://placeable/resources/table/modern/modern_table.tres" id="33_8crdq"]
+[ext_resource type="Resource" uid="uid://nvbc3h11oskw" path="res://placeable/resources/shelf/rustic/rustic_shelving.tres" id="35_ypxck"]
+[ext_resource type="Resource" uid="uid://8rdpjpb0wts5" path="res://placeable/resources/sofa/otherworldly/oth_sofa.tres" id="36_v2chl"]
 
 [sub_resource type="Resource" id="Resource_rahv3"]
 script = ExtResource("2_5bhpr")
@@ -90,6 +94,10 @@ placeable_data = ExtResource("13_hsc5h")
 [sub_resource type="Resource" id="Resource_1iq6i"]
 script = ExtResource("2_5bhpr")
 placeable_data = ExtResource("30_e20cq")
+
+[sub_resource type="Resource" id="Resource_2g1de"]
+script = ExtResource("2_5bhpr")
+placeable_data = ExtResource("16_c64f8")
 
 [sub_resource type="Resource" id="Resource_407w4"]
 script = ExtResource("2_5bhpr")
@@ -211,6 +219,22 @@ placeable_data = ExtResource("31_tuxsa")
 script = ExtResource("2_5bhpr")
 placeable_data = ExtResource("32_tcrlg")
 
+[sub_resource type="Resource" id="Resource_4lkrm"]
+script = ExtResource("2_5bhpr")
+placeable_data = ExtResource("33_8crdq")
+
+[sub_resource type="Resource" id="Resource_a08il"]
+script = ExtResource("2_5bhpr")
+placeable_data = ExtResource("16_c64f8")
+
+[sub_resource type="Resource" id="Resource_j5iq6"]
+script = ExtResource("2_5bhpr")
+placeable_data = ExtResource("35_ypxck")
+
+[sub_resource type="Resource" id="Resource_gydnd"]
+script = ExtResource("2_5bhpr")
+placeable_data = ExtResource("36_v2chl")
+
 [sub_resource type="Resource" id="Resource_7fxmd"]
 script = ExtResource("2_5bhpr")
 placeable_data = ExtResource("5_orjrt")
@@ -235,6 +259,10 @@ placeable_data = ExtResource("19_4fgqb")
 script = ExtResource("2_5bhpr")
 placeable_data = ExtResource("22_m6w2q")
 
+[sub_resource type="Resource" id="Resource_u5yxb"]
+script = ExtResource("2_5bhpr")
+placeable_data = ExtResource("33_8crdq")
+
 [sub_resource type="Resource" id="Resource_vlqvg"]
 script = ExtResource("2_5bhpr")
 placeable_data = ExtResource("7_osyqt")
@@ -258,6 +286,10 @@ placeable_data = ExtResource("29_p624g")
 [sub_resource type="Resource" id="Resource_i5wpj"]
 script = ExtResource("2_5bhpr")
 placeable_data = ExtResource("29_sk3j3")
+
+[sub_resource type="Resource" id="Resource_r656d"]
+script = ExtResource("2_5bhpr")
+placeable_data = ExtResource("36_v2chl")
 
 [sub_resource type="Resource" id="Resource_luewa"]
 script = ExtResource("2_5bhpr")
@@ -287,11 +319,15 @@ placeable_data = ExtResource("31_tuxsa")
 script = ExtResource("2_5bhpr")
 placeable_data = ExtResource("32_tcrlg")
 
+[sub_resource type="Resource" id="Resource_bthfy"]
+script = ExtResource("2_5bhpr")
+placeable_data = ExtResource("35_ypxck")
+
 [resource]
 script = ExtResource("1_87e7x")
-listed_items = Array[ExtResource("2_5bhpr")]([SubResource("Resource_407w4"), SubResource("Resource_modb0"), SubResource("Resource_dlsiv"), SubResource("Resource_200ud"), SubResource("Resource_ul1bb"), SubResource("Resource_wilnv"), SubResource("Resource_3n5w2"), SubResource("Resource_uveey"), SubResource("Resource_1gdei"), SubResource("Resource_qhd0n"), SubResource("Resource_nptwv"), SubResource("Resource_8ki6e"), SubResource("Resource_3xb68"), SubResource("Resource_20vf5"), SubResource("Resource_6ku0n"), SubResource("Resource_mygrf"), SubResource("Resource_tyk4d"), SubResource("Resource_o4e7j"), SubResource("Resource_u2kx2"), SubResource("Resource_4rbh7"), SubResource("Resource_11kmj"), SubResource("Resource_87wiy"), SubResource("Resource_cnuga"), SubResource("Resource_f30bn"), SubResource("Resource_qiik0"), SubResource("Resource_nm7g1"), SubResource("Resource_vl318"), SubResource("Resource_83hdt"), SubResource("Resource_ttqox"), SubResource("Resource_xjrmr")])
-rustic_listed_items = Array[ExtResource("2_5bhpr")]([SubResource("Resource_luewa"), SubResource("Resource_dv4mn"), SubResource("Resource_iicjt"), SubResource("Resource_f850w"), SubResource("Resource_cblvm"), SubResource("Resource_6jxqp"), SubResource("Resource_ravmb")])
+listed_items = Array[ExtResource("2_5bhpr")]([SubResource("Resource_407w4"), SubResource("Resource_modb0"), SubResource("Resource_dlsiv"), SubResource("Resource_200ud"), SubResource("Resource_ul1bb"), SubResource("Resource_wilnv"), SubResource("Resource_3n5w2"), SubResource("Resource_uveey"), SubResource("Resource_1gdei"), SubResource("Resource_qhd0n"), SubResource("Resource_nptwv"), SubResource("Resource_8ki6e"), SubResource("Resource_3xb68"), SubResource("Resource_20vf5"), SubResource("Resource_6ku0n"), SubResource("Resource_mygrf"), SubResource("Resource_tyk4d"), SubResource("Resource_o4e7j"), SubResource("Resource_u2kx2"), SubResource("Resource_4rbh7"), SubResource("Resource_11kmj"), SubResource("Resource_87wiy"), SubResource("Resource_cnuga"), SubResource("Resource_f30bn"), SubResource("Resource_qiik0"), SubResource("Resource_nm7g1"), SubResource("Resource_vl318"), SubResource("Resource_83hdt"), SubResource("Resource_ttqox"), SubResource("Resource_xjrmr"), SubResource("Resource_4lkrm"), SubResource("Resource_a08il"), SubResource("Resource_j5iq6"), SubResource("Resource_gydnd")])
+rustic_listed_items = Array[ExtResource("2_5bhpr")]([SubResource("Resource_luewa"), SubResource("Resource_dv4mn"), SubResource("Resource_iicjt"), SubResource("Resource_f850w"), SubResource("Resource_cblvm"), SubResource("Resource_6jxqp"), SubResource("Resource_ravmb"), SubResource("Resource_bthfy")])
 elegant_listed_items = Array[ExtResource("2_5bhpr")]([SubResource("Resource_rahv3"), SubResource("Resource_xqsud"), SubResource("Resource_q8mi2"), SubResource("Resource_lfkon"), SubResource("Resource_vqv4x"), SubResource("Resource_i1bdt"), SubResource("Resource_x24y0"), SubResource("Resource_douqh")])
-modern_listed_items = Array[ExtResource("2_5bhpr")]([SubResource("Resource_7fxmd"), SubResource("Resource_jk4dg"), SubResource("Resource_oar06"), SubResource("Resource_reaxb"), SubResource("Resource_em2af"), SubResource("Resource_1ysa7")])
-futuristic_listed_items = Array[ExtResource("2_5bhpr")]([SubResource("Resource_juqrg"), SubResource("Resource_uwgms"), SubResource("Resource_tu8og"), SubResource("Resource_50qnn"), SubResource("Resource_gfs8r"), SubResource("Resource_1iq6i")])
-otherworldly_listed_items = Array[ExtResource("2_5bhpr")]([SubResource("Resource_vlqvg"), SubResource("Resource_lglcu"), SubResource("Resource_552ni"), SubResource("Resource_ctdjj"), SubResource("Resource_ixwg2"), SubResource("Resource_i5wpj")])
+modern_listed_items = Array[ExtResource("2_5bhpr")]([SubResource("Resource_7fxmd"), SubResource("Resource_jk4dg"), SubResource("Resource_oar06"), SubResource("Resource_reaxb"), SubResource("Resource_em2af"), SubResource("Resource_1ysa7"), SubResource("Resource_u5yxb")])
+futuristic_listed_items = Array[ExtResource("2_5bhpr")]([SubResource("Resource_juqrg"), SubResource("Resource_uwgms"), SubResource("Resource_tu8og"), SubResource("Resource_50qnn"), SubResource("Resource_gfs8r"), SubResource("Resource_1iq6i"), SubResource("Resource_2g1de")])
+otherworldly_listed_items = Array[ExtResource("2_5bhpr")]([SubResource("Resource_vlqvg"), SubResource("Resource_lglcu"), SubResource("Resource_552ni"), SubResource("Resource_ctdjj"), SubResource("Resource_ixwg2"), SubResource("Resource_i5wpj"), SubResource("Resource_r656d")])

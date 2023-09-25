@@ -10,7 +10,7 @@ class_name Ship2Results
 const WIN_MUSIC = preload("res://sound/music/win.wav")
 const LOSS_MUSIC = preload("res://sound/music/loss.wav")
 const DAY_CHANGE = preload("res://scenes/day_change.tscn")
-
+var transitioned: bool
 var points: int
 
 func _ready():
@@ -75,7 +75,9 @@ func calculate_reward() -> String:
 	return "Reward: " + str(snapped(points, 1) * 2)
 
 func _input(event):
-	if Input.is_action_just_pressed("gboy_a") or Input.is_action_just_pressed("gboy_select"):
+	if (Input.is_action_just_pressed("gboy_a") or Input.is_action_just_pressed("gboy_select")) \
+	and !transitioned:
+		transitioned = true
 		PlayerManager.player.current_day += 1
 		await Transition.dissolve()
 		var scene = DAY_CHANGE.instantiate()

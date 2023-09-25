@@ -12,9 +12,10 @@ func _ready() -> void:
 	PlayerManager.player = player
 
 func toggle_menu_interface() -> void:
-	if PlayerManager.player.state == PlayerManager.player.States.ITEM_PLACING \
-	or PlayerManager.player.state == PlayerManager.player.States.MENU_OPENED \
-	or PlayerManager.player.state == PlayerManager.player.States.ITEM_LIST_OPENED:
+	if (PlayerManager.player.state == PlayerManager.player.States.ITEM_PLACING
+	or PlayerManager.player.state == PlayerManager.player.States.MENU_OPENED
+	or PlayerManager.player.state == PlayerManager.player.States.ITEM_LIST_OPENED) \
+	and hud:
 		hud.ingame_menu.visible = not hud.ingame_menu.visible
 		if PlayerManager.player.state != PlayerManager.player.States.ITEM_PLACING:
 			PlayerManager.player.state = PlayerManager.player.States.ITEM_PLACING

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="PlaceableData" load_steps=7 format=3 uid="uid://8rdpjpb0wts5"]
+
+[ext_resource type="Resource" uid="uid://bsevtqmxl0tbf" path="res://placeable/resources/sofa/otherworldly/oth_sofa_front.tres" id="1_47ft7"]
+[ext_resource type="Resource" uid="uid://daybrsv73ches" path="res://placeable/resources/sofa/otherworldly/oth_sofa_right.tres" id="2_rci7a"]
+[ext_resource type="Resource" uid="uid://wrvhx10j3opv" path="res://placeable/resources/sofa/otherworldly/oth_sofa_back.tres" id="3_wmt18"]
+[ext_resource type="Resource" uid="uid://dkqriyx36x8vf" path="res://placeable/resources/sofa/otherworldly/oth_sofa_left.tres" id="4_gqehg"]
+[ext_resource type="Script" path="res://placeable/PlaceableData.gd" id="5_srakr"]
+[ext_resource type="Texture2D" uid="uid://dq4wbso613ldd" path="res://placeable/resources/sofa/otherworldly/sofaOtherworldly1.png" id="6_5h6qg"]
+
+[resource]
+script = ExtResource("5_srakr")
+name = "Giant Hand"
+available_rotations = Array[Resource("res://placeable/RotatedPlaceableData.gd")]([ExtResource("1_47ft7"), ExtResource("2_rci7a"), ExtResource("3_wmt18"), ExtResource("4_gqehg")])
+current_rotation = ExtResource("1_47ft7")
+price = 75
+texture = ExtResource("6_5h6qg")
+goes_on_wall = false
+rustic_value = 0
+elegant_value = 0
+modern_value = 0
+futuristic_value = 0
+otherworldly_value = 7

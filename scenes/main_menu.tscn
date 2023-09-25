@@ -52,21 +52,6 @@ _data = {
 "move_everything": SubResource("Animation_urqyw")
 }
 
-[sub_resource type="Animation" id="Animation_vsaf5"]
-resource_name = "dissolve_credits"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_bvexk"]
 length = 0.001
 tracks/0/type = "value"
@@ -80,6 +65,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vsaf5"]
+resource_name = "dissolve_credits"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_spgun"]
@@ -403,7 +403,7 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(0.533333, 0.752941, 0.439216, 1)
 theme_override_fonts/font = ExtResource("2_1wyrn")
 theme_override_font_sizes/font_size = 8
-text = "Dialogues"
+text = "Music"
 horizontal_alignment = 1
 vertical_alignment = 1
 

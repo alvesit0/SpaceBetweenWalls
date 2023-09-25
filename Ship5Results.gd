@@ -12,6 +12,7 @@ const LOSS_MUSIC = preload("res://sound/music/loss.wav")
 const ENDING = preload("res://scenes/ending.tscn")
 
 var points: int
+var transitioned: bool
 
 func _ready():
 	points = 0
@@ -75,7 +76,9 @@ func calculate_reward() -> String:
 	return "Reward: " + str(snapped(points, 1) * 2)
 
 func _input(event):
-	if Input.is_action_just_pressed("gboy_a") or Input.is_action_just_pressed("gboy_select"):
+	if (Input.is_action_just_pressed("gboy_a") or Input.is_action_just_pressed("gboy_select"))\
+	and !transitioned:
+		transitioned = true
 		PlayerManager.player.current_day += 1
 		await Transition.dissolve()
 		var scene = ENDING.instantiate()

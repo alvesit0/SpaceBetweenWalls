@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="PlaceableData" load_steps=5 format=3 uid="uid://ckgf4ltl4lhqd"]
+
+[ext_resource type="Resource" uid="uid://cknnlflanemnx" path="res://placeable/resources/table/modern/modern_table_front.tres" id="1_ea6la"]
+[ext_resource type="Resource" uid="uid://bhnhn7migrr1c" path="res://placeable/resources/table/modern/modern_table_right.tres" id="2_qwg58"]
+[ext_resource type="Script" path="res://placeable/PlaceableData.gd" id="3_ce3ps"]
+[ext_resource type="Texture2D" uid="uid://co08u1nwnjaxu" path="res://placeable/resources/table/modern/mesaModerna1.png" id="4_q2p5v"]
+
+[resource]
+script = ExtResource("3_ce3ps")
+name = "Modern Table"
+available_rotations = Array[Resource("res://placeable/RotatedPlaceableData.gd")]([ExtResource("1_ea6la"), ExtResource("2_qwg58")])
+current_rotation = ExtResource("1_ea6la")
+price = 60
+texture = ExtResource("4_q2p5v")
+goes_on_wall = false
+rustic_value = 1
+elegant_value = 1
+modern_value = 6
+futuristic_value = 1
+otherworldly_value = 0

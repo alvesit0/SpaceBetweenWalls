@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="PlaceableData" load_steps=5 format=3 uid="uid://bukajlmlnjk2h"]
+
+[ext_resource type="Resource" uid="uid://y8oa2dcxkoxb" path="res://placeable/resources/table/futuristic/futuristic_table_front.tres" id="1_irfe8"]
+[ext_resource type="Resource" uid="uid://c073182isi0hi" path="res://placeable/resources/table/futuristic/futuristic_table_right.tres" id="2_lbq24"]
+[ext_resource type="Script" path="res://placeable/PlaceableData.gd" id="3_847e7"]
+[ext_resource type="Texture2D" uid="uid://b4n0isrpk440i" path="res://placeable/resources/table/futuristic/mesaFuturista1.png" id="4_eskgv"]
+
+[resource]
+script = ExtResource("3_847e7")
+name = "Electronics"
+available_rotations = Array[Resource("res://placeable/RotatedPlaceableData.gd")]([ExtResource("1_irfe8"), ExtResource("2_lbq24")])
+current_rotation = ExtResource("1_irfe8")
+price = 90
+texture = ExtResource("4_eskgv")
+goes_on_wall = false
+rustic_value = 0
+elegant_value = 0
+modern_value = 1
+futuristic_value = 6
+otherworldly_value = 2
