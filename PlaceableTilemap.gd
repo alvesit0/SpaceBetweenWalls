@@ -49,6 +49,7 @@ func remove_placeable() -> void:
 		PlayerManager.player.add_funds(selector.targeted_placeable.data.price)
 		PlayerManager.player.placed_placeables.erase(selector.targeted_placeable.data)
 		selector.targeted_placeable.queue_free()
+	selector.placeable_hitbox_check.colliding_bodies.clear()
 
 func rotate_selected() -> void: 
 	if PlayerManager.player.selected_placeable:
