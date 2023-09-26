@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_ba6mt")
-tiles = Array[Vector2]([Vector2(3, 16), Vector2(4, 16), Vector2(5, 6)])
+tiles = Array[Vector2]([Vector2(3, 16), Vector2(4, 16), Vector2(5, 16)])
 visual_tiles = Array[Vector2]([Vector2(3, 15), Vector2(4, 15), Vector2(5, 15)])
 dimensions = Vector2(22, 6)

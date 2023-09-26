@@ -24,6 +24,7 @@ var current_tab: VBoxContainer
 @onready var move_sound = $MoveSound
 
 var tabindex: int
+var open_timer: int
 
 func _ready() -> void:
 	tab_container.set_tab_icon(0, ALL_ICON)
@@ -39,13 +40,15 @@ func _ready() -> void:
 	tab_container.set_tab_title(4, "")
 	tab_container.set_tab_title(5, "")
 	tabindex = 0
+	open_timer = 10
 	current_tab = all_items_container
 	all_items_scroll_container.set_deferred("scroll_vertical", 0)
 	set_focus()
 	
 func _input(event):
 	if Input.is_action_just_pressed("gboy_a") \
-	and PlayerManager.player.state == PlayerManager.player.States.ITEM_LIST_OPENED:
+	and PlayerManager.player.state == PlayerManager.player.States.ITEM_LIST_OPENED \
+	and open_timer == 0:
 		back_sound.play()
 		for child in current_tab.get_children():
 			if child.has_focus() and child is ListedItem:
@@ -62,6 +65,8 @@ func _input(event):
 		queue_free()
 	
 func _process(delta):
+	if open_timer > 0:
+		open_timer -= 1
 	if Input.is_action_just_pressed("ui_right") \
 	and PlayerManager.player.state == PlayerManager.player.States.ITEM_LIST_OPENED:
 		move_sound.play()
